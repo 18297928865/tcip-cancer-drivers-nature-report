@@ -1,0 +1,2012 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nature 顶刊精读与文献汇报：重构肿瘤驱动基因诱导癌细胞凋亡 (TCIP 邻近诱导转录疗法)</title>
+<style>
+  :root {
+    --primary: #8b0000;         /* 经典 Nature 枣红/深绯红 */
+    --primary-dark: #5c0000;
+    --primary-light: #b22222;
+    --primary-bg: #fff5f5;
+    --secondary: #1a365d;       /* 深邃学术蓝 */
+    --secondary-light: #2b6cb0;
+    --accent: #c53030;
+    --accent-bg: #fffaf0;
+    --accent-border: #feebc8;
+    --dark: #1a202c;
+    --text: #2d3748;
+    --text-muted: #718096;
+    --bg-page: #f7fafc;
+    --bg-card: #ffffff;
+    --border: #e2e8f0;
+    --border-accent: #fed7d7;
+    --highlight: #fefcbf;
+    --term-tag: #edf2f7;
+    --term-text: #2d3748;
+    --term-border: #cbd5e0;
+    --shadow: 0 4px 6px -1px rgba(0,0,0,0.08), 0 2px 4px -1px rgba(0,0,0,0.04);
+    --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+    --radius: 8px;
+    --radius-lg: 12px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+    color: var(--text);
+    background-color: var(--bg-page);
+    line-height: 1.85;
+    font-size: 16px;
+    scroll-behavior: smooth;
+  }
+
+  /* 顶部阅读进度条 */
+  #progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #b22222, #e53e3e, #dd6b20);
+    z-index: 9999;
+    width: 0%;
+    transition: width 0.1s ease;
+  }
+
+  /* 顶部全局导航 */
+  .top-navbar {
+    position: sticky;
+    top: 0;
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+    padding: 12px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  }
+
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--primary);
+    text-decoration: none;
+  }
+
+  .nav-badge {
+    background: var(--primary);
+    color: #fff;
+    font-size: 11px;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+  }
+
+  .nav-links a {
+    color: var(--text);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover {
+    color: var(--primary);
+  }
+
+  /* 页面容器主体 */
+  .layout-container {
+    max-width: 1360px;
+    margin: 30px auto;
+    padding: 0 24px;
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 32px;
+    align-items: start;
+  }
+
+  @media (max-width: 1080px) {
+    .layout-container {
+      grid-template-columns: 1fr;
+    }
+    .sidebar-toc {
+      display: none !important;
+    }
+  }
+
+  /* 侧边目录 (Sticky TOC) */
+  .sidebar-toc {
+    position: sticky;
+    top: 80px;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 20px 16px;
+    box-shadow: var(--shadow);
+    max-height: calc(100vh - 110px);
+    overflow-y: auto;
+  }
+
+  .toc-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .toc-list {
+    list-style: none;
+    font-size: 13px;
+  }
+
+  .toc-item {
+    margin-bottom: 4px;
+  }
+
+  .toc-item a {
+    display: block;
+    padding: 6px 10px;
+    color: var(--text);
+    text-decoration: none;
+    border-radius: 6px;
+    transition: all 0.2s;
+    line-height: 1.4;
+  }
+
+  .toc-item a:hover {
+    background: var(--primary-bg);
+    color: var(--primary);
+  }
+
+  .toc-item.active a {
+    background: var(--primary-bg);
+    color: var(--primary);
+    font-weight: 600;
+    border-left: 3px solid var(--primary);
+  }
+
+  .toc-item.sub {
+    margin-left: 14px;
+    font-size: 12.5px;
+  }
+
+  /* 主内容卡片 */
+  .main-content {
+    min-width: 0;
+  }
+
+  /* 论文头部 Hero */
+  .paper-hero {
+    background: linear-gradient(135deg, #2b1111 0%, #1a202c 100%);
+    color: #fff;
+    padding: 44px 40px;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    margin-bottom: 32px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .paper-hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 320px;
+    height: 100%;
+    background: radial-gradient(circle, rgba(229,62,62,0.18) 0%, rgba(0,0,0,0) 70%);
+    pointer-events: none;
+  }
+
+  .journal-badge {
+    display: inline-block;
+    background: #e53e3e;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 800;
+    padding: 4px 12px;
+    border-radius: 4px;
+    letter-spacing: 1px;
+    margin-bottom: 18px;
+    text-transform: uppercase;
+  }
+
+  .paper-hero h1 {
+    font-size: 28px;
+    line-height: 1.4;
+    font-weight: 800;
+    margin-bottom: 14px;
+    color: #ffffff;
+  }
+
+  .title-en {
+    font-size: 18px;
+    line-height: 1.5;
+    color: #cbd5e0;
+    font-style: italic;
+    font-family: Georgia, serif;
+    margin-bottom: 24px;
+  }
+
+  .paper-meta {
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    padding-top: 18px;
+    font-size: 13.5px;
+    color: #e2e8f0;
+    line-height: 1.7;
+  }
+
+  .meta-authors strong {
+    color: #feb2b2;
+  }
+
+  .meta-links {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    font-size: 13px;
+  }
+
+  .meta-links a {
+    color: #90cdf4;
+    text-decoration: underline;
+  }
+
+  /* 博士文献汇报备战导读 Banner */
+  .phd-guide-banner {
+    background: linear-gradient(135deg, #fffaf0 0%, #feebc8 100%);
+    border-left: 5px solid #dd6b20;
+    border-radius: var(--radius);
+    padding: 22px 24px;
+    margin-bottom: 30px;
+    box-shadow: var(--shadow);
+  }
+
+  .phd-guide-banner h3 {
+    color: #9c4221;
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .phd-guide-banner p {
+    color: #744210;
+    font-size: 14.5px;
+    line-height: 1.75;
+  }
+
+  /* 卡片模块 */
+  .card-section {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 36px 36px;
+    margin-bottom: 32px;
+    box-shadow: var(--shadow);
+  }
+
+  .section-heading {
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--secondary);
+    border-bottom: 2px solid var(--border);
+    padding-bottom: 12px;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .section-heading .sec-id {
+    background: var(--primary);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 800;
+    padding: 3px 9px;
+    border-radius: 4px;
+    letter-spacing: 0.5px;
+  }
+
+  .subsection-heading {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--primary);
+    margin: 26px 0 14px 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  /* 文本与段落排版 */
+  p {
+    margin-bottom: 18px;
+    color: #2d3748;
+    text-align: justify;
+  }
+
+  /* 机制解析卡片 / 导读卡片 */
+  .mechanism-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-left: 4px solid var(--primary);
+    border-radius: var(--radius);
+    padding: 20px 22px;
+    margin: 22px 0;
+  }
+
+  .mechanism-card.blue {
+    border-left-color: #2b6cb0;
+    background: #ebf8ff;
+  }
+
+  .mechanism-card.green {
+    border-left-color: #2f855a;
+    background: #f0fff4;
+  }
+
+  .mechanism-card.purple {
+    border-left-color: #6b46c1;
+    background: #faf5ff;
+  }
+
+  .mechanism-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  /* 词汇高亮 / 专业概念注解 */
+  .term-tag {
+    display: inline-block;
+    background: var(--term-tag);
+    color: var(--term-text);
+    border: 1px solid var(--term-border);
+    padding: 1px 6px;
+    border-radius: 4px;
+    font-size: 13.5px;
+    font-weight: 600;
+  }
+
+  .badge-chem {
+    background: #e6fffa;
+    color: #234e52;
+    border: 1px solid #b2f5ea;
+    padding: 2px 7px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 700;
+  }
+
+  .badge-gene {
+    background: #fefcbf;
+    color: #744210;
+    border: 1px solid #faf089;
+    padding: 2px 7px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 700;
+  }
+
+  /* 图版展示区 */
+  .figure-wrapper {
+    margin: 28px 0;
+    background: #fdfdfd;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+
+  .figure-img-container {
+    text-align: center;
+    cursor: zoom-in;
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--radius);
+    background: #fff;
+    padding: 10px;
+  }
+
+  .figure-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+    transition: transform 0.25s ease;
+  }
+
+  .figure-img:hover {
+    transform: scale(1.01);
+  }
+
+  .zoom-hint {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-top: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .figure-caption {
+    margin-top: 18px;
+    font-size: 14.5px;
+    line-height: 1.7;
+    color: #4a5568;
+    background: #f7fafc;
+    padding: 16px 20px;
+    border-radius: var(--radius);
+    border-left: 3px solid var(--secondary);
+  }
+
+  .figure-caption strong.fig-title {
+    color: var(--secondary);
+    display: block;
+    margin-bottom: 6px;
+    font-size: 15px;
+  }
+
+  /* 表格设计 */
+  .custom-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 22px 0;
+    font-size: 14.5px;
+    background: #fff;
+  }
+
+  .custom-table th {
+    background: #f1f5f9;
+    color: #1e293b;
+    font-weight: 700;
+    padding: 12px 14px;
+    border: 1px solid #cbd5e1;
+    text-align: left;
+  }
+
+  .custom-table td {
+    padding: 12px 14px;
+    border: 1px solid #e2e8f0;
+    color: #334155;
+    vertical-align: top;
+  }
+
+  .custom-table tr:nth-child(even) {
+    background-color: #f8fafc;
+  }
+
+  .custom-table tr:hover {
+    background-color: #f1f5f9;
+  }
+
+  /* 幻灯片演讲脚本卡片 */
+  .slide-card {
+    background: #fff;
+    border: 1px solid #cbd5e1;
+    border-radius: var(--radius);
+    margin-bottom: 20px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+  }
+
+  .slide-header {
+    background: #1e293b;
+    color: #fff;
+    padding: 10px 18px;
+    font-size: 14px;
+    font-weight: 700;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .slide-body {
+    padding: 18px;
+  }
+
+  .script-box {
+    background: #fffdf5;
+    border-left: 4px solid #f59e0b;
+    padding: 12px 16px;
+    border-radius: 4px;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #78350f;
+    line-height: 1.65;
+  }
+
+  .script-box strong {
+    color: #92400e;
+  }
+
+  /* 导师尖锐问答卡片 */
+  .qa-card {
+    background: #ffffff;
+    border: 1px solid #fed7d7;
+    border-radius: var(--radius);
+    margin-bottom: 22px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+  }
+
+  .qa-q {
+    background: #fff5f5;
+    color: #9b2c2c;
+    padding: 14px 18px;
+    font-weight: 700;
+    font-size: 15px;
+    border-bottom: 1px solid #feb2b2;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .qa-a {
+    padding: 16px 20px;
+    font-size: 14.5px;
+    color: #2d3748;
+    line-height: 1.75;
+  }
+
+  .qa-a strong.highlight-point {
+    color: #2b6cb0;
+  }
+
+  /* 图片点击放大弹窗 (Modal Lightbox) */
+  #lightbox-modal {
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.92);
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    cursor: zoom-out;
+  }
+
+  #lightbox-img {
+    max-width: 95%;
+    max-height: 95%;
+    border-radius: 6px;
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
+    transition: transform 0.2s ease;
+  }
+
+  #lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: #fff;
+    font-size: 36px;
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  /* 回到顶部按钮 */
+  #back-to-top {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 44px;
+    height: 44px;
+    background: var(--primary);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.25s ease;
+    z-index: 999;
+  }
+
+  #back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  #back-to-top:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+  }
+
+  /* 页脚 */
+  footer {
+    border-top: 1px solid var(--border);
+    background: #fff;
+    padding: 36px 24px;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 13.5px;
+    margin-top: 60px;
+  }
+</style>
+</head>
+<body>
+
+  <!-- 顶部进度条 -->
+  <div id="progress-bar"></div>
+
+  <!-- 顶部导航栏 -->
+  <header class="top-navbar">
+    <a href="#" class="nav-logo">
+      <span class="nav-badge">Nature 2023</span>
+      <span>TCIP · 肿瘤驱动基因重构激活凋亡</span>
+    </a>
+    <nav class="nav-links">
+      <a href="#overview">研究概览</a>
+      <a href="#sec1">TCIP1杀伤</a>
+      <a href="#sec2">三元复合物</a>
+      <a href="#sec3">MYC抑制</a>
+      <a href="#sec4">机制与转录延伸</a>
+      <a href="#sec5">体内安全性与普适性</a>
+      <a href="#methods">STAR方法</a>
+      <a href="#phd-review" style="color: var(--primary); font-weight: 700;">🎓 博士精读汇报</a>
+    </nav>
+  </header>
+
+  <!-- 布局双栏结构 -->
+  <div class="layout-container">
+    <!-- 侧边 Sticky TOC 目录 -->
+    <aside class="sidebar-toc">
+      <div class="toc-title">
+        <span>📑 文献精读目录</span>
+      </div>
+      <ul class="toc-list">
+        <li class="toc-item"><a href="#overview">1. 论文概览与导读</a></li>
+        <li class="toc-item sub"><a href="#abstract">中英文双语摘要</a></li>
+        <li class="toc-item sub"><a href="#intro">立项背景与科学假说</a></li>
+        <li class="toc-item"><a href="#sec1">2. TCIP1 选择性杀死 DLBCL</a></li>
+        <li class="toc-item sub"><a href="#fig1">Figure 1: TCIP 设计与活性</a></li>
+        <li class="toc-item sub"><a href="#ed-fig1">Extended Data 1-3: 筛选与优化</a></li>
+        <li class="toc-item"><a href="#sec2">3. 三元复合物介导细胞杀伤</a></li>
+        <li class="toc-item sub"><a href="#fig2">Figure 2: 化学挽救与 TR-FRET</a></li>
+        <li class="toc-item sub"><a href="#ed-fig4">Extended Data 4-5: 结合动力学与周期</a></li>
+        <li class="toc-item"><a href="#sec3">4. 快速抑制 MYC 及其靶基因</a></li>
+        <li class="toc-item sub"><a href="#fig3">Figure 3: MYC 下调与转录组变化</a></li>
+        <li class="toc-item sub"><a href="#ed-fig6">Extended Data 6: GSEA 通路富集</a></li>
+        <li class="toc-item"><a href="#sec4">5. 转录激活机制与自反馈重构</a></li>
+        <li class="toc-item sub"><a href="#fig4">Figure 4: Pol II 延伸与 BCL6 回路</a></li>
+        <li class="toc-item sub"><a href="#ed-fig7">Extended Data 7-8: ChIP-seq 轨迹</a></li>
+        <li class="toc-item sub"><a href="#ed-fig9">Extended Data 9: 正反馈自杀循环</a></li>
+        <li class="toc-item"><a href="#sec5">6. 体内靶向安全性与普适性</a></li>
+        <li class="toc-item sub"><a href="#fig5">Figure 5: 小鼠毒理与 ER-TCIP2</a></li>
+        <li class="toc-item"><a href="#discussion">7. 全文讨论与范式革命</a></li>
+        <li class="toc-item"><a href="#methods">8. 详尽实验方法 (STAR Methods)</a></li>
+        <li class="toc-item" style="margin-top: 10px; border-top: 1px dashed var(--border); padding-top: 8px;">
+          <a href="#phd-review" style="color: var(--primary); font-weight: 700;">🎓 博士文献汇报专栏</a>
+        </li>
+        <li class="toc-item sub"><a href="#novelties">五大核心新颖点拆解</a></li>
+        <li class="toc-item sub"><a href="#implications">生物学与转化意义</a></li>
+        <li class="toc-item sub"><a href="#background-depth">邻近药理学背景拓展</a></li>
+        <li class="toc-item sub"><a href="#ppt-guide">15-20min PPT 讲稿脚本</a></li>
+        <li class="toc-item sub"><a href="#defense-qa">导师尖锐提问 5 连问应答</a></li>
+      </ul>
+    </aside>
+
+    <!-- 右侧主体内容容器 -->
+    <main class="main-content">
+
+  <!-- 论文信息卡片 Hero -->
+  <header class="paper-hero" id="overview">
+    <div class="journal-badge">Nature · Vol 620 · Article · 顶刊精读</div>
+    <h1>重构肿瘤驱动基因以激活细胞凋亡：转录/表观遗传化学邻近诱导剂 (TCIP) 开启癌症合成致死新范式</h1>
+    <div class="title-en">Rewiring cancer drivers to activate apoptosis (Transcriptional/Epigenetic Chemical Inducers of Proximity, TCIPs)</div>
+    <div class="paper-meta">
+      <div class="meta-authors">
+        <strong>第一作者</strong>：Sai Gourisankar<sup>1,2,6</sup>, Andrey Krokhotin<sup>1,6</sup>, Wenzhi Ji (季文智)<sup>3,6</sup> 等<br>
+        <strong>通讯作者</strong>：<strong>Nathanael S. Gray</strong> (nsgray01@stanford.edu)<sup>3*</sup>，<strong>Gerald R. Crabtree</strong> (crabtree@stanford.edu)<sup>1,4*</sup><br>
+        <strong>主要作者</strong>：Xiaofan Liu (刘晓凡)<sup>3</sup>, Chiung-Ying Chang (张琼莹)<sup>1</sup>, Samuel H. Kim<sup>1</sup>, Zhengnian Li (李正念)<sup>3</sup>, Wendy Wenderski<sup>1,4</sup>, Juste M. Simanauskaite<sup>1</sup>, Haopeng Yang (杨浩鹏)<sup>5</sup>, Hannes Vogel<sup>1</sup>, Tinghu Zhang (张廷虎)<sup>3</sup>, Michael R. Green<sup>5</sup><br>
+        <strong>研究机构</strong>：斯坦福大学病理学系 (Stanford Pathology)、化学工程系、化学生物学与系统生物学系、ChEM-H 研究所、斯坦福癌症研究所、发育生物学系；德克萨斯大学 MD 安德森癌症中心 (MD Anderson) 淋巴瘤与骨髓瘤系
+      </div>
+      <div class="meta-links">
+        <span>出版信息：Nature 620, 417–427 (2023)</span> |
+        <span>DOI：<a href="https://doi.org/10.1038/s41586-023-06348-2" target="_blank" rel="noopener">10.1038/s41586-023-06348-2</a></span> |
+        <span>上线日期：2023年7月26日</span> |
+        <span>收稿日期：2022年8月15日 · 接收日期：2023年6月20日</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- 博士生文献汇报核心导读横幅 -->
+  <div class="phd-guide-banner">
+    <h3>🎓 博士文献汇报（Journal Club）核心备战导读</h3>
+    <p>
+      <strong>核心科学问题与范式危机</strong>：当前所有经典的肿瘤靶向疗法——无论是激酶抑制剂、PROTAC 靶向蛋白降解（TPD）、分子胶，还是 CRISPRi / RNAi 基因沉默，本质上都属于<strong>“功能缺失型”（Loss-of-Function, LoF）</strong>干预手段。它们要求对癌基因进行 100% 彻底的酶活抑制或蛋白清除，这往往会带来两大不可避免的临床困境：① <strong>机制性在体毒性</strong>（当靶点蛋白在正常组织中行使生理必需功能时，彻底清除会摧毁正常稳态）；② <strong>极易快速突变与旁路旁代偿耐药</strong>。<br><br>
+      <strong>本研究的颠覆性创见</strong>：化学生物学邻近效应奠基人、斯坦福大学 <strong>Gerald R. Crabtree 院士</strong>与著名激酶/小分子靶向专家 <strong>Nathanael S. Gray 教授</strong>联手，在 <em>Nature</em> 提出了开创性的<strong>“功能获得型”（Gain-of-Function, GoF）药理学概念——转录/表观遗传化学邻近诱导剂（TCIPs）</strong>。通过合成一种异双功能小分子，一端锚定肿瘤高表达的致癌转录抑制因子（如淋巴瘤中的 <strong>BCL6</strong>），另一端招募转录激活延伸因子（如 <strong>BRD4</strong> 或雌激素受体 <strong>ER</strong>）。这种“分子搭桥”不仅解除了 BCL6 对促凋亡基因的表观遗传沉默，更借刀杀人，<strong>将肿瘤细胞赖以生存的致癌驱动蛋白强制改造成驱动细胞自杀的“死亡诱导转录因子”</strong>！只需动用细胞内极小比例（约 10%）的分子即可在 15 分钟内引发爆发式促凋亡转录延伸（<strong>BIM、PMAIP1/NOXA、FOXO3</strong>），在 1–10 nM 极低浓度下彻底歼灭包括耐药和 TP53 突变在内的淋巴瘤细胞（效能高出传统降解剂 1,000 倍以上），并在小鼠体内表现出极高的组织耐受性，为整个人类抗癌药物研发开辟了由“抑制消除”走向“功能重构”的崭新纪元。
+    </p>
+  </div>
+
+  <!-- 摘要部分 (中英双语对照) -->
+  <section class="card-section" id="abstract">
+    <h2 class="section-heading"><span class="sec-id">Abstract</span>中英文双语论文摘要逐句精译</h2>
+
+    <div class="mechanism-card blue">
+      <div class="mechanism-title">📌 摘要核心要点提炼 (Executive Abstract Takeaways)</div>
+      <ul style="margin-left: 20px; line-height: 1.8; font-size: 14.5px; color: #1e3a8a;">
+        <li><strong>概念创立</strong>：首次提出 TCIP（Transcriptional/Epigenetic Chemical Inducer of Proximity），无需基因工程改造即可在内源水平重构转录回路。</li>
+        <li><strong>首发代表分子 TCIP1</strong>：分子量由 BCL6(BTB) 结合剂 BI3812 与 BET(BRD4) 结合剂 JQ1 经化学 Linker 共价拼装而成。</li>
+        <li><strong>作用机制</strong>：在基因组 BCL6 结合位点将 BRD4 丰度提升 50%，15 分钟内诱发 RNA Pol II 在促凋亡靶基因启动子及外显子-内含子接头处发生Ser2磷酸化延伸，同时仅消耗超级增强子处 10% 的 BRD4。</li>
+        <li><strong>颠覆性杀伤效能</strong>：在弥漫大 B 细胞淋巴瘤（DLBCL，含 TP53 双等位缺失耐药株）中展现出 1.3 nM 的极低 EC50，比 BCL6 降解剂（BI3802）或 BRD4 降解剂（dBET1）高出 200–10,000 倍。</li>
+        <li><strong>正反馈回路重构</strong>：破坏了 BCL6 基因内部原本的负自反馈抑制，将 BCL6 自身诱导为高表达正反馈，放大自杀效应。</li>
+        <li><strong>平台普适性验证</strong>：通过设计 TCIP2（招募雌激素受体 ER），成功在 ER+ BCL6+ 淋巴瘤中复现定向杀伤，证明该模块化策略可拓展至更广阔的转录调控靶点。</li>
+      </ul>
+    </div>
+
+    <table class="custom-table" style="margin-top: 24px;">
+      <thead>
+        <tr>
+          <th style="width: 50%;">英文原文 (Nature Original)</th>
+          <th style="width: 50%;">学术规范中文逐句精译与科学评注</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Genes that drive the proliferation, survival, invasion and metastasis of malignant cells have been identified for many human cancers.</td>
+          <td>在人类多种恶性肿瘤中，驱动恶性细胞增殖、存活、侵袭与转移的关键基因已被广泛鉴定。</td>
+        </tr>
+        <tr>
+          <td>Independent studies have identified cell death pathways that eliminate cells for the good of the organism.</td>
+          <td>与此同时，独立的生物学研究也阐明了机体为了维持整体稳态、清除异常细胞而设立的程序性细胞死亡途径。</td>
+        </tr>
+        <tr>
+          <td>The coexistence of cell death pathways with driver mutations suggests that the cancer driver could be rewired to activate cell death using chemical inducers of proximity (CIPs).</td>
+          <td><strong>细胞死亡通路与致癌驱动突变在肿瘤细胞内的共存现象提示我们</strong>：是否可以利用<strong>化学诱导邻近剂 (CIPs)</strong>，将肿瘤驱动因子的促癌功能“重新布线”（Rewiring），反转为主动激活细胞死亡程序的执行者？</td>
+        </tr>
+        <tr>
+          <td>Here we describe a new class of molecules called transcriptional/epigenetic CIPs (TCIPs) that recruit the endogenous cancer driver, or a downstream transcription factor, to the promoters of cell death genes, thereby activating their expression.</td>
+          <td>在本研究中，我们报道了一类新型小分子化合物——<strong>转录/表观遗传化学邻近诱导剂 (TCIPs)</strong>。该类分子能够将细胞内源表达的肿瘤驱动蛋白（或其下游转录因子）精准招募至细胞死亡基因的启动子区域，从而强效激活其转录表达。</td>
+        </tr>
+        <tr>
+          <td>We focused on diffuse large B cell lymphoma, in which the transcription factor B cell lymphoma 6 (BCL6) is deregulated. BCL6 binds to the promoters of cell death genes and epigenetically suppresses their expression.</td>
+          <td>我们将研究聚焦于<strong>弥漫性大 B 细胞淋巴瘤 (DLBCL)</strong>——在该恶性血液肿瘤中，关键转录因子 <strong>BCL6</strong> 发生持续性失控高表达。BCL6 通过直接结合细胞死亡基因的启动子，在表观遗传学层面深度抑制这些促凋亡基因的转录。</td>
+        </tr>
+        <tr>
+          <td>We produced TCIPs by covalently linking small molecules that bind BCL6 to those that bind to transcriptional activators that contribute to the oncogenic program, such as BRD4.</td>
+          <td>我们通过共价连接 BCL6 结合小分子与促进致癌转录程序的转录激活因子结合剂（如 BET 家族蛋白 <strong>BRD4</strong> 结合剂），成功合成了系列 TCIP 分子。</td>
+        </tr>
+        <tr>
+          <td>The most potent molecule, TCIP1, increases binding of BRD4 by 50% over genomic BCL6-binding sites to produce transcriptional elongation at pro-apoptotic target genes within 15 min, while reducing binding of BRD4 over enhancers by only 10%, reflecting a gain-of-function mechanism.</td>
+          <td>其中活性最强的代表性分子 <strong>TCIP1</strong>，能够使基因组上 BCL6 结合位点处的 BRD4 招募量提升 50%，在仅仅 <strong>15 分钟内</strong>即在促凋亡靶基因上诱发剧烈的转录延伸反应；与此同时，增强子区域的 BRD4 结合仅轻微减少约 10%，这一鲜明对比极其有力地反映了其独特的<strong>“功能获得型”（Gain-of-Function）</strong>作用机制。</td>
+        </tr>
+        <tr>
+          <td>TCIP1 kills diffuse large B cell lymphoma cell lines, including chemotherapy-resistant, TP53-mutant lines, at EC50 of 1–10 nM in 72 h and exhibits cell-specific and tissue-specific effects, capturing the combinatorial specificity inherent to transcription.</td>
+          <td>在 72 小时内，TCIP1 能以 <strong>1–10 nM 的半数有效浓度 (EC<sub>50</sub>)</strong> 高效杀伤多株 DLBCL 细胞系（包括对常规化疗耐药、伴随 <em>TP53</em> 双等位失活突变的高危细胞系），并展现出高度依赖细胞特异性与组织特异性的杀伤谱系，完美契合了真核生物转录调控内在固有的“组合特异性”特征。</td>
+        </tr>
+        <tr>
+          <td>The TCIP concept also has therapeutic applications in regulating the expression of genes for regenerative medicine and developmental disorders.</td>
+          <td>TCIP 这一基于化学诱导邻近重构内源基因表达的通用概念，在再生医学修复基因重编程、单倍剂量不足（Haploinsufficiency）遗传发育障碍等诸多领域亦具有极其广阔的转化应用前景。</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- 立项背景与科学假说 -->
+  <section class="card-section" id="intro">
+    <h2 class="section-heading"><span class="sec-id">Introduction</span>立项背景、生物物理原理与科学假说</h2>
+
+    <h3 class="subsection-heading">1. 邻近诱导效应 (Induced Proximity) 的生物物理物理学基础</h3>
+    <p>
+      在生物体内，诱导分子相互接近是生命调控的最基本形式之一，涵盖受体二聚化激活、翻译后修饰级联（磷酸化、泛素化）、转录起始复合物装配、表观遗传异染色质浓缩以及各类变构分子骨架的组装。
+    </p>
+    <p>
+      诱导邻近效应的底层物理原理极其直观且深刻：在三维溶液体系中，两个独立分子的有效碰撞与相互作用频率，<strong>与其分子间平均距离的三次方（\(1/r^3\)）成反比</strong>。当一个异双功能小分子将两个通常不发生相互作用的蛋白质强行束缚在数个纳米的微观尺度内时，这两个蛋白质局部的**有效浓度（Effective Concentration）会骤增数千至数万倍**，从而跨越天然热力学与动力学能垒，催化下游反应。
+    </p>
+
+    <div class="mechanism-card green">
+      <div class="mechanism-title">💡 范式跃迁：从 PROTAC 蛋白质降解到 TCIP 转录机器重构</div>
+      <p style="font-size: 14.5px; color: #22543d; line-height: 1.75;">
+        过去十年间，基于邻近化学最著名的应用是 <strong>PROTAC（靶向蛋白降解嵌合体）</strong>——利用双功能分子一端结合靶蛋白，另一端招募 E3 泛素连接酶（如 CRBN、VHL），将靶蛋白送入 26S 蛋白酶体粉碎。然而，PROTAC 本质上仍属于<strong>“减法”（Loss-of-Function）</strong>逻辑：<br>
+        1. 它必须持续消耗靶蛋白；当靶蛋白耗尽后，细胞仍可能通过激活并联旁路信号产生耐药；<br>
+        2. 如果被降解的蛋白在造血、免疫或神经系统中行使正常生理功能，不可逆的全身性降解将引起不可耐受的靶向毒性；<br>
+        3. 很多致癌转录因子（如 BCL6、MYC）缺乏深口袋，且往往在肿瘤中呈复合体存在，单一降解难度极大。<br>
+        <strong>TCIP 的哲学是“加法”（Gain-of-Function）</strong>：它不消灭致癌蛋白，反而<strong>“挟天子以令诸侯”</strong>——利用癌细胞内 BCL6 的高丰度与超高亲和力，强行把 BRD4 转录延伸机器拉到促凋亡基因上，把肿瘤赖以生存的防线瞬间变成致死的“核弹发射器”！
+      </p>
+    </div>
+
+    <h3 class="subsection-heading">2. BCL6 在弥漫大 B 细胞淋巴瘤 (DLBCL) 中的病理角色与成药困境</h3>
+    <p>
+      <strong>BCL6 (B-cell lymphoma 6)</strong> 是一种含有 N 端 BTB/POZ 结构域和 C 端 6 个 Kruppel 型锌指结构域的转录抑制因子，是生发中心（Germinal Center, GC）B 细胞形成的“主控开关”（Master Regulator）。在正常生发中心反应中，B 细胞需要进行剧烈的体细胞高频突变（SHM）和类别转换重组（CSR），BCL6 的生理功能是在此期间强行压制 <em>TP53</em>、<em>CDKN1A</em> (p21)、<em>ATR</em>、<em>CHEK1</em> 等 DNA 损伤检查点和 <em>BCL2L11</em> (BIM)、<em>PMAIP1</em> (NOXA) 等促凋亡基因，防止正在编辑抗体的 B 细胞提前凋亡。
+    </p>
+    <p>
+      然而在 DLBCL 中，染色体易位（如 t(3;14)(q27;q32)）或启动子突变导致 BCL6 持续性、不受控地高表达，使得肿瘤细胞获得源源不断的抗凋亡保护。
+    </p>
+
+    <div class="mechanism-card purple">
+      <div class="mechanism-title">🔬 BCL6 结合的分子结构机制与成药靶点</div>
+      <p style="font-size: 14.5px; color: #44337a; line-height: 1.75;">
+        BCL6 依赖其 N 端的 <strong>BTB 二聚体结构域</strong>，形成一个专一的侧向结合沟槽（Lateral Groove），高亲和力招募 <strong>NCOR1、NCOR2 (SMRT) 和 BCOR</strong> 等转录共抑制蛋白，进而招募组蛋白去乙酰化酶（HDAC3 等），维持染色质致密沉默状态。<br>
+        过去药企针对该沟槽开发了高亲和力抑制剂（如 Boehringer Ingelheim 开发的 <strong>BI3812</strong>，\(K_d pprox 19\text{ nM}\)）或降解剂（<strong>BI3802</strong>）。然而，单纯使用抑制剂解除压抑（Derepression）并不能有效诱导细胞凋亡，因为促凋亡基因不仅处于被压制状态，其启动子上还缺乏强效的转录激活与延伸驱动；且 DLBCL 细胞对 BI3812 单药极易产生残留耐药细胞。<strong>这正是 TCIP 诞生的核心驱动力：单纯松开刹车（Derepression）不够，必须踩下致死油门（Active Elongation）！</strong>
+      </p>
+    </div>
+  </section>
+
+  <!-- 第一部分：TCIP1 选择性杀伤 DLBCL 细胞 -->
+  <section class="card-section" id="sec1">
+    <h2 class="section-heading"><span class="sec-id">Results 1</span>TCIP1 的理性设计与对弥漫大 B 细胞淋巴瘤 (DLBCL) 的高效选择性杀伤</h2>
+
+    <p>
+      为了验证“重构致癌驱动转录因子以诱导肿瘤细胞凋亡”的假说，研究团队将首个攻坚目标锁定在弥漫性大 B 细胞淋巴瘤（DLBCL）。在 DLBCL 中，癌细胞普遍依赖原癌蛋白 <strong>BCL6</strong> 的异常过度表达来逃避死亡。BCL6 利用其 N 端的 <strong>BTB/POZ 结构域</strong>，形成一个专一的侧向疏水沟槽，强力招募核受体辅阻遏蛋白 <strong>NCOR1/2 (SMRT) 和 BCOR</strong> 等多亚基共抑制复合体，从而在表观遗传水平上致密沉默包括促凋亡基因、细胞周期阻滞基因（如 <em>TP53</em>、<em>CDKN1A</em>/p21、<em>PMAIP1</em>/NOXA）在内的关键靶点。
+    </p>
+
+    <div class="mechanism-card blue">
+      <div class="mechanism-title">🧪 TCIP1 的分子构效拼装逻辑 (Molecular Engineering Rationale)</div>
+      <p style="font-size: 14.5px; color: #1e3a8a; line-height: 1.75;">
+        单纯利用小分子占据 BCL6(BTB) 沟槽（如 BI3812）仅能“松开刹车”（Derepression），并不能为启动子提供强效的主动转录激活力。为了克服这一瓶颈，研究团队利用化学生物学“双功能拼装”策略：<br>
+        1. <strong>靶向锚定端</strong>：选用针对 BCL6 BTB 结构域的高亲和力配体 <strong>BI3812</strong>（\(K_d pprox 19\text{ nM}\)），占据辅抑制物结合沟槽，排斥 NCOR/BCOR/SMRT；<br>
+        2. <strong>转录激活招募端</strong>：选用经典的 BET 家族溴结构域（Bromodomain）抑制剂 <strong>(+)-JQ1</strong>，其以纳摩尔级亲和力等同结合 <strong>BRD4</strong> 的两个溴结构域（BD1/BD2），并能同时招募 BRD2 与 BRD3；<br>
+        3. <strong>化学连接臂 (Linker) 优化</strong>：经过对聚乙二醇（PEG）链与叔胺（Tertiary Amine）连接臂在碳原子长度（\(n = 5 \sim 11\)）与空间刚柔度的系统性阵列化筛选（详见 Extended Data Fig. 3，JWZ 系列与 XFL 系列），最终确立了具备最佳空间几何匹配与构象互补性的冠军分子——<strong>TCIP1</strong>！
+      </p>
+    </div>
+
+    <!-- 图 1 嵌入展示 -->
+    <div class="figure-wrapper" id="fig1">
+      <div class="figure-img-container" onclick="openLightbox('figures/fig1.png')">
+        <img src="figures/fig1.png" alt="Figure 1: Production of TCIPs and selective killing of DLBCL cells" class="figure-img">
+        <div class="zoom-hint">🔍 点击图片可全屏高清放大查看原始图版</div>
+      </div>
+      <div class="figure-caption">
+        <strong class="fig-title">图 1 | TCIP 的分子设计理念、化学结构及对 DLBCL 细胞的高效选择性杀伤</strong>
+        <p>
+          <strong>a</strong>, TCIP 的通用重构模式示意图：内源性靶基因在基态下处于抑制或静默状态，通过异双功能小分子将靶向转录因子 A（如致癌抑制因子）与转录因子 B（如转录延伸机器）物理拉近，使表观遗传沉默转变为主动转录诱导。<br>
+          <strong>b</strong>, 针对淋巴瘤设计的特异性 BCL6–BRD4 TCIP 工作假说：利用双功能小分子将转录激活因子/致癌驱动蛋白 BRD4 招募至结合在死亡基因启动子上的 BCL6 阻遏蛋白旁，从而解除表观遗传抑制并强制诱导由 BCL6 锚定位点驱动的死亡基因转录。<br>
+          <strong>c</strong>, 活性最强的 BCL6–BRD4 异双功能分子 <strong>TCIP1</strong> 及其阴性对照分子 <strong>Neg1</strong>（BRD4 结合缺陷）与 <strong>Neg2</strong>（BCL6 结合缺陷）的精确化学结构。<br>
+          <strong>d</strong>, TCIP1 对化疗多药耐药且伴随 <em>TP53</em> 双等位基因失活的 DLBCL 细胞系 KARPAS422 的杀伤曲线，给药 72 小时后检测细胞活力，其 <strong>\(EC_{50} \approx 1.3\text{ nM}\)</strong>；相比之下，阴性对照分子 Neg1 与 Neg2 或单一靶头抑制剂组合即使浓度高出 100–1,000 倍亦无法产生等效杀伤。<br>
+          <strong>e</strong>, 利用含有 8 个高亲和力 BCL6 结合基序与侧翼 10 bp 序列驱动 minP-eGFP 的慢病毒报告系统在 KARPAS422 中检测 TCIP1 的原位转录激活能力。TCIP1 在给药 8 小时即呈现出鲜明的剂量依赖性 eGFP 荧光诱导（\(EC_{50} \approx 5\text{ nM}\)），且在高浓度下出现经典的双功能分子“钩状效应”（Hook effect）；Neg1 和 Neg2 均无激活效果。<br>
+          <strong>f</strong>, TCIP1 与传统靶向蛋白降解剂（PROTAC）对细胞活力的对比：BRD4 降解剂 <strong>dBET1</strong>（\(EC_{50} \approx 489\text{ nM}\)）与 BCL6 降解剂 <strong>BI3802</strong>（\(EC_{50} > 10\,\mu\text{M}\)）的杀伤效能较 TCIP1 弱 <strong>200 至 10,000 倍</strong>，表明单纯消耗降解上述蛋白绝非 TCIP1 强效杀伤的主导机制。
+        </p>
+      </div>
+    </div>
+
+    <h3 class="subsection-heading">深度实验数据剖析：1.3 nM 杀伤效能背后的“非对称优势”</h3>
+    <p>
+      为了验证 TCIP1 是否具备对致癌靶点的专一杀伤，研究团队首先选择了极具临床代表性的 DLBCL 细胞系 <strong>KARPAS422</strong>。该细胞系不仅内源性 BCL6 表达量极高，而且存在 <em>TP53</em> 双等位失活突变，临床上对常规 CHOP 化疗极其耐药。
+    </p>
+    <p>
+      实验结果显示，TCIP1 杀伤 KARPAS422 的 <strong>\(EC_{50}\) 达到惊人的 1.3 nM</strong>！而当研究人员将未连接的 JQ1（BRD4 抑制剂）与 BI3812（BCL6 抑制剂）进行等摩尔物理混合共同加入细胞培养基时，细胞杀伤效率较 TCIP1 下降了整整 <strong>100 到 1,000 倍</strong>（详见 Extended Data Fig. 1a）。这从根本上排除了“TCIP1 仅仅是作为前药在胞内释放两种抑制剂产生协同作用”的可能！
+    </p>
+
+    <!-- 扩展数据图 1 & 3 嵌入展示 -->
+    <div class="figure-wrapper" id="ed-fig1">
+      <div class="figure-img-container" onclick="openLightbox('figures/ed_fig1.png')">
+        <img src="figures/ed_fig1.png" alt="Extended Data Figure 1: PRISM cancer cell screen and specificity" class="figure-img">
+        <div class="zoom-hint">🔍 点击图片可全屏高清放大查看 Extended Data Figure 1</div>
+      </div>
+      <div class="figure-caption">
+        <strong class="fig-title">附图 1 (Extended Data Fig. 1) | 906 株人源肿瘤细胞系 PRISM 大规模无偏筛查与 BCL6 表达依赖性</strong>
+        <p>
+          <strong>a</strong>, JQ1 与 BI3812 游离单药联合处理与 TCIP1 的细胞杀伤曲线对比，证实物理共价连接引起的分子邻近是纳摩尔杀伤的前提。<br>
+          <strong>b</strong>, 在包含 14 株血液恶性肿瘤细胞系（DLBCL、伯基特淋巴瘤、白血病等）的测试板中，TCIP1 的敏感性（\(EC_{50}\)）与细胞内 BCL6 的基础表达量呈高度正相关；缺乏 BCL6 表达的细胞株（如 OCILY19）对 TCIP1 表现为耐受。<br>
+          <strong>c</strong>, 杀伤效果完全独立于 TP53 状态及内源抗凋亡蛋白 BCL2 的表达丰度。<br>
+          <strong>d</strong>, Broad 研究所 PRISM 平台 906 株肿瘤细胞系的大规模活性扫描：只有来源于造血/淋巴系统且高表达 BCL6 的恶性细胞系对 TCIP1 展现出极高敏感性，实体瘤细胞系普遍不敏感，凸显极高组织特异性。
+        </p>
+      </div>
+    </div>
+
+    <div class="figure-wrapper" id="ed-fig3">
+      <div class="figure-img-container" onclick="openLightbox('figures/ed_fig3.png')">
+        <img src="figures/ed_fig3.png" alt="Extended Data Figure 3: Linker optimization and chemical structure library" class="figure-img">
+        <div class="zoom-hint">🔍 点击图片可全屏高清放大查看 Extended Data Figure 3</div>
+      </div>
+      <div class="figure-caption">
+        <strong class="fig-title">附图 3 (Extended Data Fig. 3) | TCIP 化合物库合成路线与连接臂结构-活性关系 (SAR)</strong>
+        <p>
+          系统评估了聚乙二醇（PEG）链长（n=5 到 11）、刚性烷基链、哌嗪与叔胺修饰对二元蛋白间距和三元复合物稳定性的影响。实验证实，过短或过长的连接臂均会导致三元复合物空间张力过大或旋转熵损增加，唯有 TCIP1 的特定构象能实现最理想的热力学校正与促凋亡延伸启动。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 第二部分：三元复合物的形成是细胞致死的绝对必需条件 -->
+  <section class="card-section" id="sec2">
+    <h2 class="section-heading"><span class="sec-id">Results 2</span>三元复合物 (BRD4–TCIP1–BCL6) 是介导细胞致死的生物活性功能实体</h2>
+
+    <p>
+      TCIP1 之所以能展现出超越传统降解剂 1,000 倍以上的杀伤效能，其核心科学机制在于它催化了 <strong>BRD4–TCIP1–BCL6</strong> 异源三元复合物的形成。为了在活细胞及分子生物物理水平严谨证实三元复合物的决定性地位，研究团队开展了经典的<strong>“化学竞争挽救实验”（Chemical Rescue）</strong>与<strong>“时间分辨荧光共振能量转移”（TR-FRET）</strong>测定。
+    </p>
+
+    <!-- 图 2 嵌入展示 -->
+    <div class="figure-wrapper" id="fig2">
+      <div class="figure-img-container" onclick="openLightbox('figures/fig2.png')">
+        <img src="figures/fig2.png" alt="Figure 2: Ternary complex formation is required for cell killing" class="figure-img">
+        <div class="zoom-hint">🔍 点击图片可全屏高清放大查看原始图版 Figure 2</div>
+      </div>
+      <div class="figure-caption">
+        <strong class="fig-title">图 2 | 化学挽救实验与体外生物物理表征证实三元复合物的形成是细胞死亡的前提</strong>
+        <p>
+          <strong>a, b</strong>, 化学竞争挽救实验设计与实测结果：在恒定致死剂量 TCIP1（使 50%–95% 细胞致死）存在下，逐渐滴定过量的游离 <strong>JQ1</strong>（竞争 BRD4 结合端，图 a）或游离 <strong>BI3812</strong>（竞争 BCL6 结合端，图 b）。结果表明，任何一端的游离单配体均能完全阻断 TCIP1 对 KARPAS422 细胞的致死效应，直接证实致死表型绝非单靶点抑制引起，而是依赖两端同时结合形成的功能性三元复合物。<br>
+          <strong>c</strong>, 基于 TR-FRET 的三元复合物溶液结合测定原理：将 FITC 荧光基团共价标记于 BCL6 的 BTB 结构域，将 Terbium (Tb) 螯合物标记于抗 His 抗体并结合至带有 6xHis 标签的 BRD4(BD1) 结构域。当 TCIP1 介导两蛋白分子紧密结合时，发生高效 FRET 能量转移。<br>
+          <strong>d</strong>, 库中不同连接臂 TCIP 衍生物在 TR-FRET 中的三元复合物信号强度与浓度曲线，TCIP1 呈现极高亲和力与最强能量转移效率。<br>
+          <strong>e</strong>, 等温滴定量热法 (ITC) 结合常数热力学测定：在饱和 BRD4–TCIP1 二元复合物中滴定 BCL6(BTB)，测得三元复合物的表观结合常数 <strong>\(K_d = 340 \pm 108\text{ nM}\)</strong>，且呈现显著放热峰（\(\Delta H = -5,304\text{ kcal/mol}\)）；而游离 TCIP1 与 BCL6 之间的单纯二元结合弱于 1 mM，凸显出三元组装过程中的<strong>协同诱导契合效应（Cooperativity）</strong>。
+        </p>
+      </div>
+    </div>
+
+    <div class="mechanism-card green">
+      <div class="mechanism-title">📐 双相药理学特征：双向化学挽救与经典的“钩状效应”</div>
+      <p style="font-size: 14.5px; color: #22543d; line-height: 1.75;">
+        在化学生物学中，由异双功能小分子诱导的三元复合物普遍遵循质量作用定律所决定的<strong>双相剂量-反应关系（Biphasic Dose-Response）</strong>：<br>
+        1. <strong>在纳摩尔最佳浓度区间（1–100 nM）</strong>：单个 TCIP1 分子能够同时捕获一个 BCL6 分子和一个 BRD4 分子，形成催化活性最强的三元复合物，强力启动转录延伸；<br>
+        2. <strong>在微摩尔过饱和浓度下（> 1 μM）</strong>：游离的 TCIP1 会分别过度饱和 BCL6 和 BRD4 的结合口袋，形成各自独立的二元非活性复合物（TCIP1–BCL6 和 TCIP1–BRD4），由于二者相互竞争，三元复合物数量反向骤降，导致报告基因激活信号减弱——这就是实验中观察到的<strong>“钩状效应”（Hook Effect）</strong>！这一经典的生物物理学现象完美佐证了 TCIP 并非毒性小分子，其活性严格受控于物理邻近规律。
+      </p>
+    </div>
+
+    <!-- 扩展数据图 2, 4, 5 嵌入展示 -->
+    <div class="figure-wrapper" id="ed-fig2">
+      <div class="figure-img-container" onclick="openLightbox('figures/ed_fig2.png')">
+        <img src="figures/ed_fig2.png" alt="Extended Data Figure 2: Chemical rescue across DLBCL panel" class="figure-img">
+        <div class="zoom-hint">🔍 点击图片可全屏高清放大查看 Extended Data Figure 2</div>
+      </div>
+      <div class="figure-caption">
+        <strong class="fig-title">附图 2 (Extended Data Fig. 2) | 多株 DLBCL 细胞中的化学挽救及阴性对照特异性验证</strong>
+        <p>
+          在 SUDHL4、HBL1 等多株高表达 BCL6 的 DLBCL 系中，过量 JQ1 或 BI3812 均能以剂量依赖方式拯救细胞存活；但在原本缺乏 BCL6 的阴性对照细胞系中，TCIP1 仅表现出与游离 JQ1 等同的微弱抑制，且无法被 BI3812 挽救，证实 TCIP1 的细胞杀伤具有绝对的靶向特异性。
+        </p>
+      </div>
+    </div>
+
+    <div class="figure-wrapper" id="ed-fig4">
+      <div class="figure-img-container" onclick="openLightbox('figures/ed_fig4.png')">
+        <img src="figures/ed_fig4.png" alt="Extended Data Figure 4: In vitro TR-FRET and ITC kinetics" class="figure-img">
+        <div class="zoom-hint">🔍 点击图片可全屏高清放大查看 Extended Data Figure 4</div>
+      </div>
+      <div class="figure-caption">
+        <strong class="fig-title">附图 4 (Extended Data Fig. 4) | 体外 TR-FRET 与 ITC 热力学结合动力学全面解析</strong>
+        <p>
+          详细展示了 TCIP1 与阴性对照分子在不同浓度梯度下的荧光能量转移曲线、等温滴定量热曲线及结合动力学拟合参数，证实 TCIP1 促成了高亲和力、长停留时间的稳定异源三元超分子复合物。
+        </p>
+      </div>
+    </div>
+
+    <div class="figure-wrapper" id="ed-fig5">
+      <div class="figure-img-container" onclick="openLightbox('figures/ed_fig5.png')">
+        <img src="figures/ed_fig5.png" alt="Extended Data Figure 5: Apoptosis kinetics and cell cycle arrest" class="figure-img">
+        <div class="zoom-hint">🔍 点击图片可全屏高清放大查看 Extended Data Figure 5</div>
+      </div>
+      <div class="figure-caption">
+        <strong class="fig-title">附图 5 (Extended Data Fig. 5) | 细胞周期阻滞与快速程序性细胞凋亡 (Apoptosis) 发生时程</strong>
+        <p>
+          流式细胞术 Annexin V / PI 双染分析显示，TCIP1 处理 24–48 小时后，KARPAS422 细胞中早期与晚期凋亡细胞比例出现爆发式递增（凋亡率超 80%），伴随显著的 G0/G1 期周期停滞；Western Blot 显示 PARP 剪切体与活化 Caspase-3 剧烈上调，证实其引发的是典型的线粒体途径程序性细胞自杀。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 第三部分：TCIP1 快速阻断致癌主驱动因子 MYC 及其下游转录程序 -->
+  <section class="card-section" id="sec3">
+    <h2 class="section-heading"><span class="sec-id">Results 3</span>TCIP1 快速下调原癌基因 MYC 及其下游致癌转录网络</h2>
+
+    <p>
+      在弥漫大 B 细胞淋巴瘤（DLBCL）的发生发展中，除了 BCL6，<strong>原癌基因 MYC</strong> 的异常高表达往往是驱动肿瘤细胞无限增殖、核糖体生物合成和代谢重编程的核心引擎；临床上伴随 <em>MYC</em> 与 <em>BCL6</em>（或 <em>BCL2</em>）重排的“双打击”（Double-hit）淋巴瘤预后极其凶险。
+    </p>
+    <p>
+      令人惊喜的是，当研究团队对 TCIP1 处理后的 KARPAS422 细胞进行时间序列转录组测序（RNA-seq：1h、2h、4h）时，在表达受到最为剧烈下调的基因集之中，<strong>MYC 及其经典靶基因群赫然位列榜首</strong>！
+    </p>
+
+    <!-- 图 3 嵌入展示 -->
+    <div class="figure-wrapper" id="fig3">
+      <div class="figure-img-container" onclick="openLightbox('figures/fig3.png')">
+        <img src="figures/fig3.png" alt="Figure 3: TCIP1 represses MYC and its oncogenic targets" class="figure-img">
+        <div class="zoom-hint">🔍 点击图片可全屏高清放大查看原始图版 Figure 3</div>
+      </div>
+      <div class="figure-caption">
+        <strong class="fig-title">图 3 | TCIP1 在超低浓度下特异性下调原癌蛋白 MYC 及其致癌转录网络</strong>
+        <p>
+          <strong>a</strong>, KARPAS422 细胞在 10 nM TCIP1 处理 1、2、4 小时后的 RNA-seq 差异表达火山图，清晰显示促凋亡基因的迅猛上调与 MYC 靶基因的进行性下调。<br>
+          <strong>b</strong>, 基因集富集分析 (GSEA) 显示，Hallmark MYC Targets V1/V2 基因集呈现极具统计学意义的负向富集（显著下调，\(NES = -2.85, P < 10^{-10}\)）。<br>
+          <strong>c</strong>, 整合分析人类血液恶性肿瘤超过 4,500 套转录因子 ChIP–seq 数据集，发现被 TCIP1 显著下调的前 100 个核心基因的启动子区域高度富集内源 MYC 的结合峰，证明下调具有高度转录调控直接性。<br>
+          <strong>d, e</strong>, Western Blot 检测 MYC 蛋白动态响应：在低至 <strong>< 1 nM TCIP1</strong> 的超微量浓度下，给药仅仅 <strong>2 小时</strong> 内 MYC 蛋白即被剧烈清除下调（下降 > 80%），4 小时几乎完全消失；展现出极快的动力学响应时程。<br>
+          <strong>f</strong>, 阴性对照分子 Neg1 和 Neg2 在相同浓度梯度下对 MYC 蛋白水平完全没有下调作用，证实单纯结合一端蛋白无法关闭 MYC。<br>
+          <strong>g</strong>, 阻断三元复合物可化学逆转 MYC 下调：在 10 nM TCIP1 恒定浓度下逐渐滴定游离 BCL6 抑制剂 BI3812，不仅以剂量依赖方式恢复了 MYC 蛋白的表达，而且逆转了促凋亡因子 FOXO3 与周期抑制因子 p21 的上调，有力证实无论是“促凋亡基因激活”还是“原癌基因 MYC 沉默”，本质上皆受控于 BRD4–TCIP1–BCL6 三元复合物的形成。
+        </p>
+      </div>
+    </div>
+
+    <div class="mechanism-card blue">
+      <div class="mechanism-title">⚡ 为什么 TCIP1 能够在 < 1 nM 瞬间关闭 MYC？（与传统 JQ1 的量级差异）</div>
+      <p style="font-size: 14.5px; color: #1e3a8a; line-height: 1.75;">
+        药理学界的同行熟知，传统的游离 BET 抑制剂 <strong>(+)-JQ1</strong> 确实也能下调 MYC，但其有效浓度通常需要 <strong>500 nM 以上</strong>，且容易因补偿性转录重启而耐药。<br>
+        而 <strong>TCIP1 仅需 < 1 nM 即可在 2 小时内关闭 MYC</strong>，效能高出 JQ1 数百倍！深入的染色质免疫共沉淀（ChIP-seq）解析揭示了这一奇迹的本质：DLBCL 细胞中的 <em>MYC</em> 基因本身受到一个巨大的“超级增强子”（Super-Enhancer）驱动，而该区域对 BRD4 分子具有极高的依存度。TCIP1 将细胞核内一部分游离及局部 BRD4 迅速拉拽、重新分配到遍布全基因组的 BCL6 阻遏位点上，引发超级增强子微环境中 BRD4 关键延伸池的局部缺相，以“四两拨千斤”的极低化学剂量实现了对 MYC 表达的毁灭性切断。
+      </p>
+    </div>
+
+    <!-- 扩展数据图 6 嵌入展示 -->
+    <div class="figure-wrapper" id="ed-fig6">
+      <div class="figure-img-container" onclick="openLightbox('figures/ed_fig6.png')">
+        <img src="figures/ed_fig6.png" alt="Extended Data Figure 6: Comprehensive RNA-seq and GSEA pathway analysis" class="figure-img">
+        <div class="zoom-hint">🔍 点击图片可全屏高清放大查看 Extended Data Figure 6</div>
+      </div>
+      <div class="figure-caption">
+        <strong class="fig-title">附图 6 (Extended Data Fig. 6) | 深度转录组测序、火山图分布与通路富集热图</strong>
+        <p>
+          系统展示了 10 nM TCIP1 在 1h、2h、4h 时间节点下数千个基因的表达变化轨迹。除 MYC 靶基因受抑外，核糖体生物合成、E2F 靶基因以及氧化磷酸化通路亦同步受到抑制，促使癌细胞全面丧失增殖动力并迅速滑向不可逆的代谢崩溃。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 第四部分：转录激活的分子机制与颠覆性 BCL6 自负反馈重构 -->
+  <section class="card-section" id="sec4">
+    <h2 class="section-heading"><span class="sec-id">Results 4</span>转录延伸激活机制破译：颠覆 BCL6 自身自抑回路，构建“正反馈自杀循环”</h2>
+
+    <p>
+      常规分子生物学认知中，BCL6 是一种根深蒂固的<strong>转录抑制因子（Transcriptional Repressor）</strong>。那么，TCIP1 究竟是通过怎样的物理表观机制，在短时间内使受抑靶基因实现爆发式转录激活的？
+    </p>
+
+    <h3 class="subsection-heading">1. 靶基因直接性鉴定与 RNA Pol II 暂停释放 (Pause-Release)</h3>
+    <p>
+      研究团队通过分析 TCIP1 给药 1、2、4 小时迅速诱导上调的约 140 个核心基因，发现其中涵盖了经典的 BCL6 抑制性死亡调控因子：<strong>BCL2L11 (BIM)、PMAIP1 (NOXA)、FOXO3、CDKN1A (p21) 以及 BCL6 自身</strong>。
+    </p>
+    <p>
+      交叉对比已发表的 DLBCL 细胞系 BCL6 ChIP–seq 发现：<strong>超过 55% 的早期上调基因在其转录起始位点（TSS）上游 1 kb 范围内具备极高信噪比的内源 BCL6 结合峰</strong>（见图 4a–c）。这确凿证明这些基因是 TCIP1 直接结合、原位激活的原发靶标。
+    </p>
+
+    <!-- 图 4 嵌入展示 -->
+    <div class="figure-wrapper" id="fig4">
+      <div class="figure-img-container" onclick="openLightbox('figures/fig4.png')">
+        <img src="figures/fig4.png" alt="Figure 4: Transcriptional elongation mechanism and rewiring BCL6 autoinhibitory circuit" class="figure-img">
+        <div class="zoom-hint">🔍 点击图片可全屏高清放大查看原始图版 Figure 4</div>
+      </div>
+      <div class="figure-caption">
+        <strong class="fig-title">图 4 | TCIP1 招募 BRD4 介导 RNA Pol II 延伸释放并颠覆 BCL6 自抑制回路</strong>
+        <p>
+          <strong>a</strong>, TCIP1 直接活化的前列靶基因热图，清晰呈现 <em>BCL2L11</em> (BIM)、<em>PMAIP1</em> (NOXA)、<em>FOXO3</em> 及 <em>BCL6</em> 在 1h、2h、4h 呈阶梯式爆发活化。<br>
+          <strong>b</strong>, 活性分子 TCIP1 与阴性对照分子 Neg1、Neg2 在诱导靶基因转录方面的定量对比。<br>
+          <strong>c</strong>, 基于 4,500 套血液肿瘤转录因子 ChIP–seq 数据的全景分析：TCIP1 上调基因的启动子被证实特异且极度富集内源 BCL6 的结合，而非其他无关因子。<br>
+          <strong>d</strong>, 全基因组 ChIP–seq 分析显示，10 nM TCIP1 处理 1 小时后，在所有内源 BCL6 结合峰位点处，<strong>BRD4 的局部富集量增加了约 50%</strong>（1.5 倍）。<br>
+          <strong>e, f</strong>, 染色质活性标记与增强子受载监测：在靶基因启动子区，活性染色质标记 H3K27ac 仅发生极微弱改变；在全基因组超级增强子区域，BRD4 的总负荷量仅仅微弱降低了 <strong>10%</strong> 左右，表明 TCIP1 并非通过全面瓦解增强子发挥作用，而是以微小代价“借调”（Borrow）极少量 BRD4 即可完成对促凋亡靶标的高效激活，完全符合“功能获得型”（GoF）机制。<br>
+          <strong>g, h</strong>, 促凋亡基因 <em>BCL2L11</em> (BIM) 与 <em>BCL6</em> 基因位点的 RNA Pol II 结合轨迹：PRO-seq 与 ChIP-seq 显示，在给药仅仅 <strong>15 分钟</strong> 时，RNA Pol II 即迅速由暂停状态释放，沿着外显子-内含子接头向基因内部展开高速转录延伸，至 1–4 小时形成贯穿整个基因主体的饱和延伸轨迹。<br>
+          <strong>i, j</strong>, RT-qPCR 与可变剪接分析：TCIP1 诱导 BCL6 mRNA 的长亚型（包含第 7 外显子）爆发式积累。<br>
+          <strong>k</strong>, Western Blot 检测 BCL6 蛋白水平：在两株不同的 DLBCL 细胞中，BCL6 蛋白自身随 TCIP1 给药呈现显著的剂量依赖性暴增（亦呈现高浓度钩状效应）。<br>
+          <strong>l, m</strong>, 机制阻断验证：加入超低纳摩尔浓度的 CDK9 抑制剂 <strong>NVP2</strong>（阻断 RNA Pol II Ser2 磷酸化）可完全阻断 BCL6 自身的诱导表达；逐渐滴定 BCL6 抑制剂 BI3812 亦可逆转 BCL6 上调，证明 BCL6 自身诱导表达完全依赖三元复合物驱动的转录延伸。
+        </p>
+      </div>
+    </div>
+
+    <div class="mechanism-card purple">
+      <div class="mechanism-title">🔄 颠覆性创见：BCL6 负向自抑制回路被反转为“正反馈自杀循环”</div>
+      <p style="font-size: 14.5px; color: #44337a; line-height: 1.75;">
+        这是本篇 <em>Nature</em> 论文在生命调控逻辑上最叹为观止的理论突破！<br>
+        在正常生理状态下，<strong>BCL6 基因对其自身具有极其严格的“负向自我抑制”（Negative Autoregulation）</strong>——BCL6 蛋白会结合在自身基因的<strong>第一个内含子（Intron 1）</strong>内的特异基序上，招募抑制复合物防止自身过量表达（在 DLBCL 淋巴瘤中，该内含子抑制位点常常发生突变或缺失，导致 BCL6 脱离抑制）。<br>
+        而 TCIP1 的引入，<strong>奇迹般地把这个负反馈刹车改造成了强大的正反馈油门（Positive Feedback Loop）</strong>：<br>
+        ① TCIP1 结合在结合于 <em>BCL6</em> 内含子上的内源 BCL6 蛋白上；<br>
+        ② 招募 BRD4 及其相伴随的 P-TEFb (CDK9)，诱导 RNA Pol II 跨过内含子障碍进行强力转录延伸；<br>
+        ③ 结果是：<strong>细胞内 BCL6 的 mRNA 和蛋白水平被迅速放大数十倍</strong>！<br>
+        ④ <strong>自杀放大效应</strong>：新合成的大量 BCL6 蛋白进一步结合到细胞全基因组范围内的促凋亡基因启动子上，进而为环境中的 TCIP1 和 BRD4 提供了成倍增长的“锚定发射台”，驱动 <em>BIM</em> 与 <em>NOXA</em> 发生核爆般的转录风暴，最终在极低药物暴露下将恶性淋巴瘤细胞不可逆地送入死亡深渊（详见 Extended Data Fig. 9d 模型）！
+      </p>
+    </div>
+
+    <!-- 扩展数据图 7, 8, 9 嵌入展示 -->
+    <div class="figure-wrapper" id="ed-fig7">
+      <div class="figure-img-container" onclick="openLightbox('figures/ed_fig7.png')">
+        <img src="figures/ed_fig7.png" alt="Extended Data Figure 7: Upregulation kinetics of pro-apoptotic genes" class="figure-img">
+        <div class="zoom-hint">🔍 点击图片可全屏高清放大查看 Extended Data Figure 7</div>
+      </div>
+      <div class="figure-caption">
+        <strong class="fig-title">附图 7 (Extended Data Fig. 7) | 促凋亡基因群 (BIM, NOXA, FOXO3, p21) 的转录激活时程动力学</strong>
+        <p>
+          qPCR 与微阵列转录检测确认，促凋亡基因的 mRNA 积累在 1 小时即达到基线的 3–8 倍，远早于细胞 DNA 发生断裂的物理时间，确证细胞凋亡是直接由初级转录激活事件引发，而非细胞死亡后释放的继发应激假象。
+        </p>
+      </div>
+    </div>
+
+    <div class="figure-wrapper" id="ed-fig8">
+      <div class="figure-img-container" onclick="openLightbox('figures/ed_fig8.png')">
+        <img src="figures/ed_fig8.png" alt="Extended Data Figure 8: ChIP-seq coverage across active enhancers and promoters" class="figure-img">
+        <div class="zoom-hint">🔍 点击图片可全屏高清放大查看 Extended Data Figure 8</div>
+      </div>
+      <div class="figure-caption">
+        <strong class="fig-title">附图 8 (Extended Data Fig. 8) | 全基因组超级增强子 (Super-Enhancer) 与启动子 H3K27ac/BRD4 空间图谱</strong>
+        <p>
+          在全基因组鉴定的 51,678 个 H3K27ac 共有结合峰中，处理 2 小时后仅有 126 个峰显著增加、70 个峰轻微减少，全基因组表观遗传结构未遭破坏；超级增强子（如 OCA-B）处的 BRD4 仅轻微减损 10%，证实 TCIP1 具有近乎手术刀级的基因组作用精准度。
+        </p>
+      </div>
+    </div>
+
+    <div class="figure-wrapper" id="ed-fig9">
+      <div class="figure-img-container" onclick="openLightbox('figures/ed_fig9.png')">
+        <img src="figures/ed_fig9.png" alt="Extended Data Figure 9: Schematic model of rewiring BCL6 autoinhibitory circuit" class="figure-img">
+        <div class="zoom-hint">🔍 点击图片可全屏高清放大查看 Extended Data Figure 9</div>
+      </div>
+      <div class="figure-caption">
+        <strong class="fig-title">附图 9 (Extended Data Fig. 9) | BCL6 自负反馈回路逆转为“正反馈自杀循环”的生化模型</strong>
+        <p>
+          清晰梳理了传统状态下 BCL6-Intron1 自抑制的抑制闭环，以及 TCIP1 介入后如何颠覆为“转录诱导 -> BCL6 蛋白增加 -> 更多促凋亡启动子占据 -> 凋亡风暴”的雪崩式正反馈放大网络。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 第五部分：体内药代动力学、靶向耐受性与 TCIP 策略的普适性验证 -->
+  <section class="card-section" id="sec5">
+    <h2 class="section-heading"><span class="sec-id">Results 5</span>体内靶向安全性验证与 TCIP 概念模块化普适性 (ER–TCIP2) 拓展</h2>
+
+    <p>
+      传统的 BCL6 基因完全敲除（Knockout）小鼠会在出生后数周内因发生剧烈的多器官炎症与自身免疫衰竭而致命，因为 BCL6 在巨噬细胞、T 滤泡辅助细胞（Tfh）中承担着关键的免疫耐受刹车功能。这使得工业界长期对“强力靶向 BCL6”在体内的安全性心存疑虑。<br>
+      然而，由于 TCIP1 采用的是<strong>功能获得型（GoF）催化机制</strong>，它在体内的有效工作浓度仅需占据极小比例（约 10%–15%）的 BCL6 蛋白分子，绝不导致全身生理性 BCL6 的全面耗竭。为了检验这一预测，研究团队在野生型小鼠体内进行了严格的药代动力学（PK）、药效学（PD）与组织病理学评估。
+    </p>
+
+    <!-- 图 5 嵌入展示 -->
+    <div class="figure-wrapper" id="fig5">
+      <div class="figure-img-container" onclick="openLightbox('figures/fig5.png')">
+        <img src="figures/fig5.png" alt="Figure 5: In vivo tolerability, mouse PK/PD, and generality with ER-TCIP2" class="figure-img">
+        <div class="zoom-hint">🔍 点击图片可全屏高清放大查看原始图版 Figure 5</div>
+      </div>
+      <div class="figure-caption">
+        <strong class="fig-title">图 5 | TCIP1 在野生型小鼠体内的良好耐受性与 TCIP2 (ER–BCL6) 模块化拓展</strong>
+        <p>
+          <strong>a–c</strong>, C57BL/6 小鼠连续 5 天腹腔注射 10 mg/kg TCIP1 后的药代动力学与组织分布：血清稳态浓度达到 <strong>400–1,600 nM</strong>（高出体外杀伤有效浓度百倍以上），在脾脏、肝脏、肾脏、心脏和大脑中均检测到稳定的药物暴露。<br>
+          <strong>d</strong>, 靶器官脾脏转录组 RNA-seq：TCIP1 在脾脏内诱导了显著的靶向转录组重塑，包括 <em>FOXO3</em> 等已知 BCL6 靶标的显著上调，确证药物在体内有效实现了靶标结合与转录诱导。<br>
+          <strong>e, f</strong>, 在体耐受性与病理切片检查：经 Stanford 资深神经病理学家 Hannes Vogel 盲检，接受大剂量 TCIP1 连续治疗的小鼠体重无统计学下降，食欲和行为完全正常；心脏、肺、肝、脾、肾等重要器官的 H&E 染色未见任何组织坏死、炎性细胞浸润或异常凋亡损伤，展现出令人惊叹的体内安全窗口！<br>
+          <strong>g, h</strong>, 人源正常原代细胞选择性测试：在健康人扁桃体成熟淋巴细胞（\(EC_{50} \approx 210\text{ nM}\)）与原代成纤维细胞（\(EC_{50} \approx 470\text{ nM}\)）中，TCIP1 的半数致死浓度较 DLBCL 肿瘤细胞高出 <strong>200 到 400 倍</strong>，证实其对恶性高表达细胞的极强专一性。<br>
+          <strong>i</strong>, TCIP 策略的模块化普适性设想：利用双功能分子招募另一种完全不同类型的转录激活蛋白——核激素受体<strong>雌激素受体 (ER)</strong>，与 BCL6 发生化学邻近诱导。<br>
+          <strong>j</strong>, 合成的 ER–BCL6 TCIP 代表化合物 <strong>TCIP2</strong> 的化学结构，由天然雌酮（Oestrone）配体经化学臂连接 BCL6(BTB) 结合剂 BI3812。<br>
+          <strong>k</strong>, TCIP2 对同时高表达 ER 与 BCL6 的 DLBCL 细胞展现出强劲的抗增殖杀伤活性（<strong>\(EC_{50} = 355\text{ nM}\)</strong>）。<br>
+          <strong>l</strong>, 阴性对照验证：在仅表达 ER 但缺乏 BCL6 的乳腺癌细胞系（HCC1428 等）中，TCIP2 不仅不产生毒性，反而由于雌酮成分轻微促进细胞增殖；在 ER 与 BCL6 均为阴性的三阴性乳腺癌（TNBC）中则完全无活性；完美证明只要细胞不同时具备被连接的两种靶标，TCIP 即具备内在的惰性安全属性！
+        </p>
+      </div>
+    </div>
+
+    <div class="mechanism-card green">
+      <div class="mechanism-title">💡 概念升华：TCIP2 证实“组合特异性”是转录邻近疗法的天然安全防火墙</div>
+      <p style="font-size: 14.5px; color: #22543d; line-height: 1.75;">
+        TCIP2 的成功合成与功能验证具有极高的化学生物学理论价值：<br>
+        1. <strong>即插即用（Plug-and-Play）模块化</strong>：证明 TCIP 并非仅适用于 BRD4，任何能够在特定基因位点激活转录延伸的天然转录因子（如核受体、辅激活物）均可作为供体元件；<br>
+        2. <strong>真核转录的“与门”（AND-Gate）逻辑</strong>：只有在同时满足“靶向致癌因子高表达”（如 BCL6）与“激活因子表达”（如 BRD4 或 ER）的双阳性细胞中，TCIP 才能组装成完整的三元激活机器；只要缺失其中任一元件，该分子就蜕化为无毒的二元惰性配体。这种内在的“组合特异性”构成了 TCIP 区别于所有传统细胞毒化疗药和泛靶向抑制剂的终极安全壁垒！
+      </p>
+    </div>
+  </section>
+
+  <!-- 全文深度讨论与范式革命 -->
+  <section class="card-section" id="discussion">
+    <h2 class="section-heading"><span class="sec-id">Discussion</span>全文深度讨论：从“消除抑制”走向“功能重构”的药理学革命</h2>
+
+    <p>
+      数十年来，人类现代肿瘤靶向药物研发的思维范式几乎完全被<strong>“功能缺失型”（Loss-of-Function, LoF）</strong>所垄断：无论是占据激酶催化活性口袋的小分子抑制剂、利用单抗中和膜表面受体，还是近年炙手可热的 PROTAC / 分子胶靶向蛋白降解（TPD），其底层的药理学目标都是<strong>“消灭一个对肿瘤生存必不可少的蛋白功能”</strong>。
+    </p>
+    <p>
+      然而，这一传统逻辑正面临着日益严峻的生物学天花板：
+    </p>
+
+    <table class="custom-table">
+      <thead>
+        <tr>
+          <th style="width: 20%;">干预维度</th>
+          <th style="width: 40%;">传统抑制剂 / PROTAC 靶向降解 (LoF)</th>
+          <th style="width: 40%;">TCIP 转录化学邻近重构疗法 (GoF)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>靶标占据度要求</strong></td>
+          <td>通常需要对靶蛋白达到 <strong>90%–99% 以上的近乎完全占据或彻底清除</strong>，才足以切断其促癌信号通路。</td>
+          <td><strong>仅需动用极小比例（约 10%–15%）</strong>的靶标分子即可催化组装三元复合物，发挥显性获得性转录致死效应。</td>
+        </tr>
+        <tr>
+          <td><strong>有效工作浓度</strong></td>
+          <td>微摩尔或高纳摩尔级别（如 BI3802 \(EC_{50} > 10\,\mu\text{M}\)，dBET1 \(EC_{50} \approx 489\text{ nM}\)）。</td>
+          <td><strong>超低纳摩尔级（TCIP1 \(EC_{50} \approx 1.3\text{ nM}\)）</strong>，效能高出传统降解剂 1,000 倍以上。</td>
+        </tr>
+        <tr>
+          <td><strong>耐药逃逸机制</strong></td>
+          <td>癌细胞极易通过点突变破坏结合口袋，或通过代偿性激活旁路酪氨酸激酶/其他转录因子实现生存逃逸。</td>
+          <td><strong>直接反戈一击</strong>：肿瘤细胞对 BCL6 驱动基因的表达依赖越高，其合成促凋亡机器的“底物平台”就越充沛，将致癌依赖反转为致死弱点。</td>
+        </tr>
+        <tr>
+          <td><strong>正常组织在体毒性</strong></td>
+          <td>若靶蛋白具有维持正常造血、免疫或神经稳态的生理功能，不可逆的全身清除将诱发严重机制性毒性（如 BCL6 全身敲除小鼠死于多脏器炎症）。</td>
+          <td><strong>由于仅借用微量分子且遵循“组合与门”（AND-Gate）特异性</strong>，在缺乏高丰度 BCL6 的正常组织中表现为惰性无毒，小鼠试验未见明显毒副反应。</td>
+        </tr>
+        <tr>
+          <td><strong>生化作用时程</strong></td>
+          <td>依赖泛素化级联、多聚泛素链延伸及蛋白酶体转运降解，通常需要数小时至十数小时才能见效。</td>
+          <td><strong>光速级转录延伸</strong>：给药 <strong>15 分钟</strong> 内即观察到 RNA Pol II 跨过外显子-内含子暂停点进行转录延伸，2 小时即完成关键靶标表达重构。</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3 class="subsection-heading">从“不可成药”到“功能劫持”：转录因子靶向的破局新思路</h3>
+    <p>
+      在所有人类恶性肿瘤的驱动驱动基因中，超过 70% 是转录因子或表观遗传重塑复合体（如 MYC、BCL6、STAT3、FOXM1、EWS-FLI1 等）。因为转录因子通常缺乏酶类深邃的疏水催化口袋，且依靠广泛而平坦的蛋白质-蛋白质相互作用（PPI）界面发挥作用，它们在过去半个世纪中一直被工业界视为<strong>“不可成药”（Undruggable）的绝壁</strong>。
+    </p>
+    <p>
+      TCIP 技术的诞生彻底打破了这一桎梏：<strong>它不再要求小分子必须具备阻断庞大 PPI 界面的极高结合能，而仅仅需要一个小分子配体能够“搭上一只手”（微弱或非变构结合即可）</strong>。只要能把转录因子作为物理锚定点，TCIP 就能强行拖拽细胞内原本就存在的、极为强大的内源转录激活或表观重塑机器（如 BRD4、P-TEFb、BAF/SWI-SNF、p300/CBP、核受体等），将该位点的染色质景观与转录状态进行颠覆性逆转！
+    </p>
+
+    <div class="mechanism-card blue">
+      <div class="mechanism-title">🚀 未来拓展地平线：TCIP 在生命科学与医学领域的广泛应用前景</div>
+      <p style="font-size: 14.5px; color: #1e3a8a; line-height: 1.75;">
+        在讨论部分的尾声，通讯作者 Crabtree 院士与 Gray 教授明确指出，TCIP 所代表的“转录与表观重构”概念绝不仅限于抗击淋巴瘤：<br>
+        1. <strong>衰老细胞精准清除 (Senolytics)</strong>：衰老细胞往往依赖特定的抗凋亡网络维持长期存活并释放衰老相关分泌表型 (SASP)，TCIP 可用于精准劫持衰老特征性转录因子诱导衰老细胞自我清除；<br>
+        2. <strong>单倍剂量不足 (Haploinsufficiency) 遗传病治疗</strong>：人类有上百种严重的罕见遗传病是由于单个等位基因突变失活导致表达量减半。TCIP 可设计为特异性结合残留完好的等位基因启动子，通过招募强效延伸因子，将其转录量精准提升 2 倍，恢复正常生理表型；<br>
+        3. <strong>肿瘤新抗原原位激活与免疫治疗</strong>：通过 TCIP 重新开启在肿瘤中被表观遗传致密沉默的免疫原性逆转录病毒元件（HERVs）或新抗原，将“冷肿瘤”强行转化为“热肿瘤”；<br>
+        4. <strong>合成生物学人工基因线路重编程</strong>：无需引入外源基因编辑工具，利用化学小分子在任意时空节点实现内源基因表达的即时开/关切换。
+      </p>
+    </div>
+  </section>
+
+  <!-- 实验方法全流程解析 (STAR Methods) -->
+  <section class="card-section" id="methods">
+    <h2 class="section-heading"><span class="sec-id">Methods</span>详尽实验方法全流程解析 (STAR Methods)</h2>
+
+    <h3 class="subsection-heading">1. 细胞株培养与化学合成路线</h3>
+    <p>
+      <strong>细胞培养</strong>：KARPAS422、SUDHL4、OCI-LY1 等人源淋巴瘤细胞系在含 10% 胎牛血清（FBS）及双抗的 RPMI-1640 培养基中于 37°C、5% CO<sub>2</sub> 培养。原代人扁桃体成熟淋巴细胞取自扁桃体切除手术标本，经 Ficoll 密度梯度离心分离获得。<br>
+      <strong>TCIP1 合成要点</strong>：以 (+)-JQ1 羧酸衍生物为起始物，经缩合反应偶联特制单 Boc 保护的聚乙二醇/叔胺连接臂，脱保护后与活化的 BI3812 衍生酸进行高效酰胺缩合，所得粗产物经反相制备型高相液相色谱（RP-HPLC，C18 柱）纯化，并通过高分辨质谱（HRMS）和 <sup>1</sup>H/<sup>13</sup>C 核磁共振（NMR）验证结构与纯度（纯度 > 98%）。
+    </p>
+
+    <h3 class="subsection-heading">2. 细胞活力、凋亡测定与流式细胞术</h3>
+    <p>
+      <strong>细胞活力</strong>：采用 CellTiter-Glo 荧光发光法，于 384 孔板中每孔接种 2,000 个细胞，加入梯度稀释化合物，处理 72 小时后加入检测试剂，酶标仪测定化学发光信号，采用 GraphPad Prism 进行非线性回归四参数拟合计算 \(EC_{50}\)。<br>
+      <strong>细胞凋亡与周期分析</strong>：细胞经化合物处理特定时间后收集，以冷 PBS 洗涤，使用 FITC-Annexin V 和碘化丙啶（PI）进行双重染色，30 分钟内利用 BD LSRFortessa 流式细胞仪检测；周期分析使用无水乙醇固定后经 RNAase A 消化并进行 PI 染色分析。
+    </p>
+
+    <h3 class="subsection-heading">3. 体外生物物理测定：TR-FRET 与等温滴定量热 (ITC)</h3>
+    <p>
+      <strong>TR-FRET 测定体系</strong>：在 384 孔白色微孔板中构建 20 μL 反应体系，包含 50 nM 纯化 6xHis-BRD4(BD1)、50 nM FITC-BCL6(BTB) 以及 2 nM 铽螯合物标记抗 His 抗体（Tb-anti-His）。加入梯度稀释化合物后室温孵育 1 小时，使用 PerkinElmer EnVision 酶标仪检测供体（337 nm 激发，495 nm 发射）与受体（520 nm 发射）荧光比值（Em520/Em495）。<br>
+      <strong>ITC 实验</strong>：使用 MicroCal PEAQ-ITC 量热仪，在 25°C 下将 150 μM BCL6(BTB) 逐步滴定进入含有 15 μM BRD4(BD1) 与 15 μM TCIP1 的样品池中，通过一阶结合模型拟合得出结合焓（\(\Delta H\)）、结合常数（\(K_d\)）及摩尔结合化学计量比（\(n\)）。
+    </p>
+
+    <h3 class="subsection-heading">4. 高通量表观组与转录组学：PRO-seq、RNA-seq 与 ChIP-seq</h3>
+    <p>
+      <strong>PRO-seq (精确核连缀测序)</strong>：按经典方案分离细胞核，在生物素标记的 NTPs 存在下进行极短时间的核连缀反应，利用抗生物素蛋白磁珠（Streptavidin Beads）精准富集处于转录延伸状态的初生新生 RNA，构建高通量文库，以此解析 RNA Pol II 瞬间的转录延伸速率。<br>
+      <strong>ChIP-seq (染色质免疫共沉淀测序)</strong>：以 1% 甲醛室温交联 10 分钟，甘氨酸终止，裂解后利用超声破碎仪（Covaris）将染色质断裂至 200–500 bp 片段。分别加入高特异性抗体（抗 BCL6、抗 BRD4、抗 RNA Pol II、抗 Pol II Ser2P、抗 Pol II Ser5P、抗 CDK9、抗 H3K27ac）于 4°C 免疫共沉淀过夜。富集 DNA 经文库构建后于 Illumina NovaSeq 6000 平台进行双端测序；比对至 GRCh38 参考基因组，利用 MACS2 进行峰识别（Peak Calling），Deeptools 生成归一化 Bigwig 轨迹文件。
+    </p>
+
+    <h3 class="subsection-heading">5. 模式动物体内耐受性与药效学实验</h3>
+    <p>
+      8–10 周龄野生型雄性 C57BL/6 小鼠随机分组，每天腹腔注射给予 10 mg/kg TCIP1（溶于含 10% DMSO、40% PEG400、5% Tween-80、45% 生理盐水的给药载体）或对照溶剂，连续给药 5 天。每日监测小鼠体重、活动度和进食状态。末次给药 24 小时后眼眶取血分离血清进行 LC-MS/MS 药物浓度检测，分离主要内脏器官，部分组织用于石蜡包埋、切片与 H&E 染色进行组织毒理学盲检评估，部分脾脏组织提取总 RNA 进行高深度 Illumina 转录组测序分析。
+    </p>
+  </section>
+
+<section class="card-section" id="phd-review">
+  <div class="section-heading">
+    <span class="sec-id">SECTION VI</span>
+    PhD Journal Club: 深度学术汇报与答辩指南 (Journal Club Presentation & Defense Suite)
+  </div>
+
+  <!-- Subsection 1: Five Major Scientific Novelties -->
+  <div id="novelties">
+    <div class="subsection-heading">1. 五大核心科学突破与创新点解析 (Five Major Scientific Novelties)</div>
+    <p>
+      Gerald Crabtree 与 Nathanael Gray 团队在《Nature》发表的这项研究，标志着肿瘤靶向治疗与邻近诱导药理学（Proximity Pharmacology）进入全新纪元。对于肿瘤生物学、化学生物学博士研究生及博士后而言，该工作在概念、药理动力学、表观遗传学和抗肿瘤合成机制上呈现出五大颠覆性突破：
+    </p>
+
+    <div class="mechanism-card">
+      <div class="mechanism-title">突破 1: 药理学范式颠覆 —— 从“功能丧失 (LoF)”到“显性功能获得 (GoF)”的细胞自杀驱动</div>
+      <p>
+        <strong>【传统困境】</strong>过去 30 年肿瘤靶向药物（无论是激酶抑制剂还是 PROTAC 靶向降解剂）的核心教条是 <em>Loss-of-Function (LoF)</em>，即通过阻断催化口袋或泛素化降解致癌蛋白。然而，癌细胞基因组高度可塑，具有冗余存活旁路，即使彻底消除某个致癌因子（如 BCL6 或 MYC），癌细胞往往仅发生细胞周期停滞（G1 arrest）或通过代偿通路逃逸，极少迅速触发灾难性凋亡。
+      </p>
+      <p>
+        <strong>【TCIP 范式跃迁】</strong>TCIP 彻底颠覆了“必须杀死/降解致癌驱动物”的固有逻辑，转向 <em>Gain-of-Function (GoF)</em>。TCIP 利用癌细胞对致癌转录阻遏物（BCL6）的绝对依赖性与高表达丰度，将 BCL6 物理偶联至强效转录共激活因子 BRD4/P-TEFb。这不仅解除了 BCL6 对凋亡基因的抑制，更是<strong>反客为主</strong>，将原本护航淋巴瘤存活的 BCL6 改造为招募 RNA 聚合酶 II（Pol II）的杀伤性转录因子，在数小时内暴力开启内源性凋亡级联反应（PUMA, BIM, NOXA, FAS）。
+      </p>
+      <div style="margin-top:10px; background:#eff6ff; padding:10px 14px; border-radius:6px; font-size:13.5px; color:#1e40af;">
+        <strong>💡 Journal Club 汇报点拨:</strong> “Conventional targeted therapy tries to disarm the enemy (LoF); TCIP hands the enemy a ticking bomb and turns their weapon against themselves (GoF).” 这种机制从根本上解释了为何 TCIP 的细胞毒性远非单体抑制剂或 PROTAC 可比。
+      </div>
+    </div>
+
+    <div class="mechanism-card">
+      <div class="mechanism-title">突破 2: 极低靶点占用率 (1–2%) 即可引发催化级致死 —— 超越传统药理学占用率阈值</div>
+      <p>
+        <strong>【传统药理学教条】</strong>传统小分子抑制剂通常需要达到 <strong>&gt;90% 甚至 &gt;95% 的受体饱和占用率（Target Occupancy）</strong> 才能达到临床抗肿瘤疗效，这不仅需要极高给药浓度，还极易引发全身脱靶毒性与代谢负担。
+      </p>
+      <p>
+        <strong>【TCIP 催化级杀伤】</strong>定量表型与生物物理测量表明，TCIP1 在弥漫性大 B 细胞淋巴瘤（DLBCL）中表现出令人震撼的超强效价：<strong>EC₅₀ 低至 1.3 nM</strong>！而其单体结合分子 BI3812 单独给药即使在 10,000 nM 浓度下也无细胞毒性（效价提升超 <strong>7,000 倍</strong>）。更关键的是，全基因组结合与定量分析证实，<strong>仅需 1% 至 2% 的 BCL6 基因组结合位点被 TCIP1-BRD4 三元复合物占据</strong>，就足以释放足够剂量的 Pol II Ser2 延伸信号，不可逆地触发 Caspase-3/7 凋亡瀑布！这种“以极低占用率撬动全基因组致死表型”的特性，颠覆了经典受体占有药理学规律。
+      </p>
+    </div>
+
+    <div class="mechanism-card">
+      <div class="mechanism-title">突破 3: 15 分钟极速 Pol II 暂停释放与负自调节回路逆转 (Transcriptional Suicide Loop)</div>
+      <p>
+        <strong>【表观动力学瞬间响应】</strong>精密的新生 RNA 测序（PRO-seq）与时间梯度 ChIP-seq 揭示了 TCIP1 的超快动力学机制：给药后仅 <strong>15 分钟</strong>，在全基因组数百个由 BCL6 占据的基因座上，RNA 聚合酶 II（Pol II）的 Ser2 磷酸化水平出现爆发式上调，表明原本滞留在启动子近端的 Pol II 暂停（Promoter-proximal Pausing）被瞬时释放，全面进入高速转录延伸。
+      </p>
+      <p>
+        <strong>【负自调节反转为正向自杀回路】</strong>在生理状态下，BCL6 进化出精密的<strong>负向自调节（Negative Autoregulation）</strong>机制：BCL6 蛋白结合在其自身基因的第一内含子（Intron 1）调控区，抑制自身转录，防止细胞内 BCL6 过度蓄积。然而，TCIP1 将这一抑制性结合位点改造成强效超级转录增强子：给药 2 小时内，内源 BCL6 mRNA 和蛋白出现爆炸式自杀性飙升。更多合成的 BCL6 进一步与 TCIP1 结合，形成正反馈“滚雪球”效应，疯狂催化下游 <em>BBC3 (PUMA)</em> 与 <em>BCL2L11 (BIM)</em> 的转录，直至细胞彻底裂解。
+      </p>
+    </div>
+
+    <div class="mechanism-card">
+      <div class="mechanism-title">突破 4: 显性表型（Dominant-Positive Phenotype）克服肿瘤单倍体不足与点突变耐药</div>
+      <p>
+        <strong>【杂合突变耐药克星】</strong>传统抑制剂最致命的阿喀琉斯之踵是靶点基因点突变（如激酶结构域 Gatekeeper 突变）或结合口袋构象变异。在 LoF 药物治疗中，只要部分等位基因发生突变不再结合药物，癌细胞即可存活。
+      </p>
+      <p>
+        <strong>【反式显性（in trans）杀伤】</strong>TCIP 诱导的转录激活是一种<strong>显性功能获得性表型（Dominant-positive phenotype in trans）</strong>。因为 TCIP 无需饱和结合所有 BCL6 蛋白，只要细胞内存在部分敏感性野生型或低亲和力 BCL6 拷贝与 TCIP1/BRD4 形成三元复合物，其招募的 CDK9/Pol II 延伸机械就能在染色质上直接转录凋亡基因。未结合药物的游离 BCL6 蛋白完全无法阻止凋亡基因的强力转录。这从原理上免疫了传统因“靶点残留或结合不充分”导致的即时耐药。
+      </p>
+    </div>
+
+    <div class="mechanism-card">
+      <div class="mechanism-title">突破 5: 合成生物学级双输入“与门”选择性（Synthetic AND-Gate Selectivity）与优异体内耐受</div>
+      <p>
+        <strong>【精准“与门”逻辑架构】</strong>化疗药物及常规泛靶点药物最大的临床痛点是骨髓抑制与正常组织毒性。TCIP 呈现出合成生物学级别的布尔逻辑“与门（AND Gate）”：
+        <br>
+        <span style="display:inline-block; margin-top:6px; font-family:monospace; background:#f8fafc; padding:4px 8px; border:1px solid #cbd5e1; border-radius:4px;">
+          致死输出 (Lethality) = [高丰度致癌受体 (BCL6/Driver High)] AND [活跃表观延伸机器 (BRD4/Pol II Competence)]
+        </span>
+      </p>
+      <p>
+        <strong>【正常组织完美绝缘】</strong>正常成熟 B 细胞、T 细胞、原代人成纤维细胞及血管内皮细胞中，由于缺乏 DLBCL 特有的超强 BCL6 依赖性染色质图谱与病理级表达量，对 TCIP1 展现出高达 &gt;10,000 nM 的极端耐受性（安全治疗窗口超过 <strong>3–4 个数量级</strong>）。在 C57BL/6 小鼠体内以 10 mg/kg/day 剂量连续腹腔注射 5 天，小鼠体重平稳、脾脏生发中心未受破坏、肝肾组织学完全正常，同时在外周组织中实现了强效的靶点靶向结合，展现了极佳的成药性雏形。
+      </p>
+    </div>
+  </div>
+
+  <!-- Subsection 2: Biological & Clinical Implications -->
+  <div id="implications">
+    <div class="subsection-heading">2. 生物学启示与转化医学前景 (Biological & Clinical Implications)</div>
+    <p>
+      TCIP 的问世不仅攻克了 BCL6 这一特定致癌转录抑制因子，更为现代肿瘤学、合成生物学与药物递送科学提供了三项具有深远意义的范式启示：
+    </p>
+
+    <div class="mechanism-card">
+      <div class="mechanism-title">启示 1: 重新定义“不可成药 (Undruggable)”转录因子与靶点开发边界</div>
+      <p>
+        人类蛋白质组中超过 80% 的致癌转录因子（如 <em>MYC, BCL6, EWS-FLI1, PAX3-FOXO1, IRF4, SOX2, STAT3</em>）由于表面平坦、缺乏深层疏水催化口袋，且介导广泛而弥散的蛋白-蛋白互作（PPI），长久以来被药物化学界判定为“不可成药”（Undruggable）。
+      </p>
+      <p>
+        <strong>【TCIP 的解放性逻辑】</strong>过去人们试图寻找能以皮摩尔（pM）亲和力竞争性破坏转录因子与其 DNA 结合域或辅阻遏物界面的抑制剂，这种抑制剂极难设计。然而，TCIP 彻底改变了对配体亲和力的严苛要求：<strong>任何对靶蛋白具有中等亲和力（如微摩尔级别 μM）的表面结合分子，只要能与 BRD4 或其他转录共激活因子形成稳定的三元复合物，就足以被转化为“纳摩尔级细胞核自杀诱导剂”！</strong> 这使大量以往在药物初筛中因无法阻断功能而被废弃的“弱结合分子”重获新生，极大地拓宽了抗肿瘤药物开发靶点库。
+      </p>
+    </div>
+
+    <div class="mechanism-card">
+      <div class="mechanism-title">启示 2: TCIP 作为通用化学模块化平台 (The TCIP Modular Platform) —— 从 TCIP1 到 TCIP2</div>
+      <p>
+        Crabtree 与 Gray 团队在研究中明确证明，TCIP 决不是针对 BRD4-BCL6 的偶然个例，而是一个高度模块化、可编程的普适化学生物学架构：
+      </p>
+      <ul style="margin-left: 20px; line-height: 1.8;">
+        <li>
+          <strong>TCIP2 原理验证 (Proof-of-Concept):</strong> 研究者通过将雌激素受体（ER）激动剂/调节剂（4-羟基他莫昔芬 4-OHT 衍生物）与 BCL6 抑制剂 BI3812 通过连接子偶联，成功合成了 <strong>TCIP2</strong>。在 ER 阳性/BCL6 阳性乳腺癌模型中，TCIP2 成功借用内源 ER 的转录激活功能，定向开启 BCL6 基因座的转录，高效触发细胞杀伤。
+        </li>
+        <li>
+          <strong>靶点库的横向拓展:</strong> 理论上，任何在特定恶性肿瘤中异常高表达或具有超级增强子驱动的致癌转录因子（例如尤文氏肉瘤中的融合蛋白 EWS-FLI1、横纹肌肉瘤中的 PAX3-FOXO1、滑膜肉瘤中的 SS18-SSX），均可通过设计双功能分子，招募转录激活因子（BRD4, MED1, p300/CBP, CDK9），将这些驱动肿瘤增殖的恶性分子就地转变为诱导凋亡或分化的杀伤性引擎。
+        </li>
+      </ul>
+    </div>
+
+    <div class="mechanism-card">
+      <div class="mechanism-title">启示 3: 临床转化面临的药理学挑战与工程化应对方案</div>
+      <p>
+        尽管前景极其广阔，TCIP 要走向临床试验，仍需解决三大关键成药性挑战：
+      </p>
+      <ol style="margin-left: 20px; line-height: 1.8;">
+        <li>
+          <strong>钩状效应 (Hook Effect / Prozone Phenomenon) 的体内窗口调控:</strong> 双功能分子在高浓度下容易形成“二元复合物饱和”竞争，呈现特征性的反 U 形非单调剂量响应。虽然 TCIP 仅需 1–2% 靶点占用率即可起效，但在体内必须精确控制最大血药浓度（C<sub>max</sub>）与稳态暴露量，防止剂量过载抑制三元复合物形成。
+        </li>
+        <li>
+          <strong>分子量与口服生物利用度 (DMPK 优化):</strong> TCIP1 的分子量约为 850 Da，违反了经典 Lipinski “五规则”（Rule of 5）。与 PROTAC 类似，未来的转化开发需要开展连接子（Linker）的刚性化改造、构象预组织（Conformational Pre-organization）、前药（Prodrug）设计或利用脂质纳米颗粒（LNP）递送系统，以提升其口服生物利用度与肿瘤靶向穿透力。
+        </li>
+        <li>
+          <strong>患者分层生物标志物 (Precision Biomarkers):</strong> 临床伴随诊断需精确评估患者肿瘤组织的：(1) BCL6 染色质结合广度与启动子突变；(2) 凋亡通路执行元件（BAX/BAK）的基因完整性；(3) 促凋亡与抗凋亡蛋白（如 BCL-2）的表达平衡（提示与 Venetoclax 联用的巨大潜力）。
+        </li>
+      </ol>
+    </div>
+  </div>
+
+  <!-- Subsection 3: Background Depth / Proximity Pharmacology Timeline -->
+  <div id="background-depth">
+    <div class="subsection-heading">3. 邻近诱导药理学 30 年演进全景与技术矩阵对比 (Proximity Pharmacology: 30-Year Evolution & Matrix)</div>
+    <p>
+      邻近诱导化学（Chemical Inducers of Proximity, CIP）是化学生物学最具颠覆性的前沿领域。自 1993 年 Crabtree 与 Schreiber 提出双聚化概念以来，该领域经历了从“人工工程化系统”到“靶向蛋白降解”，再到如今“内源转录重构”的壮丽三阶跃：
+    </p>
+
+    <!-- Visual Timeline -->
+    <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: var(--radius); padding: 24px; margin: 25px 0;">
+      <div style="font-weight: 700; color: #1e293b; margin-bottom: 18px; font-size: 16px; border-bottom: 2px solid #cbd5e1; padding-bottom: 8px;">
+        ⏳ 邻近诱导药理学里程碑演变时间轴 (1993 – 2023)
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px;">
+        <div style="background: #ffffff; padding: 14px; border-radius: 6px; border-left: 4px solid #3b82f6; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
+          <div style="font-weight: bold; color: #1d4ed8; font-size: 14px;">1993 · 奠基之作 (CID)</div>
+          <div style="font-size: 13px; color: #475569; margin-top: 6px;">
+            <strong>Spencer, Crabtree & Schreiber</strong><br>
+            利用双功能配体 FK1012 诱导 FKBP-FRB 人工受体二聚化，首次确立“化学诱导邻近”概念。
+          </div>
+        </div>
+        <div style="background: #ffffff; padding: 14px; border-radius: 6px; border-left: 4px solid #10b981; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
+          <div style="font-weight: bold; color: #047857; font-size: 14px;">2001 · PROTAC 降解纪元</div>
+          <div style="font-size: 13px; color: #475569; margin-top: 6px;">
+            <strong>Sakamoto, Crews & Deshaies</strong><br>
+            设计首个招募 E3 泛素连接酶的嵌合体，开创靶向蛋白降解（Targeted Protein Degradation, TPD）时代。
+          </div>
+        </div>
+        <div style="background: #ffffff; padding: 14px; border-radius: 6px; border-left: 4px solid #f59e0b; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
+          <div style="font-weight: bold; color: #b45309; font-size: 14px;">2014 · 分子胶机制破译</div>
+          <div style="font-size: 13px; color: #475569; margin-top: 6px;">
+            <strong>Ebert & Kaelin 实验室</strong><br>
+            阐明沙利度胺/来那度胺作为“分子胶（Molecular Glue）”诱导 CRBN 与 IKZF1/3 发生非生理性互作降解。
+          </div>
+        </div>
+        <div style="background: #ffffff; padding: 14px; border-radius: 6px; border-left: 4px solid #8b5cf6; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
+          <div style="font-weight: bold; color: #6d28d9; font-size: 14px;">2020 · 溶酶体与自噬拓展</div>
+          <div style="font-size: 13px; color: #475569; margin-top: 6px;">
+            <strong>Bertozzi (LYTAC) / Arimoto (AUTAC)</strong><br>
+            将降解范围从胞质蛋白拓展至胞外分泌蛋白、膜受体及聚集性细胞器。
+          </div>
+        </div>
+        <div style="background: #ffffff; padding: 14px; border-radius: 6px; border-left: 4px solid #c53030; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
+          <div style="font-weight: bold; color: #9b2c2c; font-size: 14px;">2023 · TCIP 范式跃迁 (Nature)</div>
+          <div style="font-size: 13px; color: #475569; margin-top: 6px;">
+            <strong>Crabtree & Gray 团队</strong><br>
+            从“清除蛋白 (LoF)”跨越至“合成转录激活 (GoF)”，开启转录邻近诱导药理学全新版图！
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Comparative Matrix Table -->
+    <div style="font-weight: 700; color: #1e293b; margin-top: 25px; margin-bottom: 12px; font-size: 15px;">
+      📊 邻近诱导药物技术矩阵全方位横向对比 (Proximity Pharmacology Comparison Matrix)
+    </div>
+    <div style="overflow-x: auto;">
+      <table class="custom-table">
+        <thead>
+          <tr>
+            <th style="width: 14%;">技术维度</th>
+            <th style="width: 21%;">传统小分子抑制剂 (SMI)</th>
+            <th style="width: 21%;">PROTAC 靶向降解剂</th>
+            <th style="width: 21%;">分子胶降解剂 (Molecular Glue)</th>
+            <th style="width: 23%;">TCIP 转录诱导激活剂 (本篇论文)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>作用机制 (MoA)</strong></td>
+            <td>结合催化或变构口袋，阻断酶活性或破坏结合界面</td>
+            <td>双功能分子招募 E3 泛素连接酶，催化靶蛋白多聚泛素化降解</td>
+            <td>修饰 E3 连接酶复合表面，形成新互作界面诱导底物降解</td>
+            <td><strong>双功能偶联致癌转录阻遏物与共激活因子（BRD4/P-TEFb），就地重塑转录机制</strong></td>
+          </tr>
+          <tr>
+            <td><strong>表型本质 (Phenotype)</strong></td>
+            <td>隐性功能丧失 (Recessive Loss-of-Function)</td>
+            <td>隐性功能丧失 (Recessive Loss-of-Function)</td>
+            <td>功能丧失 (Loss-of-Function) 或新形态降解 (Neomorphic)</td>
+            <td><strong>显性功能获得与自杀正反馈 (Dominant Gain-of-Function & Suicide Loop)</strong></td>
+          </tr>
+          <tr>
+            <td><strong>靶点受体占用率要求</strong></td>
+            <td>极高（通常需 &gt;90%–95% 持续饱和）</td>
+            <td>亚化学计量比催化（Sub-stoichiometric, 需 20%–50%）</td>
+            <td>中等至较高（依赖三元复合物构象互补）</td>
+            <td><strong>超极低（仅需 1%–2% 基因组位点结合即可触发全基因组致死）</strong></td>
+          </tr>
+          <tr>
+            <td><strong>典型细胞活性 ($EC_{50}$)</strong></td>
+            <td>微摩尔至中等纳摩尔 (0.1–10 μM)</td>
+            <td>低纳摩尔至微摩尔 (10–500 nM)</td>
+            <td>纳摩尔至微摩尔 (10–1000 nM)</td>
+            <td><strong>皮摩尔至低纳摩尔级 (TCIP1 EC₅₀ = 1.3 nM，较单体增效 &gt;7,000倍)</strong></td>
+          </tr>
+          <tr>
+            <td><strong>对单倍突变/点突变耐受</strong></td>
+            <td>极脆弱：结合口袋单一突变即可诱发完全耐药</td>
+            <td>脆弱：靶蛋白突变或 E3 连接酶失活（如 VHL/CRBN 缺失）即耐药</td>
+            <td>脆弱：结合界面残基突变易导致底物脱落</td>
+            <td><strong>极强：反式显性（in trans）杀伤，未结合等位基因无法阻止凋亡转录爆发</strong></td>
+          </tr>
+          <tr>
+            <td><strong>靶点适用空间</strong></td>
+            <td>必须具备深层酶活催化口袋或高亲和力结合腔</td>
+            <td>需具备可用结合配体、且表面存在暴露的赖氨酸供泛素化</td>
+            <td>结构极其紧凑，但难以进行理性的计算机从头设计（De novo）</td>
+            <td><strong>任何致癌转录因子、融合蛋白或具有结合配体的表观调节元件</strong></td>
+          </tr>
+          <tr>
+            <td><strong>代表性分子/化合物</strong></td>
+            <td>Ibrutinib, Venetoclax, Gleevec</td>
+            <td>ARV-110 (Bavdegalutamide), ARV-471</td>
+            <td>Thalidomide, Lenalidomide, CC-90009</td>
+            <td><strong>TCIP1 (BI3812-JQ1), TCIP2 (4-OHT-BI3812)</strong></td>
+          </tr>
+          <tr>
+            <td><strong>核心挑战与瓶颈</strong></td>
+            <td>靶点不可成药、旁路代偿耐药、毒性窗口窄</td>
+            <td>分子量偏大、E3 连接酶依赖、细胞耐药突变</td>
+            <td>理性设计极其困难、脱靶降解风险</td>
+            <td><strong>钩状效应（需精确调控体内暴露量）、高分子量口服吸收优化</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Subsection 4: 15-20 min Master Presentation Script -->
+  <div id="ppt-guide">
+    <div class="subsection-heading">4. 15–20 分钟 PhD Journal Club 汇报演讲全流程演练脚本 (Master Presentation Script: Slides 1–8)</div>
+    <p>
+      本套演讲脚本专门为博士生、博士后在顶级实验室 Journal Club、学术沙龙或博士资格答辩准备。脚本分为英文汇报原声讲稿（Verbatim English Spoken Narration）与中文讲解剖析，包含每张 Slide 的视觉呈现排布、核心科学逻辑与时间节奏把控（总时长控制在 16–18 分钟以内）：
+    </p>
+
+    <!-- Slide 1 -->
+    <div class="slide-card">
+      <div class="slide-header">
+        <span>SLIDE 1: 标题页与范式革新 (Title & Paradigm Shift)</span>
+        <span>建议时间: 1.5 - 2.0 min</span>
+      </div>
+      <div class="slide-body">
+        <p><strong>【视觉布局 (Visual Layout)】:</strong> 核心标题 <em>Rewiring cancer drivers to activate apoptosis</em>；作者团队（Sai Gourisankar, Nathanael Gray, Gerald Crabtree @ Stanford & MD Anderson）；并列展示两大对立模式图：左侧为传统 LoF（抑制剂/PROTAC 消除癌蛋白），右侧为 TCIP GoF（致癌转录抑制因子与共激活因子偶联，直接点火凋亡基因）。</p>
+        
+        <div class="script-box">
+          <p><strong>🎙️ English Spoken Narration:</strong></p>
+          <p>
+            "Good morning, professors and colleagues. Today, I am thrilled to present a landmark study published in <em>Nature</em> in August 2023, entitled <em>'Rewiring cancer drivers to activate apoptosis'</em>, coming from the collaborative teams of Gerald Crabtree at Stanford and Nathanael Gray at MD Anderson. For decades, the central dogma of targeted cancer therapy has rested upon <em>Loss-of-Function</em>: developing small molecules to inhibit enzymatic activity, or PROTACs to degrade oncogenic drivers. However, cancers frequently survive target elimination through compensatory survival loops and bypass mutations. Today's paper introduces a paradigm shift: instead of trying to extinguish an oncogenic driver, can we <strong>rewire its native chromatin localization to artificially drive cell death?</strong> They created TCIPs—Transcriptional Chemical Inducers of Proximity—turning an oncogenic repressor, BCL6, into a dominant-positive apoptotic trigger. Let's delve into how this molecular rewiring works."
+          </p>
+        </div>
+
+        <div style="margin-top:10px; background:#f1f5f9; padding:12px; border-radius:4px; font-size:13.5px; color:#334155;">
+          <strong>💡 中文讲解与节奏点拨:</strong> 开场切忌平铺直叙念 PPT。要以宏大的哲学视角切入，指出过去 30 年肿瘤靶向界“一味追求杀死/降解致癌蛋白（LoF）”的思想盲区。强调 TCIP 团队将“敌人变成刺向自己的武器（GoF）”，确立整场汇报的高端学术基调。
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="slide-card">
+      <div class="slide-header">
+        <span>SLIDE 2: 科学难题与生物学背景 (The Bottleneck: Undruggable BCL6 in DLBCL)</span>
+        <span>建议时间: 2.0 min</span>
+      </div>
+      <div class="slide-body">
+        <p><strong>【视觉布局 (Visual Layout)】:</strong> 弥漫性大 B 细胞淋巴瘤（DLBCL）发病机理模式图；展示生发中心（Germinal Center）B 细胞在体细胞高频突变（SHM）期间 BCL6 作为“总控阻遏物（Master Repressor）”抑制 <em>TP53, PUMA, CDKN1A</em> 的生理机制；右侧展示既往 BCL6 抑制剂（如 BI3812）在细胞系中高浓度无毒性（IC₅₀ &gt; 10 μM）的对比图。</p>
+        
+        <div class="script-box">
+          <p><strong>🎙️ English Spoken Narration:</strong></p>
+          <p>
+            "To understand the authors' rationale, let's examine diffuse large B-cell lymphoma (DLBCL). DLBCL is the most common aggressive lymphoma, and it heavily relies on the BTB zinc-finger transcription factor BCL6. In normal germinal centers, BCL6 transiently represses checkpoint and apoptotic genes like <em>TP53, CDKN1A</em>, and <em>PUMA</em> to allow somatic hypermutation. In DLBCL, chromosomal translocations and super-enhancers drive constitutive BCL6 overexpression, locking these lymphoma cells in a perpetual, apoptosis-resistant state. For decades, pharma has sought potent BCL6 inhibitors. Yet, molecules like BI-3812, which bind the BCL6 BTB domain with high affinity, completely fail to kill DLBCL cells on their own—yielding an IC₅₀ greater than 10 micromolar. Why? Because simply displacing corepressors without actively recruiting an activation complex is insufficient to override the established heterochromatin state. This intractable roadblock set the stage for TCIP."
+          </p>
+        </div>
+
+        <div style="margin-top:10px; background:#f1f5f9; padding:12px; border-radius:4px; font-size:13.5px; color:#334155;">
+          <strong>💡 中文讲解与节奏点拨:</strong> 重点讲透两件事：第一，BCL6 为什么重要（DLBCL 的生存命脉）；第二，为什么传统抑制剂失败（BI3812 是好结合分子，但不能致死）。这自然引出“仅破坏辅阻遏物不够，必须主动拉入激活因子”的研究动机。
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="slide-card">
+      <div class="slide-header">
+        <span>SLIDE 3: 分子设计与皮摩尔杀伤之谜 (TCIP1 Architecture & Picomolar Potency)</span>
+        <span>建议时间: 2.5 min</span>
+      </div>
+      <div class="slide-body">
+        <p><strong>【视觉布局 (Visual Layout)】:</strong> 聚焦 <strong>Figure 1 & Extended Data Fig. 1</strong>；展示 TCIP1 化学结构（BI3812 通过刚性/柔性复合连接子连接至 BET 溴结构域抑制剂 (+)-JQ1）；展示 906 株癌细胞系 PRISM 筛选结果火山图；以及 SUDHL4 等细胞系中 1.3 nM 的极速杀伤剂量曲线。</p>
+        
+        <div class="script-box">
+          <p><strong>🎙️ English Spoken Narration:</strong></p>
+          <p>
+            "Here is the molecular design shown in Figure 1. The authors conjugated BI-3812, the BCL6 binder, to (+)-JQ1, a potent ligand of the BRD4 tandem bromodomains, via an optimized chemical linker, naming the resulting molecule <strong>TCIP1</strong>. As a negative control, they synthesized d-TCIP1 using the inactive (-)-JQ1 enantiomer. When they screened TCIP1 across the 906-cancer cell line PRISM panel, only DLBCL lines expressing high BCL6 were specifically and selectively eliminated. Most strikingly, in SUDHL4 cells, TCIP1 achieved an EC₅₀ of <strong>1.3 nanomolar</strong>! Remember, BI-3812 alone has an IC₅₀ over 10,000 nanomolar, and JQ1 has an IC₅₀ around 500 nanomolar. Combining them into a proximity-inducing chimera produced a more than <strong>7,000-fold gain in cytotoxic potency</strong>. Inactive enantiomers or non-binder controls had zero activity. This is catalytic-like synergy at its finest."
+          </p>
+        </div>
+
+        <div style="margin-top:10px; background:#f1f5f9; padding:12px; border-radius:4px; font-size:13.5px; color:#334155;">
+          <strong>💡 中文讲解与节奏点拨:</strong> 点出数据震撼点：1.3 nM vs &gt;10,000 nM，足足 7000 倍的飞跃！同时强调立体异构体负对照（(-)-JQ1 衍生物 d-TCIP1 完全无活性），证明这是绝对依赖立体特异性三元结合的化学效应。
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 4 -->
+    <div class="slide-card">
+      <div class="slide-header">
+        <span>SLIDE 4: 三元复合物证明与钩状效应 (Mechanism I: Ternary Complex & The Hook Effect)</span>
+        <span>建议时间: 2.0 min</span>
+      </div>
+      <div class="slide-body">
+        <p><strong>【视觉布局 (Visual Layout)】:</strong> 聚焦 <strong>Figure 2 & Extended Data Fig. 4</strong>；展示 TR-FRET 与等温滴定量热法（ITC）三元复合物形成曲线；展示体外过量 BI3812 或 JQ1 竞争性解救实验；展示在超高微摩尔浓度下出现的特征性“钩状效应（Hook Effect）”钟形曲线；展示 Caspase-3/7 荧光激活。</p>
+        
+        <div class="script-box">
+          <p><strong>🎙️ English Spoken Narration:</strong></p>
+          <p>
+            "Next, the authors set out to prove in Figure 2 that cell killing strictly depends on simultaneous ternary complex assembly rather than dual independent target inhibition. Using TR-FRET and isothermal titration calorimetry (ITC), they demonstrated robust cooperative ternary complex formation between recombinant BCL6 BTB domain, TCIP1, and BRD4 BD1 with a dissociation constant of approximately 340 nM. Crucially, when they co-administered a 100-fold excess of either free BI-3812 or free JQ1, the cell killing of TCIP1 was completely rescued. Furthermore, at supramicromolar concentrations above 5 micromolar, they observed the classical biphasic <em>Hook effect</em>, where binary complexes saturate and displace the functional ternary complex, confirming a strict ternary stoichiometry. Caspase-3/7 cleavage confirmed rapid induction of apoptosis within hours."
+          </p>
+        </div>
+
+        <div style="margin-top:10px; background:#f1f5f9; padding:12px; border-radius:4px; font-size:13.5px; color:#334155;">
+          <strong>💡 中文讲解与节奏点拨:</strong> 答辩委员会最关心“到底是不是三元复合物在起作用还是两个药单加的毒性”。重点阐述两项铁证：1. 过量单体彻底化学解救（Rescue）；2. 高浓度反 U 型钩状效应。逻辑闭环，无懈可击。
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 5 -->
+    <div class="slide-card">
+      <div class="slide-header">
+        <span>SLIDE 5: 15分钟 Pol II 暂停释放与转录自杀正反馈 (Mechanism II: Pol II Pause-Release & Suicide Loop)</span>
+        <span>建议时间: 3.0 min</span>
+      </div>
+      <div class="slide-body">
+        <p><strong>【视觉布局 (Visual Layout)】:</strong> 聚焦 <strong>Figure 3, Figure 4, Extended Data Fig. 7 & 8</strong>；展示 PRO-seq 在给药 15 分钟、30 分钟、120 分钟的瞬时转录热图；展示 BCL6 基因第一内含子（Intron 1）和 <em>PUMA, BIM</em> 启动子处 Pol II Ser2 磷酸化的爆发性峰图；展示内源 BCL6 mRNA 在 2 小时内飙升数倍的定量 PCR 与 Western blot。</p>
+        
+        <div class="script-box">
+          <p><strong>🎙️ English Spoken Narration:</strong></p>
+          <p>
+            "Now let's examine the heart of the mechanism in Figures 3 and 4. How does TCIP1 kill cells so rapidly? Using precision run-on sequencing (PRO-seq), the authors tracked nascent transcription. Within just <strong>15 minutes</strong> of TCIP1 addition, they observed an immediate release of paused RNA Polymerase II into active elongation across hundreds of BCL6-bound loci, marked by robust phosphorylation of Pol II at Serine 2 and CDK9 recruitment. Now look at Figure 4: under normal conditions, BCL6 binds to a negative autoregulatory element in its own Intron 1, repressing its own promoter. TCIP1 inverts this repressor into a powerful super-activator! Within 2 hours, nascent BCL6 transcript levels surge 4-fold. This creates an unstoppable, positive feedback <strong>transcriptional suicide loop</strong>: as more BCL6 is produced, it complexes with TCIP1 to hyper-activate pro-apoptotic genes including <em>BBC3 (PUMA)</em> and <em>BCL2L11 (BIM)</em>. Meanwhile, oncogenic drivers like <em>MYC</em> are rapidly downregulated. The cell's own machinery is hijacked into irreversible apoptosis."
+          </p>
+        </div>
+
+        <div style="margin-top:10px; background:#f1f5f9; padding:12px; border-radius:4px; font-size:13.5px; color:#334155;">
+          <strong>💡 中文讲解与节奏点拨:</strong> 这是全场最精彩的高潮（Climax）！用充满力量感的话语解释“负自调节逆转为自杀回路”：癌细胞本来设计了一个刹车（负自调节），TCIP 把刹车改造成了油门，诱导细胞狂飙着冲向凋亡。15 分钟 Pol II 暂停释放是无可辩驳的直观表观证据。
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 6 -->
+    <div class="slide-card">
+      <div class="slide-header">
+        <span>SLIDE 6: 体内药代与双输入“与门”安全窗 (In Vivo PK/PD & Synthetic AND-Gate Safety)</span>
+        <span>建议时间: 2.5 min</span>
+      </div>
+      <div class="slide-body">
+        <p><strong>【视觉布局 (Visual Layout)】:</strong> 聚焦 <strong>Figure 5a–f & Extended Data Fig. 9</strong>；展示正常成纤维细胞（BJ）和 PBMC 对 TCIP1 的超高耐受剂量曲线（&gt;10,000 nM 存活）；展示 C57BL/6 小鼠连续 5 天 10 mg/kg/day 腹腔注射后的体重曲线、脾脏/肝脏 H&E 染色病理切片；展示小鼠脾脏内靶点结合（B220 染色）分析。</p>
+        
+        <div class="script-box">
+          <p><strong>🎙️ English Spoken Narration:</strong></p>
+          <p>
+            "A critical concern for any potent apoptotic inducer is systemic toxicity. As shown in Figure 5, TCIP1 operates under a strict synthetic AND-gate logic: death requires both high BCL6 occupancy and active chromatin rewiring. In normal human primary fibroblasts (BJ cells) and mature peripheral lymphocytes, TCIP1 caused no loss of viability even at 10 micromolar—a safety therapeutic window spanning thousands of fold! In in vivo studies, C57BL/6 mice were administered 10 mg/kg daily of TCIP1 for 5 days. Mice exhibited zero weight loss, intact mobility, and no organ pathology by H&E histology in liver, kidney, or spleen. In lymphoid organs, normal germinal center architecture and mature B-cell fractions remained intact, while ex vivo analysis proved effective target engagement in splenic tissue. This demonstrates a remarkably wide therapeutic index in a whole organism."
+          </p>
+        </div>
+
+        <div style="margin-top:10px; background:#f1f5f9; padding:12px; border-radius:4px; font-size:13.5px; color:#334155;">
+          <strong>💡 中文讲解与节奏点拨:</strong> 突出安全窗口（Safety Margin）：非肿瘤细胞 10 μM 不死，而肿瘤细胞 1.3 nM 绝杀。小鼠实验证明体内不掉体重、无脏器损伤，彻底打消评委对“BRD4 泛靶点共激活毒性”的疑虑。
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 7 -->
+    <div class="slide-card">
+      <div class="slide-header">
+        <span>SLIDE 7: 平台普适性验证 —— TCIP2 与前沿拓展 (TCIP2 Modularity & Next-Gen Targets)</span>
+        <span>建议时间: 2.0 min</span>
+      </div>
+      <div class="slide-body">
+        <p><strong>【视觉布局 (Visual Layout)】:</strong> 聚焦 <strong>Figure 5g–j</strong>；展示 TCIP2 化学结构（4-OHT 他莫昔芬衍生物与 BI3812 连接）；展示在 ER 阳性/BCL6 依赖性乳腺癌细胞系中的合成致死曲线；右侧呈现 TCIP 拓展至 <em>EWS-FLI1, PAX3-FOXO1, MYC</em> 等经典不可成药致癌转录因子的设计蓝图。</p>
+        
+        <div class="script-box">
+          <p><strong>🎙️ English Spoken Narration:</strong></p>
+          <p>
+            "Is TCIP restricted only to BRD4 and BCL6? To prove the modularity of their platform, the authors designed <strong>TCIP2</strong>, shown in Figure 5g. Instead of JQ1, they attached 4-hydroxytamoxifen (4-OHT), a ligand for the Estrogen Receptor alpha (ERα), to the BCL6 ligand BI-3812. In ER-positive breast cancer cells, TCIP2 successfully engaged ERα, recruited it to BCL6-bound loci, and triggered transcriptional re-activation and cell death! This confirms TCIP as a truly plug-and-play chemical biology platform. Looking ahead, this approach can theoretically be applied to recruit general activators like p300, CDK9, or MED1 to diverse pediatric and adult drivers such as EWS-FLI1 in Ewing sarcoma, PAX3-FOXO1 in rhabdomyosarcoma, and even oncogenic MYC complexes."
+          </p>
+        </div>
+
+        <div style="margin-top:10px; background:#f1f5f9; padding:12px; border-radius:4px; font-size:13.5px; color:#334155;">
+          <strong>💡 中文讲解与节奏点拨:</strong> 强调 TCIP2 的概念验证意义：它证明 TCIP 不是针对单一分子的“奇巧淫技”，而是可以自由组装的通用化学积木系统，为肉瘤融合蛋白等死穴靶点指明了破局之路。
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 8 -->
+    <div class="slide-card">
+      <div class="slide-header">
+        <span>SLIDE 8: 批判性评析、局限性与转化展望 (Critical Appraisal & Translational Horizons)</span>
+        <span>建议时间: 2.0 min</span>
+      </div>
+      <div class="slide-body">
+        <p><strong>【视觉布局 (Visual Layout)】:</strong> 总结图：展示 TCIP 的核心优势对比列表；列出当前 3 大局限性（PK/PD 优化、潜在耐药机制、异种移植瘤长期疗效数据）；提出未来联合用药（如 TCIP1 + Venetoclax 靶向 BCL-2）设想。</p>
+        
+        <div class="script-box">
+          <p><strong>🎙️ English Spoken Narration:</strong></p>
+          <p>
+            "In summary, this paper represents a monumental leap forward in chemical biology and oncology. By shifting the paradigm from loss-of-function inhibition to dominant-positive transcriptional suicide, TCIPs achieve sub-nanomolar potency with only 1–2% target occupancy. However, as critical scientists, we must also recognize several limitations: First, the in vivo experiments in this initial paper demonstrated safety and splenic target engagement, but did not yet report robust long-term DLBCL xenograft tumor regression curves, likely awaiting further medicinal chemistry optimization. Second, molecules with molecular weights around 850 Da face PK challenges, requiring advanced formulation or oral bioavailability optimization. Third, future clinical trials must monitor resistance mechanisms, such as BAX/BAK apoptotic machinery loss or BCL6 BTB pocket mutations. Combining TCIP with BCL-2 inhibitors like Venetoclax could offer potent synergistic synergy. Thank you for your attention, and I would be delighted to take any questions!"
+          </p>
+        </div>
+
+        <div style="margin-top:10px; background:#f1f5f9; padding:12px; border-radius:4px; font-size:13.5px; color:#334155;">
+          <strong>💡 中文讲解与节奏点拨:</strong> 顶尖 Journal Club 的收尾必须体现扎实的独立批判性思考（Critical Thinking）。既高度评价其里程碑价值，又客观指出其未展示长期荷瘤小鼠生存期（异种移植模型）等局限性，体现出成熟博士学者的严谨风范。
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Subsection 5: Top 5 Defense Q&As -->
+  <div id="defense-qa">
+    <div class="subsection-heading">5. 博士答辩与审稿人硬核问题 Top 5 深度解析与答辩范式 (Top 5 Defense Q&As & Model Answers)</div>
+    <p>
+      在博士资格考试（Qualifying Exam）、学位论文答辩或顶级同行评审（Peer Review）中，评审专家通常会针对双功能分子药理学机制、体内毒性、脱靶与耐药提出高难度质询。以下精选 5 个最硬核的同行质询问题及学术级标准应答范式：
+    </p>
+
+    <!-- Q1 -->
+    <div class="qa-card">
+      <div class="qa-q">
+        <span>❓ 质询 1 (The Hook Effect in vivo):</span>
+        体外细胞实验显示，当 TCIP1 浓度超过 1–5 μM 时会出现明显的反 U 形“钩状效应（Hook Effect）”，即过量分子分别饱和靶蛋白单体反而丧失细胞杀伤活性。小鼠给药 10 mg/kg 时，体内为何没有因局部高浓度掉入“钩状失效区”？临床上应如何控制治疗窗？
+      </div>
+      <div class="qa-a">
+        <p>
+          <strong class="highlight-point">【标准应答范式】:</strong> 这是一个触及邻近诱导三元双功能分子本质的极高水平问题。我们可以从<strong>三维热力学平衡、游离血药浓度与催化极低占用率</strong>三个层面严密解答：
+        </p>
+        <ol style="margin-left: 20px; line-height: 1.8;">
+          <li>
+            <strong>总血药浓度 ≠ 游离游动浓度（Free Drug Concentration）:</strong> 小鼠腹腔给药 10 mg/kg 后，虽然在血浆和组织中测得总浓度峰值可达微摩尔级，但大分子双功能药物（MW ~850 Da）通常具有很高的血浆蛋白结合率（PPB &gt; 98%–99%），实际进入细胞核与染色质接触的游离有效药物浓度（Free Nuclear Fraction）通常在 10–100 nM 之间，<strong>完美落在形成三元复合物的“最高效致死区间”</strong>，远低于体外纯水相溶液中引发二元单体饱和的 5–10 μM 临界阈值。
+          </li>
+          <li>
+            <strong>1.3 nM 极高亲和力与微摩尔失效区相隔 3 个数量级:</strong> TCIP1 的细胞杀伤 EC₅₀ 为 1.3 nM，而钩状效应显著显现的下限通常在 1,000–5,000 nM 之后，二者之间存在接近 <strong>1,000 倍的极为宽广的治疗浓度窗口（Therapeutic Window）</strong>，这与传统亲和力较差（μM 级）的 PROTAC 形成鲜明对比。
+          </li>
+          <li>
+            <strong>极低占用率（1–2%）的容错机制:</strong> PROTAC 需要持续催化周转，而 TCIP 仅需瞬时极低比例（1–2%）的三元复合物结合在启动子区释放 Pol II，即可引发不可逆的内源性 Caspase 级联激活。因此，即便局部微环境存在部分二元饱和，残留的三元复合物浓度依然足以驱动细胞凋亡。在临床方案中，可以通过稳态低剂量持续输注（Continuous Infusion）或皮下缓释方案，将稳态血药游离浓度精准维持在 10–50 nM，从而彻底避开钩状效应。
+          </li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- Q2 -->
+    <div class="qa-card">
+      <div class="qa-q">
+        <span>❓ 质询 2 (Sparing Normal Germinal Center B Cells):</span>
+        正常生发中心（Germinal Center, GC）B 细胞在生理体细胞高频突变（SHM）阶段也高度依赖并高表达 BCL6。为何 TCIP1 在体内 10 mg/kg 连续给药 5 天能够保留正常脾脏结构，而没有引起生发中心毁灭性崩解和严重免疫缺陷？
+      </div>
+      <div class="qa-a">
+        <p>
+          <strong class="highlight-point">【标准应答范式】:</strong> 这一问题直击恶性肿瘤细胞与正常生理细胞的本质表观遗传差异：
+        </p>
+        <ul style="margin-left: 20px; line-height: 1.8;">
+          <li>
+            <strong>致癌超级增强子与染色质构象的极度脆弱性（Oncogenic Addiction）:</strong> 弥漫性大 B 细胞淋巴瘤（DLBCL）的染色质处于病理性的转录高负荷状态，其 <em>BCL6</em> 基因座常发生 3q27 染色体易位或体细胞启动子超突变，丢失了生理性刹车，全基因组高度依赖 BCL6 对 <em>PUMA, BIM</em> 等促凋亡基因的持续强力压制；一旦引入 TCIP1，病理性的促凋亡超级增强子立刻引爆。
+          </li>
+          <li>
+            <strong>正常生发中心 B 细胞的多维促存活信号网络保护:</strong> 正常生发中心 B 细胞处在滤泡树突状细胞（FDC）和 T 滤泡辅助细胞（Tfh）极其严密的微环境信号支持下，接受来自 CD40L、BCR 强信号以及 IL-4/IL-21 等外源细胞因子的强力抗凋亡保护（如内源性高水平 MCL-1, BCL-xL），这些生理信号网络能够有效对冲瞬时转录扰动。
+          </li>
+          <li>
+            <strong>细胞周期与动力学差异:</strong> 淋巴瘤细胞增殖失控，处于极高速的转录延伸状态，对 Pol II Ser2 暂停释放高度敏感；而小鼠体内的大多数淋巴组织处于相对稳态，外周幼稚 B 细胞和记忆 B 细胞几乎不表达 BCL6。因此，小鼠脾脏生发中心在 5 天短期暴露下表现出极高的组织耐受性。
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Q3 -->
+    <div class="qa-card">
+      <div class="qa-q">
+        <span>❓ 质询 3 (Selective Apoptosis vs Oncogene Hyper-activation):</span>
+        BRD4 和 P-TEFb 是普遍性的转录共激活因子，能够强效激活 <em>MYC</em> 等经典原癌基因。将 BRD4 强行招募至染色质，难道不会意外超量激活致癌基因，反而加速肿瘤恶化吗？作者是如何证明转录激活的特异性的？
+      </div>
+      <div class="qa-a">
+        <p>
+          <strong class="highlight-point">【标准应答范式】:</strong> 这是一个极具洞察力的表观遗传调控机制问题，作者在正文 Figure 3 和 Figure 4 中通过高精度<strong>多组学动力学数据</strong>作出了无可辩驳的证明：
+        </p>
+        <ol style="margin-left: 20px; line-height: 1.8;">
+          <li>
+            <strong>空间位点特异性（Locus Specificity）由 BCL6 配体精确锚定:</strong> TCIP1 不是游离在核内泛激活转录，而是由高亲和力配体 BI3812 物理定位在全基因组数百个内源 BCL6 识别位点（Motif）上。由于 BCL6 进化上的生理核心功能就是结合并抑制促凋亡基因（<em>PUMA, BIM, NOXA, FAS, CDKN1A</em>），因此 BRD4/P-TEFb 是被<strong>靶向递送至这些促凋亡基因的启动子与增强子区</strong>，就地解除压制并强效点火。
+          </li>
+          <li>
+            <strong>MYC 等致癌基因在 2 小时内被剧烈下调而非激活:</strong> PRO-seq 和 RNA-seq 数据惊人地显示，TCIP1 给药后，<em>MYC</em> 以及一系列增殖相关基因的转录在 2 小时内迅速崩溃下降（降低超 70%–80%）。这是因为 JQ1 结构域局部隔离消耗了游离 BRD4，同时全基因组转录资源被疯狂分流并聚焦到 BCL6 激活位点上，加上促凋亡因子的过表达触发了负反馈转录重构，彻底摧毁了原癌基因的维持条件。
+          </li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- Q4 -->
+    <div class="qa-card">
+      <div class="qa-q">
+        <span>❓ 质询 4 (TCIP vs BCL6 PROTAC Degraders):</span>
+        目前学术界和工业界已有针对 BCL6 的 PROTAC 靶向降解剂，能够有效消除 BCL6 蛋白。相比于将 BCL6 彻底降解清除的 PROTAC，TCIP 的“功能获得型（GoF）诱导凋亡”策略在生物物理学和临床转化上有何不可替代的优势？
+      </div>
+      <div class="qa-a">
+        <p>
+          <strong class="highlight-point">【标准应答范式】:</strong> 这一对比构成本文最具颠覆性的学术贡献，可从四大维度全面论证 TCIP 的代际领先优势：
+        </p>
+        <table class="custom-table" style="margin: 12px 0;">
+          <thead>
+            <tr>
+              <th>比较维度</th>
+              <th>BCL6 PROTAC 降解剂</th>
+              <th>TCIP 转录诱导激活剂</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>致死活性效价</strong></td>
+              <td>通常 EC₅₀ 在 50–500 nM 之间</td>
+              <td><strong>EC₅₀ 低至 1.3 nM（杀伤活性强 50–100 倍以上）</strong></td>
+            </tr>
+            <tr>
+              <td><strong>生物学后果</strong></td>
+              <td>蛋白消失后，染色质仅缓慢解除抑制，常导致 G1 期阻滞而非迅速凋亡</td>
+              <td><strong>直接招募 Pol II 强力转录 PUMA/BIM，数小时内直接爆发凋亡</strong></td>
+            </tr>
+            <tr>
+              <td><strong>受体占用与反应速率</strong></td>
+              <td>依赖泛素连接酶多聚泛素化周转，消除周期需 12–24 小时</td>
+              <td><strong>15 分钟实现 Pol II Ser2 暂停释放，极低占用率（1-2%）即可致死</strong></td>
+            </tr>
+            <tr>
+              <td><strong>耐药逃逸风险</strong></td>
+              <td>肿瘤常通过下调或突变 E3 连接酶（VHL/CRBN/Cullin）产生继发性耐药</td>
+              <td><strong>直接利用内源基础通用转录机械（Pol II/CDK9），几乎不可能丢失转录元件</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Q5 -->
+    <div class="qa-card">
+      <div class="qa-q">
+        <span>❓ 质询 5 (Anticipated Clinical Resistance Mechanisms):</span>
+        如果 TCIP 未来进入人体临床试验，肿瘤细胞最可能通过哪些分子机制演进出耐药性？我们在转化医学上应采取哪些针对性的应对策略与联合用药方案？
+      </div>
+      <div class="qa-a">
+        <p>
+          <strong class="highlight-point">【标准应答范式】:</strong> 基于 TCIP 的作用链条，肿瘤细胞可能在<strong>靶点结合口袋、转录调节回路、以及下游凋亡执行端</strong>三个节点发生耐药演化：
+        </p>
+        <ol style="margin-left: 20px; line-height: 1.8;">
+          <li>
+            <strong>结合口袋突变 (BCL6 BTB Domain Mutations):</strong> 肿瘤细胞可能在 BI3812 结合沟槽（如 N21, H14 等关键残基）引入点突变，阻止小分子结合。<strong>【应对方案】:</strong> 研发第二代具有不同母核或多重接触构象的 BCL6 结合配体，或利用共价结合（Covalent ligand）锁定口袋。
+          </li>
+          <li>
+            <strong>凋亡执行通路缺陷 (Apoptotic Machinery Deficiencies):</strong> 肿瘤细胞通过获得性缺失促凋亡效应因子 <em>BAX</em> 或 <em>BAK</em>，或突变下调 <em>PUMA</em>，使得转录激活信号无法有效转导至线粒体外膜通透（MOMP）。<strong>【应对方案】:</strong> 临床前将 BAX/BAK 完整性纳入伴随诊断基因检测；对于突变缺陷型，可设计招募其他致死通路（如焦亡 Pyroptosis 或铁死亡 Ferroptosis）转录调控因子的新型 CIP。
+          </li>
+          <li>
+            <strong>抗凋亡蛋白代偿性过表达 (BCL-2 / MCL-1 Upregulation):</strong> 淋巴瘤细胞常通过扩增 BCL-2 抵消 PUMA/BIM 的促凋亡作用。<strong>【最优临床联用方案】:</strong> <strong>TCIP1 与 FDA 批准的 BCL-2 抑制剂 Venetoclax（维奈克拉）强强联合！</strong> TCIP 负责上调 PUMA/BIM，Venetoclax 负责拔除细胞内残余的 BCL-2 保护伞，二者在纳摩尔级别产生极其剧烈的“合成致死协同（Synthetic Lethality）”，彻底封闭肿瘤耐药逃逸窗口。
+          </li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+</section>
+</main>
+</div>
+
+<!-- Modal Lightbox for Figures -->
+<div id="lightbox-modal" onclick="closeLightbox(event)">
+  <span id="lightbox-close" onclick="closeLightbox(event)">&times;</span>
+  <img id="lightbox-img" src="" alt="Enlarged Scientific Figure">
+</div>
+
+<!-- Back to top button -->
+<button id="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" title="Back to top">↑</button>
+
+<!-- Academic Footer -->
+<footer style="background: #0f172a; color: #94a3b8; padding: 45px 20px; margin-top: 60px; border-top: 1px solid #334155; text-align: center; font-size: 14px; line-height: 1.8;">
+  <div style="max-width: 1000px; margin: 0 auto;">
+    <div style="color: #f8fafc; font-weight: 700; font-size: 16px; margin-bottom: 12px;">
+      TCIP Oncology & Proximity Pharmacology Academic Interactive Review
+    </div>
+    <p style="margin-bottom: 10px;">
+      Landmark Paper: <em>Rewiring cancer drivers to activate apoptosis</em>. <strong>Nature</strong> 620, 417–427 (2023). DOI: <a href="https://doi.org/10.1038/s41586-023-06348-2" target="_blank" style="color: #38bdf8; text-decoration: none;">10.1038/s41586-023-06348-2</a>
+    </p>
+    <p style="font-size: 13px; color: #64748b; margin-bottom: 16px;">
+      Authors: Sai Gourisankar, Andrey Krokhotin, Wenzhi Ji (季文智), Nathanael S. Gray, Gerald R. Crabtree et al. (Stanford University & MD Anderson Cancer Center)
+    </p>
+    <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 20px; font-size: 13px;">
+      <a href="https://www.nature.com/articles/s41586-023-06348-2" target="_blank" style="color: #cbd5e1; text-decoration: none;">📄 Nature Original Paper</a>
+      <span>•</span>
+      <a href="https://github.com/18297928865/tcip-cancer-drivers-nature-report" target="_blank" style="color: #cbd5e1; text-decoration: none;">💻 GitHub Open-Source Repository</a>
+      <span>•</span>
+      <a href="#overview" style="color: #cbd5e1; text-decoration: none;">🔝 Back to Top</a>
+    </div>
+    <div style="font-size: 12px; color: #475569; border-top: 1px solid #1e293b; padding-top: 16px;">
+      Constructed for PhD Journal Club presentation, structural chemical biology review, and proximity pharmacology education. All rights to original figures and data belong to Springer Nature and the respective authors.
+    </div>
+  </div>
+</footer>
+
+<!-- Interactive Scripts -->
+<script>
+  // Reading Progress Bar
+  window.addEventListener('scroll', function() {
+    const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = (winScroll / height) * 100;
+    const bar = document.getElementById('progress-bar');
+    if (bar) {
+      bar.style.width = scrolled + '%';
+    }
+
+    // Back to top button visibility
+    const btt = document.getElementById('back-to-top');
+    if (btt) {
+      if (winScroll > 400) {
+        btt.classList.add('show');
+      } else {
+        btt.classList.remove('show');
+      }
+    }
+  });
+
+  // Modal Lightbox Functions
+  function openLightbox(src) {
+    const modal = document.getElementById('lightbox-modal');
+    const img = document.getElementById('lightbox-img');
+    if (modal && img) {
+      img.src = src;
+      modal.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    }
+  }
+
+  function closeLightbox(e) {
+    if (e.target.id === 'lightbox-modal' || e.target.id === 'lightbox-close') {
+      const modal = document.getElementById('lightbox-modal');
+      if (modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+      }
+    }
+  }
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      const modal = document.getElementById('lightbox-modal');
+      if (modal && modal.style.display === 'flex') {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+      }
+    }
+  });
+
+  // ScrollSpy for Sidebar TOC
+  document.addEventListener('DOMContentLoaded', function() {
+    const tocLinks = document.querySelectorAll('.toc-list a');
+    const sections = [];
+    
+    tocLinks.forEach(link => {
+      const id = link.getAttribute('href');
+      if (id && id.startsWith('#')) {
+        const el = document.querySelector(id);
+        if (el) {
+          sections.push({ el: el, link: link });
+        }
+      }
+    });
+
+    function updateActiveTOC() {
+      const scrollPos = window.scrollY + 140;
+      let currentSection = null;
+
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const rect = sections[i].el.getBoundingClientRect();
+        const top = rect.top + window.scrollY;
+        if (scrollPos >= top) {
+          currentSection = sections[i];
+          break;
+        }
+      }
+
+      tocLinks.forEach(link => link.classList.remove('active'));
+      if (currentSection) {
+        currentSection.link.classList.add('active');
+      }
+    }
+
+    window.addEventListener('scroll', updateActiveTOC);
+    updateActiveTOC();
+  });
+</script>
+
+</body>
+</html>

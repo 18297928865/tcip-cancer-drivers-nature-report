@@ -1,0 +1,4250 @@
+=== PAGE 1 ===
+Nature  |  Vol 620  |  10 August 2023  |  417
+Article
+Rewiring cancer drivers to activate 
+apoptosis
+Sai Gourisankar1,2,6, Andrey Krokhotin1,6, Wenzhi Ji3,6, Xiaofan Liu3, Chiung-Ying Chang1, 
+Samuel H. Kim1, Zhengnian Li3, Wendy Wenderski1,4, Juste M. Simanauskaite1, 
+Haopeng Yang5, Hannes Vogel1, Tinghu Zhang3, Michael R. Green5, Nathanael S. Gray3 ✉ & 
+Gerald R. Crabtree1,4 ✉
+Genes that drive the proliferation, survival, invasion and metastasis of malignant cells 
+have been identified for many human cancers1–4. Independent studies have identified 
+cell death pathways that eliminate cells for the good of the organism5,6. The coexistence 
+of cell death pathways with driver mutations suggests that the cancer driver could be 
+rewired to activate cell death using chemical inducers of proximity (CIPs). Here we 
+describe a new class of molecules called transcriptional/epigenetic CIPs (TCIPs) that 
+recruit the endogenous cancer driver, or a downstream transcription factor, to the 
+promoters of cell death genes, thereby activating their expression. We focused on 
+diffuse large B cell lymphoma, in which the transcription factor B cell lymphoma 6 
+(BCL6) is deregulated7. BCL6 binds to the promoters of cell death genes and 
+epigenetically suppresses their expression8. We produced TCIPs by covalently linking 
+small molecules that bind BCL6 to those that bind to transcriptional activators that 
+contribute to the oncogenic program, such as BRD4. The most potent molecule, 
+TCIP1, increases binding of BRD4 by 50% over genomic BCL6-binding sites to produce 
+transcriptional elongation at pro-apoptotic target genes within 15 min, while reducing 
+binding of BRD4 over enhancers by only 10%, reflecting a gain-of-function mechanism. 
+TCIP1 kills diffuse large B cell lymphoma cell lines, including chemotherapy-resistant, 
+TP53-mutant lines, at EC50 of 1–10 nM in 72 h and exhibits cell-specific and tissue- 
+specific effects, capturing the combinatorial specificity inherent to transcription.  
+The TCIP concept also has therapeutic applications in regulating the expression of 
+genes for regenerative medicine and developmental disorders.
+Induced proximity is fundamental to many forms of biological regula-
+tion, including receptor function9, post-translational modifications10,11, 
+regulation of transcription12,13, epigenetic regulation14–16 and allosteric 
+processes that generate scaffolds to facilitate protein–protein inter-
+actions. The underlying physical principle is based on the fact that an 
+effective collision between two molecules is inversely proportional 
+to the cube of the distance between them15. The biological roles of 
+induced proximity have been probed with dimeric small molecules, 
+CIPs, that have been used to recapitulate many steps in signal transduc-
+tion, protein localization and transcription15. Recently, dimeric small 
+molecules that use CIP to target proteins to the proteasome, PROTACS17, 
+or to inhibit protein–protein interactions18 have been developed. More 
+broadly, the observation that even an event as carefully regulated as 
+programmed cell death can be activated by CIPs19–21 suggests that dis-
+tinct cellular circuitries might be linked, or rewired, using CIPs, to cause 
+cancer cells to activate processes leading to apoptosis.
+To rewire transcriptional circuits within a genetically unmodified cell 
+or organism, we developed small molecules that allow the recruitment 
+of cancer-driving transcriptional or epigenetic regulators to the regu-
+latory regions of target therapeutic genes. The general features of 
+the concept and design of a TCIP is illustrated in Fig. 1a and involves 
+synthesis of small molecules that bind to a specific transcriptional or 
+epigenetic regulator on one side; on the other side, a transcription 
+factor binds to a target therapeutic gene. We applied these molecules 
+to activate apoptosis in cancer cells.
+TCIP1 selectively kills DLBCL cells
+To design the first TCIPs, we targeted diffuse large B cell lymphoma 
+(DLBCL) and made use of small molecules that bind to the BTB domain 
+of BCL6 and inhibit its interaction with nuclear receptor corepressor 
+(NCOR), BCL6 corepressor (BCOR) and silencing mediator of retinoic 
+acid and thyroid hormone receptor (SMRT), which epigenetically sup-
+press some BCL6 targets including pro-apoptotic, cell cycle arrest 
+and DNA-damage response genes22, such as TP53 (ref. 8) (Fig. 1b). To 
+provide additional transcriptional activation of pro-apoptotic genes, 
+https://doi.org/10.1038/s41586-023-06348-2
+Received: 15 August 2022
+Accepted: 20 June 2023
+Published online: 26 July 2023
+ Check for updates
+1Department of Pathology, Stanford University, Stanford, CA, USA. 2Department of Chemical Engineering, Stanford University, Stanford, CA, USA. 3Department of Chemical and Systems 
+Biology, Stanford Cancer Institute, ChEM-H, Stanford University, Stanford, CA, USA. 4Department of Developmental Biology, Stanford University, Stanford, CA, USA. 5Department of Lymphoma 
+& Myeloma, The University of Texas MD Anderson Cancer Center, Houston, TX, USA. 6These authors contributed equally: Sai Gourisankar, Andrey Krokhotin, Wenzhi Ji. ✉e-mail: nsgray01@
+stanford.edu; crabtree@stanford.edu
+
+
+=== PAGE 2 ===
+418  |  Nature  |  Vol 620  |  10 August 2023
+Article
+over simple derepression, we covalently linked one such BTB binder, 
+BI3812 (ref. 23), covalently to the bromodomain and extraterminal 
+(BET) protein family binder JQ1 (ref. 24), which binds comparably to 
+both bromodomains of BRD4 and slightly less potently to the bromo-
+domains of BRD2 and BRD3 (Fig. 1c). These bromodomain proteins are 
+involved in transcription and contribute a driving function to several 
+tumours by facilitating MYC activation25.
+These molecules were tested for their effect on viability of the 
+chemotherapy-resistant DLBCL cell line KARPAS422. This line has bial-
+lelic inactivation of TP53 and was chosen for its high level of expression 
+of BCL6 and the fact that it has multiple cancer drivers26,27. TCIP1 rapidly 
+and robustly killed KARPAS422 with a half-maximal effective concen-
+tration (EC50) of 1.3 nM, 72 h after the addition of drug (Fig. 1d). Three 
+other DLBCL lines with high levels of BCL6 (Fig. 1d) were also rapidly and 
+robustly killed by TCIP1. Adding JQ1 and BI3812 separately or together 
+showed 100–1,000-fold less-effective cell killing (Extended Data 
+Fig. 1a), excluding the possibility that TCIP1 acts by simply delivering 
+two inhibitors into the cell. We synthesized negative chemical controls— 
+Neg1 and Neg2—with the same linker structure as TCIP1 but with modi-
+fications known to mitigate binding to BRD4 or BCL6, respectively23,24. 
+Neg1 and Neg2 had greater than 100-fold less effect on cell viability than 
+did TCIP1, even in combination (Fig. 1d), suggesting that binding both 
+proteins in proximity is required for effective killing. We noted that 
+unlike TCIP1, both BI3812 and JQ1 left a substantial resistant population 
+of cells alive, as has been previously reported28.
+In a panel of 14 lymphoma and other blood cancer cell lines, killing, as 
+measured by EC50, correlated with BCL6 levels (Extended Data Fig. 1b). 
+Some DLBCL cell lines such as OCILY19, with no detectable level of 
+BCL6 (Extended Data Fig. 1b), showed little or no response compared 
+with controls. The level of expression of BCOR, NCOR and SMRT var-
+ied among the cell lines and could also contribute to the variation in 
+sensitivity29. Among the cell lines tested, there was no evidence that 
+killing required TP53, nor was there evidence of repression of killing 
+by endogenous BCL2 levels (Extended Data Fig. 1b,c). To examine the 
+a
+b
+c
+Poly(A) 
+pause
+minP
+eGFP
+8× High-conﬁdence BCL6 
+motifs including ﬂanking 10 bp 
+Late
+poly(A)
+KARPAS422
+BCL6-high cells
+Transduce
+EC50 ~ 5 nM
+0
+5
+10
+15
+20
+25
+Dose (M)
+Fluoresence (fold change to DMSO)
+Drug
+TCIP1
+Neg1
+Neg2
+DMSO
+Active compound
+Negative controls
+e
+Cl
+N
+N
+N
+N
+S
+NH
+O
+H
+N
+O
+N
+N
+N
+HN
+N
+O
+O
+O
+HN
+O
+TCIP1
+Cl
+N
+N
+N
+N
+S
+NH
+O
+H
+N
+O
+N
+N
+N
+HN
+N
+O
+O
+O
+HN
+O
+Neg1
+Cl
+Cl
+N
+N
+N
+N
+S
+NH
+O
+H
+N
+O
+N
+N
+N
+HN
+N
+O
+O
+O
+OH
+O
+Neg2
+f
+BCL6
+GAPDH
+DMSO
+(M) 24 h BI3802
+BRD4
+GAPDH
+DMSO
+10–9
+10–8
+10–7
+10–5
+10–6
+(M) 24 h dBET1
+30-
+kDa
+185-
+30-
+kDa
+185-
+d
+TF A
+TF B
+Target locus
+Therapeutic 
+effect
+BRD4*
+Pro-apoptotic genes
+Cell death
+BCL6
+BTB
+*Or cancer driver
+0
+0.25
+0.50
+0.75
+1.00
+TCIP1
+EC50 ~1.7 nM
+Neg1 + Neg2
+EC50 ~ 642 nM
+0
+0.25
+0.50
+0.75
+1.00
+TCIP1
+EC50 ~ 1.3 nM
+Neg1 + Neg2
+EC50 ~ 198 nM
+0
+0.25
+0.50
+0.75
+1.00
+Viabililty
+SUDHL5
+TCIP1
+EC50 ~1.8 nM
+Neg1 + Neg2
+EC50 ~ 441 nM
+0
+0.25
+0.50
+0.75
+1.00
+SUDHL10
+TCIP1
+EC50 ~ 9.3 nM
+Neg1 + Neg2
+EC50 ~ 326 nM
+Viabililty
+Viabililty
+Viabililty
+Dose (M)
+Dose (M)
+Dose (M)
+10–11
+10–10
+10–9
+10–8
+10–7
+10–6
+10–5
+10–11
+10–10
+10–9
+10–8
+10–7
+10–6
+10–5
+10–11
+10–10
+10–9
+10–8
+10–7
+10–6
+10–5
+10–11
+10–10
+10–9
+10–8
+10–7
+10–6
+10–5
+10–11
+10–10
+10–9
+10–8
+10–7
+10–6
+10–5
+10–10
+10–9
+10–8
+10–7
+10–6
+10–5
+10–9
+10–8
+10–7
+10–6
+10–5
+Dose (M)
+KARPAS422
+HT
+0
+0.25
+0.50
+0.75
+1.00
+Dose (M)
+Viability
+TCIP1 EC50 ~1.3 nM
+dBET1 (BRD4 degrader) EC50 ~ 489 nM
+BI3802 (BCL6 degrader) EC50 > 10 μM
+dBET1 + BI3802 EC50 ~ 192 nM
+KARPAS422
+Cl
+Cl
+Fig. 1 | Production of TCIPs. a, An endogenous target gene is activated or 
+repressed using a bivalent molecule binding one endogenous transcription 
+factor (TF) or epigenetic regulator on one side, chemically linked to a moiety 
+that binds to a second transcription factor that binds to the regulatory region 
+of a target gene, which might induce production of a therapeutic gene.  
+b, A specific TCIP that recruits a transcriptional activator (BRD4) or cancer 
+driver to the BCL6 repressor on cell death genes, thereby derepressing 
+transcription and inducing transcription driven by BCL6. c, Chemical 
+structures of the most potent BCL6–BRD4 TCIP, TCIP1 and the negative 
+controls Neg1 (BRD4 non-binding) and Neg2 (BCL6 non-binding). d, TCIP1 
+effect on cell viability of the chemotherapy-resistant, TP53-mutant DLBCL cell 
+line KARPAS422, as well as three other DLBCL cell lines with high levels of BCL6. 
+n = 4 biological replicates, mean ± s.d. e, Design and activation of a BCL6 reporter 
+with TCIP1 in KARPAS422 cells at 8 h after drug addition. n = 4 biological 
+replicates, mean ± s.d. minP, minimal promoter. f, Comparison of TCIP1 effect 
+on cell viability with the effect of BRD4 or BCL6 degraders (n = 3 biological 
+replicates, mean ± s.d). Viability curves in d and f are after 72 h of drug treatment.
+
+
+=== PAGE 3 ===
+Nature  |  Vol 620  |  10 August 2023  |  419
+potency of TCIP1 among diverse cancer types, we carried out an unbi-
+ased screen of the effect of TCIP1 on the viability of 906 cancer cell 
+lines (PRISM30) originating from various lineages. The most sensitive 
+cancer cells were those that both originated from haematopoietic and/
+or lymphoid tissues and had high BCL6 levels (Extended Data Fig. 1d).
+To test whether TCIP1 derepresses BCL6-regulated gene expres-
+sion using endogenous levels of BCL6 and BRD4, we designed a BCL6 
+reporter from known BCL6-binding sites at promoters of cell death 
+genes such as TP53 and CASP8, based on BCL6 chromatin immuno-
+precipitation followed by sequencing (ChIP–seq) data in DLBCL cells, 
+including the flanking 10 bp to capture any co-binding of endog-
+enous transcription factors (Fig. 1e). Addition of TCIP1 revealed 
+dose-dependent activation at 8 h, with an EC50 of 5 nM, similar to the 
+EC50 of cell viability in these cells (Fig. 1d). Reporter activation also 
+featured a characteristic ‘hook effect’, reflecting competition among 
+bivalent molecules for limited endogenous proteins, and the controls 
+Neg1 and Neg2 did not activate the reporter. We also noted that TCIP1 
+was 200–10,000-fold more potent in killing DLBCL cells than was degra-
+dation of BRD4 by dBET1 (ref. 31) and/or degradation of BCL6 by BI3802 
+(ref. 32) (Fig. 1f), indicating that simple sequestration of these proteins 
+is not the primary contributor to the potency of TCIP1.
+Cell killing requires a ternary complex
+The 1,000-fold increase in potency of TCIP1 over BRD4 or BCL6 degra-
+dation suggested the formation of a gain-of-function ternary complex 
+between BRD4, BCL6 and TCIP1. We carried out chemical rescue experi-
+ments in which we titrated increasing concentrations of either JQ1 or 
+BI3812 to multiple DLBCL cell lines, against constant concentrations of 
+TCIP1 that kill 50–95% of cells within 72 h. JQ1 or BI3812 prevented death 
+by TCIP1, indicating that both the BRD4-binding and the BCL6-binding 
+side of TCIP1 are essential for effective killing (Fig. 2a,b). Examination 
+of other DLBCL lines indicated that death of cell lines with little or no 
+BCL6 could not be rescued (Extended Data Fig. 2a–c), and that in cell 
+lines with low levels of BCL6, the potency of TCIP1 was comparable with 
+Neg2, suggesting that the effects of TCIP1 in lines without BCL6 are due 
+to simple BRD4 inhibition (Extended Data Fig. 2d,e).
+To quantify the direct interaction between TCIP1, BRD4 and BCL6, 
+we developed a time-resolved fluorescence resonance energy transfer 
+(TR-FRET) assay based on the proximity of the BTB domain of BCL6 
+labelled with fluorescein isothiocyanate (FITC) to bromodomain 1 
+(BD1) of BRD4 detected with an anti-histidine tag, terbium-conjugated 
+antibody (Fig. 2c). Formation of a ternary complex in vitro, related to 
+TR-FRET peak height and area under the curve33, was detected using 
+TCIP1 as well as multiple TCIP molecules shown in Fig. 2e.
+One reason for the broad hook effect observed in the TR-FRET assay 
+for TCIP1 and other potent TCIPs (Fig. 2c,e and Extended Data Fig. 3a) 
+is the formation of cooperative protein–protein interactions induced 
+by the drug, such as a molecular glue9,34,35. To examine this in detail, we 
+carried out isothermal calorimetry binary and ternary titrations of 
+TCIP1, BRD4(BD1) and BCL6(BTB). Both binary interactions of BCL6–
+TCIP1 and BRD4–TCIP1 were weak (Kd of BRD4–TCIP1 = 5.08 µM; Kd of 
+BCL6–TCIP1 > 1 mM; Extended Data Fig. 3b), but the ternary complex 
+affinity was Kd of BRD4–TCIP1–BCL6 = 340 ± 108 nM (mean ± s.d., n = 3) 
+(Fig. 2d, left). Using an orthogonal method, biolayer interferometry, 
+we obtained a similar affinity of Kd of BRD4–TCIP1–BCL6 = 293 ± 132 nM 
+(Fig. 2d, right) and confirmed the weak interaction between TCIP1 and 
+BCL6(BTB). We verified the published affinities of JQ1 to BRD4(BD1) 
+and BI3812 to BCL6(BTB), and also that the protein domains do not 
+interact on their own (Extended Data Fig. 3b). Biolayer interferom-
+etry measurements also revealed that the ternary complex has a slow 
+off-rate of 26 ms−1 with a half-life of 30 s (Extended Data Fig. 3c–e). 
+Together, the data indicate that TCIP1 induces a stable, cooperative 
+protein–protein interaction between bromodomain 1 of BRD4 and 
+the BTB domain of BCL6.
+TCIP1 was the most potent in cell killing among a small library of 
+related TCIPs using different linkers (Fig. 2e). To better understand the 
+relationship between the molecular structure and cellular activity of 
+TCIP, we analysed the relationship between BCL6 reporter transactiva-
+tion in DLBCL cells and favourable ternary complex formation in vitro 
+and inside the cell (Fig. 2f,g). The most potent TCIPs at cell killing and 
+activating the BCL6 reporter also had high affinities of in vitro and 
+intracellular ternary complex formation (Fig. 2f,g and Extended Data 
+Fig. 3f). The data are consistent with the requirement of an intracel-
+lular ternary complex of BRD4, TCIP1 and BCL6 for the activation of 
+cell death.
+Apoptosis throughout the cell cycle
+To characterize the cell death observed with TCIP1, we quantified 
+cells that have externalized phosphatidylserine by staining with 
+annexin V. We observed a dose-dependent increase in the number 
+of annexin-positive cells, at 10 nM TCIP1, at 24 h (Extended Data 
+Fig. 4a). TCIP1 induced detectable apoptosis by 4–8 h (Extended 
+Data Fig. 4b).
+Cancers can evade cell killing by many chemotherapeutics that func-
+tion only during a specific stage of the cell cycle. To investigate the 
+cell-cycle dependence of the apoptosis caused by TCIP1, we performed 
+cell-cycle analysis in concert with TUNEL staining, which measures 
+DNA fragmentation (Extended Data Fig. 4c). The cell-cycle analysis 
+revealed that TCIP1 induced both a G1/S and G2/M block in the cell 
+cycle (Extended Data Figs. 4d and 5a). By examining DNA cleavage 
+with the TUNEL assay, we found that cell death occurred during all 
+phases of the cell cycle (Extended Data Figs. 4e and 5a). To further 
+examine the mechanism of cell death by TCIP1, we used serum star-
+vation to arrest the cell cycle in G0/G1. The cells became even more 
+sensitive to TCIP1, exhibiting an EC50 of 250 pM compared with 3.2 nM 
+without arrest (Extended Data Fig. 4f). This observation indicates 
+that TCIP1 produces cell death by activating more than a single cell 
+death pathway.
+TCIP1 activates pro-apoptotic genes
+To define the genes involved in the induction of apoptosis by TCIP1, 
+we carried out RNA sequencing studies 20 h after adding drug at 10 or 
+100 nM, when the critical genes were likely to be executing their func-
+tions. Changes in gene expression were dependent on dose (Extended 
+Data Fig. 6a–c), and at just 10 nM TCIP1, the expression of 1,654 genes 
+was increased, whereas the expression of 1,347 genes was reduced 
+(Fig. 3a). Genes activated by TCIP1 were enriched for known cell-cycle 
+arrest and pro-apoptotic targets normally repressed by BCL6, such 
+as P21 (also known as CDKN1A), FOXO3 and PMAIP1 (also known as 
+NOXA) (Fig. 3a and Extended Data Fig. 6b,c,e). Along with the p53 and 
+apoptosis pathways, TCIP1 also induces the TNF pathway (Extended 
+Data Fig. 6d). Signalling via NF-κB has been shown to be repressed by 
+BCL6 (refs. 22,36,37). These changes in mRNA levels were paralleled 
+by dose-dependent and time-dependent changes in protein expres-
+sion in two different DLBCL cell lines, SUDHL5 and KARPAS422, with 
+negligible effect of the chemical controls Neg1 and Neg2 (Fig. 3d–f). 
+Of particular interest was the observation that FOXO3 is activated by 
+0.5 nM TCIP1 (Fig. 3e) and within 2 h by 10 nM TCIP1 (Fig. 4d). Activation 
+of FOXO3 also displayed a hook effect (Fig. 3e), characteristic of the 
+direct target of a bivalent molecule. FOXO3 is a master pro-apoptotic 
+gene38 with a BCL6-binding site at its promoter39. Although FOXO3 and 
+P21 are also known to be activated downstream of TP53 (ref. 40), which 
+is itself a BCL6 target, TP53 is biallelically inactivated in this DLBCL line 
+(KARPAS422) and other chemotherapy-resistant DLBCL lines killed by 
+TCIP1. This supports the evidence in Extended Data Fig. 4 that TCIP1 
+derepresses multiple cell-cycle arrest and death pathways that are 
+normally repressed by BCL6.
+
+
+=== PAGE 4 ===
+420  |  Nature  |  Vol 620  |  10 August 2023
+Article
+TCIP1 represses MYC and its targets
+Among the group of genes whose expression was most reduced were 
+MYC and its targets (Fig. 3b and Extended Data Fig. 6c). This is impor-
+tant as many DLBCLs are considered to be dependent on MYC41,42. We 
+examined the top 100 most TCIP1-reduced genes using over 4,500 
+ChIP–seq datasets of human transcription factors in blood cancer 
+cell lines43, and found the promoters of TCIP1-inhibited genes highly 
+enriched for MYC binding in multiple datasets (Fig. 3c). Examination of 
+MYC protein levels upon the addition of TCIP1 showed that MYC levels 
+were reduced starting at less than 1 nM TCIP1 and within 2 h of addition 
+of the drug (Fig. 3d,e). The chemical controls Neg1 and Neg2 did not 
+affect MYC levels at comparable concentrations (Fig. 3f). BET/BRD4 
+inhibitors such as JQ1 are known to reduce the expression of MYC25, 
+but at much higher levels of drug (500 nM) than TCIP1. We therefore 
+hypothesized that repression of MYC is a gain-of-function consequence 
+of the ternary complex formed by TCIP1.
+To clarify the role of ternary complex formation for the repression 
+of MYC as well as other gene expression and protein level changes 
+observed, we blocked binding of TCIP1 to BCL6 by titrating the 
+BCL6(BTB) inhibitor BI3812 against a constant concentration of 10 nM 
+TCIP1 (Fig. 3g). Titration of BI3812 prevented downregulation of MYC, 
+as well as reversed upregulation of p21 and FOXO3 (Fig. 3g). The results 
+indicate that both activation of pro-apoptotic targets and repression 
+of MYC are mediated by the formation of a ternary complex between 
+BRD4, TCIP1 and BCL6, and support the evidence in Fig. 2 that the active 
+biological entity is the ternary complex.
+Identification of direct targets of TCIP1
+The addition of 10 nM TCIP1 to KARPAS422 cells for 1, 2 and 4 h and 
+subsequent measurement of RNA identified a selective set of approxi-
+mately 140 genes induced by TCIP1, including well-characterized 
+BCL6-repressed targets such as the apoptotic regulators BCL2L11 (also 
+JWZ-7-20
+JWZ-7-23
+JWZ-7-22
+XFL-01-185
+XFL-01-186
+JWZ-7-100
+JWZ-7-13
+a
+b
+BRD4
+BCL6
+BTB
+Lethal
+Rescue
+Lethal
+BRD4
+BCL6
+BTB
+Lethal
+Lethal
+Rescue
+c
+6xH
+BRD4(BD1)
+Avi
+BCL6(BTB)
+O-
+NH
+O
+H
+HN
+H
+S
+O
+Tb
+FITC
+d
+TCIP name
+JWZ-7-13
+JWZ-7-14
+XFL-01-173
+JWZ-7-6
+TCIP1
+XFL-01-186
+XFL-03-017
+JWZ-7-22
+TCIP name
+Linker
+Linker
+JWZ-7-97
+JWZ-7-98
+JWZ-7-100
+JWZ-7-15
+JWZ-7-20
+JWZ-7-23
+XFL-01-185
+XFL-03-018
+R =                except as indicated
+HN
+O
+R = N
+n = 5
+CH2
+O
+O
+O
+O
+O
+O
+R = N
+N
+N
+N
+N
+N
+N
+N
+n = 6
+CH2
+n = 7
+CH2
+n = 8
+CH2
+n = 8
+CH2
+n = 9
+CH2
+n = 10
+CH2
+n = 11
+CH2
+n = 11
+CH2
+Cl
+Cl
+N
+N
+N
+N
+S
+NH
+O
+R
+N
+N
+N
+N
+H
+N
+O
+O
+O
+HN
+O
+Linker
+e
+BRD4
+BCL6
+TCIP1
+BRD4–TCIP1 Kd: 5.08 μM
+BRD4–TCIP1–BCL6 Kd: 340 nM
+TCIP1
+BCL6–TCIP1 Kd: >1 mM
+0
+0
+–0.05
+–0.10
+–0.15
+–2.00
+–4.00
+–0.20
+0
+0
+0.5 1.0 1.5 2.0 2.5
+40
+80
+120
+160
+Time (min)
+Molar ratio
+μcal s–1
+Injectant (kcal mol–1)
+BCL6 into BRD4–TCIP1
+n = 0.9
+Kd = 340 ± 108 nM
+ΔH = –5,304 ± 1,279 cal mol–1
+ΔS = 11.9 ± 3.9 cal mol–1
+ 
+Biolayer interferometry
+Kd = 293 ± 132 nM
+kon = 1.03 ± 0.26 × 10–4 nM s–1
+koff = 0.026 ± 0.01 s–1
+f
+g
+TCIP1
+JWZ-7-100
+JWZ-7-13
+JWZ-7-14
+JWZ-7-15
+JWZ-7-20
+JWZ-7-6
+JWZ-7-97
+JWZ-7-98
+Neg1
+Neg2
+XFL-03-017
+XFL-03-018
+2.5
+5.0
+7.5
+10.0
+6.5
+7.0
+7.5
+8.0
+–log10(nanoBRET EC50) (M)
+Reporter activation of 5 nM
+drug/DSMO after 8 h
+Linker
+Alkyl
+PEG
+Piperidine
+Other rigid
+TCIP1
+JWZ-7-14
+JWZ-7-15
+JWZ-7-22
+JWZ-7-23
+JWZ-7-6
+JWZ-7-97
+JWZ-7-98
+Neg1
+Neg2
+XFL-01-185
+XFL-01-186
+XFL-03-017
+XFL-03-018
+2.5
+5.0
+7.5
+10.0
+0
+5
+10
+15
+20
+25
+TR-FRET area under the curve
+Reporter activation of 5 nM
+drug/DSMO after 8 h
+BI3812 (M)
+1.00
+Viabililty
+0.75
+0.50
+0.25
+0
+SUDHL5 cells
+2 nM
+4 nM
+8 nM
+16 nM
+32 nM
+64 nM
+TCIP1 dose
+JQ1 (M)
+1.00
+Viabililty
+0.75
+0.50
+0.25
+0
+SUDHL5 cells
+1 nM
+2 nM
+4 nM
+8 nM
+TCIP1 dose
+0
+5
+10
+15
+Dose (M)
+Normalized TR-FRET signal
+(fold change to DMSO)
+TCIP1
+JWZ-7-14
+JWZ-7-97
+Neg1
+Neg2
+1
+10
+100 1,000 10,000
+0
+0.05
+0.10
+Concentration (nM)
+Shift (nm)
+10–10
+10–9
+10–8
+10–7
+10–6
+10–5
+10–10
+10–9
+10–8
+10–7
+10–6
+10–5
+10–8
+10–7
+10–6
+10–5
+10–4
+BTB
+Fig. 2 | TCIP1 functions by inducing ternary complex formation.  
+a, Competitive titration of BI3812 against TCIP1. TCIP1 was added at concentrations 
+from 2 to 64 nM that killed 90% of SUDHL5 DLBCL cells at the same time as 
+addition of the indicated concentrations of BI3812. n = 3 biological replicates, 
+mean ± s.d., 72 h of drug treatment. b, Competitive titration of JQ1 against 
+TCIP1. n = 3 biological replicates, mean ± s.d, 72 h of drug treatment. c, TR-FRET 
+assay to measure molecule-dependent ternary complex formation between 
+BRD4(BD1) and BCL6(BTB). Plotted are a representative set of TCIPs that were 
+the most potent (in cell viability assays) within each category of linker structure. 
+TCIP1 had the highest potency of all designed molecules. Each point represents 
+an independent replicate, which is the mean of three technical repeats; the 
+mean value line is drawn. d, Analysis of cooperative binding induced by TCIP1 
+and the BRD4(BD1) and BCL6(BTB) domains. A representative ternary complex 
+Kd measurement by isothermal calorimetry is shown. For binary measurements, 
+see Extended Data Fig. 3b. n = 3 independent replicates, mean ± s.d. Isothermal 
+calorimetry parameters shown are 20:1 BRD4(BD1):TCIP1 in the cell and titration 
+of BCL6(BTB). For biolayer interferometry, measurements were with 50 µM 
+excess BRD4(BD1) in the well, nanomolar titrations of TCIP1 and biotinylated 
+BCL6(BTB) on the tip. n = 3 independent replicates. The points and error bars 
+are mean ± s.e. The Kd value is mean ± s.d. ΔH, enthalpy; ΔS, entropy; kon, on-rate 
+of binding; koff, off-rate of binding. e, Multiple BRD4–BCL6 TCIPs synthesized 
+with different linkers to test the structure–activity relationship. f, Effect of 
+favourable in vitro ternary complex formation (represented by TR-FRET area 
+under the curve) on the transcriptional activation of the BCL6 reporter in 
+DLBCL cells. g, Effect of favourable intracellular ternary complex formation 
+(represented by nanoBRET EC50) on the transcriptional activation of the BCL6 
+reporter in DLBCL cells.
+
+
+=== PAGE 5 ===
+Nature  |  Vol 620  |  10 August 2023  |  421
+known as BIM)44, PMAIP1, FOXO3 and BCL6. These probably represent 
+direct transcriptional targets of TCIP1 (Fig. 4a). Almost all differen-
+tial genes were increasingly activated at 1, 2 and 4 h, compared with 
+negligible effects of the control molecules Neg1 and Neg2 (Fig. 4b). 
+BCL6-repressed pathways such as TNF signalling and p53 pathways 
+began to be upregulated at 1 and 2 h, and MYC targets only began to be 
+repressed at 4 h (Extended Data Fig. 7c), consistent with reduction of MYC 
+protein levels after 2 h (Fig. 3d). Although several genes showed reduced 
+expression in TCIP1-treated cells at the early 1 and 2 h timepoints, in con-
+trast to the upregulated genes, they were not statistically significantly 
+enriched for any particular biological pathway (Extended Data Fig. 7c) 
+and could represent general stress from the onset of DNA fragmentation. 
+Analysis of BCL6 occupancy at promoters of upregulated genes, using 
+published BCL6 ChIP–seq in the DLBCL line OCILY1 (ref. 39), showed that 
+53%, 57% and 55%, respectively, of upregulated genes at 1, 2 and 4 h had 
+high-confidence BCL6 peaks within 1 kb of their transcription start site 
+(see Methods). Further analysis using over 4,500 ChIP–seq datasets of 
+various human transcription factors in blood cancer cell lines43 revealed 
+that the promoters of TCIP1-activated genes were statistically signifi-
+cantly enriched for BCL6 binding in multiple datasets (Fig. 4c). These 
+studies indicate that TCIP1 specifically activates BCL6 target genes.
+ChIP–seq studies of BRD4 after 1 h of drug addition revealed that 
+TCIP1 produced a consistent, modest approximately 1.5-fold increase in 
+BRD4 recruitment to BCL6 sites over the genome (Fig. 4d). This obser-
+vation could indicate that TCIP1 needs to recruit only small amounts 
+of BRD4 to produce the robust activation of BCL6 targets observed, 
+and/or that the two other BET proteins expressed in these cells, BRD2 
+and BRD3, also mediate its effects. BRD4 and other BET proteins have 
+previously been implicated largely in transcriptional elongation, par-
+ticularly in mediating activation of RNA polymerase II (Pol II) elongation 
+activity by phosphorylation of serine 2 of its C-terminal domain (CTD) 
+(Pol II Ser2 phos)45. The other major CTD modification of Pol II is serine 
+5 phosphorylation (Pol II Ser5 phos), which marks paused polymerase 
+ready to initiate transcription46. These serines are actively phosphoryl-
+ated and dephosphorylated during the cycle of transcription. To closely 
+examine the consequences of the addition of TCIP1 on transcription, 
+we carried out short timepoint ChIP–seq experiments with antibodies 
+specific to these CTD modifications as well as acetylation of lysine 27 
+on histone H3 (H3K27ac), a mark associated with active enhancers47 
+and promoters48 (Extended Data Fig. 8a).
+We found that just 15 min of drug addition increased Pol II Ser2 phos, 
+further increasing over 1, 2 and 4 h, reflecting immediate transcriptional 
+elongation, at well-characterized BCL6 target pro-apoptotic genes includ-
+ing PMAIP1, FOXO3, BCL2L11 and BCL6 itself (Fig. 4e,g,h and Extended 
+Data Fig. 8b). Accompanying this immediate elongation effect was a loss of 
+Pol II Ser5 phos, which could reflect a redistribution effect and/or a switch 
+from pausing to productive elongation (Fig. 4e, middle row). Effects at 
+downregulated genes were similar to those at unchanged genes and prob-
+ably reflect background or a stress response. We further ascertained that 
+BRD4 levels increase at the promoters of upregulated genes selectively, 
+approximately 150% after just 1 h of TCIP1 addition (Fig. 4f, top row), 
+consistent with its increase at BCL6-binding sites genome wide (Fig. 4d).
+a
+b
+c
+f
+g
+d
+mTORC1 signalling
+MYC targets V1
+0
+10
+20
+30
+40
+0
+0.2
+0.4
+0.6
+0.8
+1,347 Downregulated genes/
+genes annotated
+−log10(Padjusted)
+Unfolded protein response
+p21
+MYC
+GAPDH
+FOXO3
+GAPDH
+TCIP1, 20 h
+DMSO 0.2 0.5
+1.0
+2.0
+3.9
+7.8 15.6 31.3 62.5
+250
+125
+nM
+MYC
+DMSO 0.2 0.5
+1.0
+2.0
+3.9
+7.8 15.6 31.3 62.5
+250
+125
+nM
+p21
+GAPDH
+GAPDH
+FOXO3
+GAPDH
+SUDHL5
+kDa
+50-
+30-
+80-
+30-
+25-
+30-
+KARPAS422
+kDa
+50-
+80-
+30-
+25-
+30-
+e
+KLF2
+RNF213
+CDKN1A
+DUSP5
+FOXO3
+CXCR4
+RAPGEF1
+ARID3A
+CELF2
+IGF2R BCL2
+FCRL5
+CCND1
+MYC
+TET3
+SIPA1L1
+NFKB1
+−10
+−5
+0
+5
+10
+0
+2
+4
+6
+log10(Normalized transcript counts)
+log2(10 nM TCIP1/DMSO)
+1,654 Up
+1,347 Down
+MYC
+p21
+GAPDH
+0
+1
+2
+4
+20
+8
+h
+FOXO3
+GAPDH
+KARPAS422
+MYC
+p21
+GAPDH
+0
+1
+2
+4
+20
+8
+h
+FOXO3
+SUDHL5
+kDa
+30-
+80-
+65-
+50-
+25-
+50-
+25-
+30-
+80-
+65-
+kDa
+10 nM TCIP1
+MYC
+DMSO 1.5 4.6
+14 41 nM 0.12 0.37 1.1
+10 μM BI3812
+3.3
+DMSO
+in KARPAS422
+GAPDH
+Constant 10 nM TCIP1 + BCL6 inhibitor (BI3812), 8 h
+p21
+FOXO3
+GAPDH
+BRD4
+BCL6
+kDa
+25-
+50-
+65-
+30-
+30-
+80-
+MYC
+GAPDH
+FOXO3
+MYC
+GAPDH
+FOXO3
+p21
+GAPDH
+p21
+GAPDH
+DMSO 0.2 0.5 1.0 2.0
+3.9 7.8 15.6 31.3 62.5
+250
+125
+nM
+DMSO 0.2 0.5
+1.0
+2.0
+3.9
+7.8 15.6 31.3 62.5
+250
+125
+nM
+KARPAS422
+Neg1, 20 h
+Neg2, 20 h
+kDa
+50-
+80-
+30-
+25-
+30-
+kDa
+50-
+80-
+30-
+25-
+30-
+BLUE1
+GM12878
+RAMOS
+GM12878 CD4+ T cells
+CA46
+P4936
+P4936
+RAJI
+RAMOS
+P4936
+K562
+GEN2.2
+RAMOS K562
+K562 P4936
+P4936
+BL41
+Jurkat
+RAJI
+RAMOS
+SUDHL4
+OCILY1
+0
+10
+20
+30
+–2
+2
+0
+log2(Peaks in downregulated genes/
+random set of peaks)
+–log10(Padjusted)
+MYC
+BCL6
+RAMOS
+MYC targets V2
+BTB domain
+Fig. 3 | TCIP1 represses MYC and its targets while activating pro-apoptotic 
+genes. a, Gene activation (median change: fourfold up) and repression after 
+addition of 10 nM TCIP1 in KARPAS422 cells for 20 h, with well-known BCL6 
+targets labelled. Significance cut-offs were Padjusted ≤ 0.05 and |log2(drug/
+DMSO)| ≥ 1); n = 2 biological replicates. b, Downregulated genes are significantly 
+enriched for MYC targets (MSigDB hallmark pathways). c, Analysis of transcription 
+factor binding of the top 100 downregulated genes in 4,500 or more public 
+ChIP–seq datasets in blood-lineage cells. For b,c, the adjusted P values were 
+computed by two-sided Fisher’s exact test and adjusted for multiple comparisons 
+by Benjamini–Hochberg. d, Kinetics of protein changes in MYC, p21 and FOXO3 
+in DLBCL cell lines after treatment with 10 nM TCIP1. e, Dose-dependent changes 
+in protein levels of target genes selected from the RNA sequencing results in 
+two separate DLBCL cell lines, KARPAS422 and SUDHL5. f, Negligible effect of 
+the negative controls Neg1 and Neg2 on protein levels of TCIP1 targets. For  
+d–f, blots are representative of two biological replicates, except KARPAS422  
+in d and in e where data represent three biological replicates. g, Rescue of p21 
+and FOXO3 upregulation and MYC downregulation by competitive titration  
+of the BTB binder BI3812 against constant 10 nM TCIP1 treatment for 8 h. 
+Representative of two biological replicates. In all blots in d–g, any markers 
+immunoblotted for the same gel are followed immediately by the loading 
+control GAPDH run on that same gel.
+
+
+=== PAGE 6 ===
+422  |  Nature  |  Vol 620  |  10 August 2023
+Article
+FOXO3
+KLF2
+BCL6
+BCL2L11
+DUSP5
+–2
+0
+2
+0
+2
+4
+6
+log10(normalized transcript counts)
+log2(10 nM TCIP1/DMSO)
+140 Up
+213 Down
+PMAIP1
+d
+1
+2
+4
+1
+2
+4
+1
+2
+4 h
+TCIP1
+Neg1
+Neg2
+10 nM:
+ All signiﬁcant upregulated (711) and
+ downregulated (886) genes
+All differential genes 
+in Neg1 and Neg2:
+Upregulated: 13 
+Downregulated: 33 
+–5
+5
+0
+a
+b
+c
+5.0
+4.5
+4.0
+3.5
+3.0
+2.5
+2.0
+BCL6-binding site
+–2.0
+2.0 kb
+DMSO
+TCIP1
+BRD4 (normalized counts)
+PMAIP1 > > > > >>
+Chromosome 18: 59897565−59909611
+0
+100.14
+BRD4 1 h
+0
+100.14
+BRD4 0 h
+0
+8.25
+Pol II Ser2 phos 4 h
+0
+0
+8.25
+Pol II Ser2 phos 2 h
+0
+8.25
+Pol II Ser2 phos 1 h
+8.25
+0
+Pol II Ser2 phos 15min
+0
+8.25
+Pol II Ser2 phos 0 h
+0
+32.83
+Pol II Ser5 phos 4 h
+0
+32.83
+Pol II Ser5 phos 2 h
+0
+32.83
+Pol II Ser5 phos 1 h
+0
+32.83
+Pol II Ser5 phos 15 min
+0
+32.83
+Pol II Ser5 phos 0 h
+0
+21.71
+H3K27ac 4 h
+0
+21.71
+H3K27ac 2 h
+0
+21.71
+H3K27ac 1 h
+0
+21.71
+H3K27ac 15 min
+21.71
+H3K27ac 0 h
+PMAIP1
+0
+25
+BRD4 1 h
+0
+25
+BRD4 0 h
+0
+15
+Pol II Ser2 phos 4 h
+0
+15
+Pol II Ser2 phos 2 h
+0
+15
+Pol II Ser2 phos 1 h
+0
+15
+Pol II Ser2 phos 15 min
+0
+15
+Pol II Ser2 phos 0 h
+NM_001130845.2 (BCL6)
+NM_001134738.1 (BCL6)
+NM_001706.5 (BCL6)
+Chromosome 3: 187718514−187748235
+BCL6
+BCL6-binding site
+and BCL6 intronic SE
+e
+f
+g
+–3 kb
+Centre
+3 kb
+–3 kb
+Centre
+3 kb
+3
+4
+5
+6
+7
+BRD4
+(normalized counts)
+Enhancers
+Super-enhancers
+TCIP1
+DMSO
+TCIP1
+DMSO
+BCL6L, 706 amino acids
+BCL6S, 650 amino acids
+ZF
+BTB
+ZF
+BTB
+Exon 7
+BCL6L
+BCL6S
+GAPDH
+DMSO
+0.2
+0.5
+1.0
+2.0
+3.9
+7.8
+15.6 31.3 62.5
+250 nM 
+125
+KARPAS422
+GAPDH
+SUDHL5
+BCL6L
+BCL6S
+BCL6L
+BCL6S
+TCIP1, 20 h
+80-
+kDa
+30-
+80-
+30-
+GAPDH
+BCL6L
+0
+1
+2
+4
+20
+8
+ h
+1
+2
+4
+20
+8
+BCL6S
+10 nM TCIP1
+KARPAS422
+10 nM TCIP1 + 100 nM CDK9i
+115-
+80-
+30-
+kDa
+0
+1.5
+4.6
+14
+41 nM 0.12
+0.37
+1.1
+10 μM BI3812
+3.3
+DMSO
+KARPAS422
+BCL6L
+BCL6S
+GAPDH
+Constant 10 nM TCIP1 + BCL6 inhibitor (BI3812), 8 h
+80-
+30-
+kDa
+i
+j
+h
+k
+l
+m
+–3 kb
+TSS
+3 kb
+5
+10
+15
+20
+25
+30
+BRD4
+(normalized counts)
+Upregulated
+–3 kb
+TSS
+3 kb
+Downregulated
+0
+2
+4
+6
+8
+H3K27ac
+ (normalized counts)
+0
+2
+4
+6
+Pol II Ser5 phos 
+(normalized counts)
+–3 kb
+TSS
+TES
+3 kb
+–3 kb
+TSS
+TES
+3 kb
+–3 kb
+TSS
+TES
+3 kb
+–3 kb
+TSS
+TES
+3 kb
+–3 kb
+TSS
+TES
+3 kb
+–3 kb
+TSS
+TES
+3 kb
+–3 kb
+TSS
+TES
+3 kb
+–3 kb
+TSS
+TES
+3 kb
+–3 kb
+TSS
+TES
+3 kb
+0
+1
+2
+3
+Pol II Ser2 phos
+ (normalized counts)
+Upregulated
+Downregulated
+Unchanged
+0 h 
+15 min
+1 h 
+2 h 
+4 h 
+0 h 
+15 min
+1 h 
+2 h 
+4 h 
+0 h 
+15 min
+1 h 
+2 h 
+4 h 
+Density at differential genes (2 h, 10 nM TCIP1)
+0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+1.8
+0
+1
+2
+4
+8
+20
+Fold change to 0 h
+(normalized GAPDH)
+Time for 10 nM TCIP1 treatment
+in KARPAS422 cells (h)
+BCL6L: 
+exons 6–7
+BCL6S: 
+exons 6–8
+**
+P = 0.006
+**
+P = 0.001
+*
+P = 0.01
+*
+P = 0.02
+P = 0.04
+*
+OCILY7
+B cells
+OCILY1
+SUDHL4
+RS411
+OCILY1
+B cells
+CD4+ T cells
+OCILY1
+CD4+ T cells
+B cells
+OCILY1
+OCILY1
+B cells
+OCILY1
+ICN12
+JURLMK1
+0
+2
+–2
+log2(Peaks in upregulated genes/
+random set of peaks)
+0
+5
+10
+15
+–log10(Padjusted)
+BCL6
+Gene expression change log2
+(10 nM drug/DSMO)
+Fig. 4 | Rapid activation of BCL6 target genes by recruitment of BRD4.  
+a, Gene expression changes after 10 nM TCIP1 for 2 h in KARPAS422, with well- 
+known BCL6 targets labelled. P values were computed by a two-sided Wald test 
+and adjusted for multiple comparisons by Benjamini–Hochberg. Differential 
+gene cut-offs: Padjusted ≤ 0.05 and |log2(drug/DMSO)| ≥ 0.5; n = 3 biological 
+replicates. b, Changes in gene expression after 1, 2 and 4 h of 10 nM TCIP1 
+compared with Neg1 and Neg2. c, Enrichment analysis of transcription factor 
+binding in promoters of genes upregulated at 2 h after TCIP1 treatment in more 
+than 4,500 public ChIP–seq datasets in blood-lineage cells. P values were computed 
+by a two-sided Fisher’s exact test and adjusted for multiple comparisons by 
+Benjamini–Hochberg. d, BRD4 density in KARPAS422 cells at BCL6 summits 
+after 1 h of 100 nM TCIP1. e, Time-dependent density of Pol II Ser2 phos, Pol II 
+Ser5 phos and H3K27ac along gene bodies that are ±3 kb after 10 nM TCIP1, at 
+differential genes identified by 2 h of RNA sequencing in a. TES, transcription 
+end site; TSS, transcription start site. f, BRD4 density at differential genes, as in 
+e, and enhancers and super-enhancers identified by H3K27ac (Methods). 
+Metaprofiles and shading in e represent mean ± s.e. from spike-in-normalized 
+and input-normalized ChIP–seq data, and in f represent mean ± s.e. from 
+sequence-depth-normalized and input-normalized ChIP–seq data. g, ChIP–seq 
+tracks at PMAIP1 after addition of 10 nM TCIP1. h, Tracks at the BCL6 locus, with 
+alternative transcripts shown. SE, super-enhancer. Pol II Ser2 phos, Pol II Ser5 
+phos and H3K27ac tracks in g,h are spike-in- and input-normalized, and BRD4 
+tracks are sequence-depth- and input-normalized. i, Structures of BCL6 
+isoforms. ZF, zinc finger. j, mRNA of long and short isoforms of BCL6 (BCL6L 
+and BCL6S, respectively), measured by quantitative PCR with reverse 
+transcription by primers specific to isoform-unique exon–exon junctions 
+(shown by arrowheads in i). n = 3 biological replicates, mean ± s.d. P values  
+were calculated by a two-tailed, unpaired Student’s t-test. k, Induction of the 
+BCL6L isoform by 1 nM or less TCIP1. l, Simultaneous treatment of 10 nM of 
+TCIP1 and 100 nM of the CDK9 inhibitor (CDK9i) NVP2 to block elongation.  
+m, Competitive titration of BI3812 against 10 nM TCIP1. The blots in k–m are 
+representative of two biological replicates.
+
+
+=== PAGE 7 ===
+Nature  |  Vol 620  |  10 August 2023  |  423
+We used our H3K27ac ChIP–seq data to examine the consequences 
+at regulatory regions such as active enhancers where there is a 20 times 
+higher cumulative load of BRD4 than at other regions of the genome49,50. 
+BRD4 occupancy decreased at enhancers approximately 10% 1 h after 
+addition of TCIP1 (Fig. 4f, bottom row; example genome track of the 
+OCA-B super-enhancer is shown in Extended Data Fig. 8e). In addi-
+tion, there were negligible changes in H3K27ac either at promoters of 
+differential genes (Fig. 4e) or genome wide; after 2 h, only 126 peaks 
+increased, whereas 70 peaks decreased (|log2(TCIP1/DMSO)| ≥ 0.5, 
+Padjusted ≤ 0.05) out of 51,678 total consensus peaks reconstructed 
+(Extended Data Fig. 8c). This is consistent with the genetic studies of 
+Melnick and colleagues, which point to a competition model between 
+BCL6 and other transcription factors underlying repression51. Our 
+data support a model in which TCIP1 borrows a fraction of the total 
+BRD4, recruits it to BCL6-binding sites and BCL6-regulated genes, 
+and rapidly activates transcriptional elongation and the expression 
+of these target genes.
+Rewiring the BCL6 autoinhibitory circuit
+BCL6 expression is subject to negative autoregulation that originates 
+from BCL6-binding sites in the first intron of the BCL6 gene, which 
+are often deleted or mutated in DLBCL52,53, providing protection 
+from cell death. The TCIPs that we have designed should convert this 
+negative-feedback pathway to a positive-feedback pathway, by replac-
+ing the epigenetic repression that BCL6 provides54, with transcriptional 
+activation by BRD4. To determine whether this prediction is correct, we 
+examined BCL6 mRNA levels after treatment with TCIP1 and found that 
+within 1–2 h of the addition of 10 nM TCIP1, the long isoform of BCL6 
+is upregulated at the expense of its short isoform due to transcription 
+and alternative splicing of exon 7 in the BCL6 gene (Fig. 4i,j). The BCL6 
+protein was significantly increased in a dose-dependent manner upon 
+addition of TCIP1, also showing a hook effect, in two different DLBCL cell 
+lines (Fig. 4k). Simultaneous addition of a nanomolar CDK9 inhibitor, 
+NVP2 (ref. 45), to block elongation of transcription, prevented upregu-
+lation of BCL6 protein levels (Fig. 4l). The chemical controls Neg1 and 
+Neg2 also did not affect BCL6 (Extended Data Fig. 9a). The kinetics of 
+BCL6 induction were similar in two separate DLBCL cell lines (SUDHL5 
+and KARPAS422) (Extended Data Fig. 9c); in addition, BRD4 protein 
+levels did not change substantially (Extended Data Fig. 9b).
+Because the primary transcript of BCL6 is 24 kb and Pol II moves at 
+2–3 kb per minute, we hypothesized that transcription of BCL6 must 
+start almost immediately after addition of TCIP1. Indeed, in our ChIP–
+seq data, we observed that elongation of polymerase starts to increase 
+a
+Spleen
+Liver
+Lung
+ All signiﬁcant upregulated and
+ downregulated genes
+log2(TCIP1/vehicle)
+4
+2
+0
+–2
+–4
+Number of genes
+upregulated
+Number of genes
+downregulated
+Concentration
+(μM ± s.d.)
+Liver
+36 ± 18
+301
+204
+Lung
+12 ± 0.94
+255
+167
+b
+c
+d
+e
+Gene
+Foxo3
+Txnip
+Spleen
+1.7
+Cdkn1a
+2.4
+Hexim1
+1.6
+1.8
+Fold change (10 mg kg–1 or 10 nM TCIP1/vehicle)
+2 h
+1 h
+4 h
+20 h
+1.0
+1.0
+1.9
+1.3
+2.6
+1.2
+3.4
+1.4
+3.0
+2.2
+5.8
+1.9
+4.3
+69
+4.6
+7.4
+in KARPAS422 DLBCL cells
+1
+2
+3
+4
+5
+18
+20
+22
+24
+26
+28
+Time (days)
+Body weight (g)
+10 mg kg–1 TCIP1
+Vehicle
+10 mg kg–1 i.p.
+t1/2 (h)
+0.42 ± 0.14
+tmax (h)
+Cmax (μM)
+AUC0–last (μM per h)
+9.7 ± 0.16
+0.41 ± 0.01 1.92 ± 0.07
+0
+100
+200
+300
+400
+500
+0
+100
+200
+300
+400
+500
+Time (min)
+Plasma total drug 
+concentration (nM)
+f
+g
+i
+j
+ER
+Pro-apoptotic genes
+Cell death
+BCL6
+BTB
+k
+l
+Lung
+Spleen
+Vehicle
+10 mg kg–1 TCIP1
+HO
+N
+H
+H
+H
+O
+N
+H
+O
+O
+O
+H
+N
+O
+N
+N
+CI
+N
+NH
+N
+O
+O
+O
+NH
+O
+TCIP2
+h
+1.25
+1.00
+0.75
+0.50
+0.25
+0
+Viability
+10–6
+10–5
+10–7
+10–8
+10–9
+10–10
+TCIP1 (M)
+10–11
+EC50 ~ 210 nM
+10–6
+10–5
+10–7
+10–8
+10–9
+10–10
+TCIP1 (M)
+10–11
+1.25
+1.00
+0.75
+0.50
+0.25
+0
+Viability
+EC50 ~ 470 nM
+10–5
+Dose (M)
+10–6
+10–7
+10–8
+Viability
+0
+0.5
+1.0
+BI3802 (BCL6 degrader)
+TCIP2
+EC50 ~ 355 nM
+Viability
+0
+0.5
+1.0
+1.5
+10–5
+TCIP2 (M)
+10–6
+10–7
+10–8
+Cell line TPM
+HS578T
+HCC1428
+KARPAS422
+BCL6
+425
+54
+20
+Source: CCLE
+KARPAS422
+EC50 ~ 355 nM
+Spleen
+48 ± 26
+2,785
+2,471
+Oestrone
+BI3812 (BCL6 inhibitor)
+ESR1
+ESR2
+6
+50
+0
+0
+71
+0
+Primary lymphocytes
+HCC1428
+HS578T
+Fig. 5 | Toxicity of TCIP1 in mice and primary human cells and 
+generalization to ER-positive cancers. a, Tissue-specific transcriptomic 
+effects of TCIP1, treated at 10 mg kg−1 intraperitoneal (i.p.) once daily for 5 days. 
+b, Quantification of transcriptome changes in the liver, lung and spleen and 
+associated accumulated tissue concentrations of TCIP1. Treatment at 
+10 mg kg−1 TCIP1 intraperitoneal once daily, with measurement on day 5. n = 3 
+mice per treatment. c, Pharmacokinetic parameters of TCIP1. t1/2, half-life; tmax, 
+time to max serum concentration; Cmax, maximum serum concentration; 
+AUC0-last, area under the curve from dosing to last measured concentration.  
+d, Comparison of key gene targets upregulated by TCIP1 in both cultured 
+DLBCL cells (KARPAS422) and in the spleen. e, Body weight of treated mice.  
+No adverse effects or behavioural abnormalities were noticed. f, Haematoxylin 
+and eosin staining of the lung and spleen from representative mice treated with 
+vehicle and drug. Scale bars, 50 µm (lung images) and 100 µm (spleen images). 
+n = 3 mice each for treatment and vehicle for a–f. g, Effect of TCIP1 on cell 
+viability of primary human tonsillar lymphocytes. h, Effect of TCIP1 on cell 
+viability of primary human fibroblasts. i, ER–BCL6 TCIP2 designed to induce 
+cell death in oestrogen-positive, BCL6-overexpressing DLBCLs. j, Chemical 
+structure of TCIP2. k, Effect on cell viability of TCIP2 compared with controls: 
+oestrone, BI3812 (a BCL6(BTB) inhibitor) and BI3802 (a BCL6 degrader) in 
+KARPAS422 cells with high ERβ (encoded by ESR2) levels. l, Measurement of  
+the selective effect on cell viability by TCIP2 in DLBCL cells with coincident 
+overexpression of ER and BCL6 (KARPAS422) compared with primary human 
+lymphocytes, a triple-negative breast cancer cell line (HS578T) and ER-driven 
+but BCL6-low breast cancer cells (HCC1428). CCLE, Cancer Cell Line 
+Encyclopedia. n = 3 biological replicates, mean ± s.d. for g,h,k,l. Viability 
+curves in g,h,k,l are after 72 h of drug treatment.
+
+
+=== PAGE 8 ===
+424  |  Nature  |  Vol 620  |  10 August 2023
+Article
+at exon–intron junctions at just 15 min, and continues to spread through 
+the gene body at 1, 2 and 4 h after addition of 10 nM TCIP1 (Fig. 4h). BRD4 
+density increases modestly by 1 h at the known intronic BCL6-binding 
+site. Finally, as in Fig. 3g, to clarify the role of ternary complex formation 
+for the BCL6 upregulation observed, we titrated the BCL6(BTB) inhibi-
+tor BI3812 against a constant concentration of 10 nM TCIP1 and found 
+that we could reverse the upregulation of BCL6 (Fig. 4m). Our data 
+indicate that BCL6 is itself a direct target of TCIP1 and TCIP1 can rewire 
+its repressive negative-feedback pathway into a positive-feedback 
+pathway, amplifying the potency of the molecule in killing cancer cells 
+(model in Extended Data Fig. 9d).
+Cell-type-specific activity of TCIP1
+BCL6-knockout mice die of a complex inflammatory reaction that 
+has been dissected to specific regions of the protein55. Because TCIP1 
+requires engagement of both BCL6 and BRD4, and also operates at 
+a concentration that would occupy only a fraction of the total BCL6 
+molecules (unlike a degrader or inhibitor), we were curious about the 
+potential toxicity of TCIP1. We evaluated the tolerability, pharmacoki-
+netic properties and target engagement of TCIP1 in wild-type C57BL/6 
+mice treated for 5 days with 10 mg kg−1 TCIP1 once daily by intraperito-
+neal injection. TCIP1 induced dramatic transcriptomic changes in the 
+spleen despite comparable tissue concentrations of drug (Fig. 5a,b). 
+Serum concentrations were approximately 100–400-fold higher than 
+expected therapeutic doses (Fig. 5c). Notable genes upregulated in 
+DLBCL cells, such as FOXO3, were also upregulated in the spleen as 
+well as other known BCL6 targets in lymphocytes (Fig. 5d and Sup-
+plementary Table 1). Despite the large transcriptomic changes in the 
+spleen, TCIP1 was well tolerated with no adverse effects noticed and 
+no significant changes in mouse body weight (Fig. 5e). Haematoxylin 
+and eosin staining and examination (by H.V.) also did not reveal notice-
+able abnormalities such as inflammatory infiltrates or apoptotic cells 
+(Fig. 5f). We also observed a 200–400-fold lower sensitivity in primary 
+human fibroblasts (EC50 of approximately 470 nM) and lymphocytes 
+(EC50 of approximately 210 nM) (Fig. 5g,h). T and B lymphocytes are 
+particularly germane because they have among the highest levels of 
+BCL6 (ref. 56). The data support the cellular evidence that TCIP1 acts 
+in a context-specific manner dependent on coincident expression of 
+BRD4 and BCL6.
+Generality of the TCIP strategy
+We explored the generality and predictability of the TCIP approach by 
+designing and synthesizing a series of molecules predicted to borrow 
+the transcriptional activity of the oestrogen hormone receptor protein 
+to activate BCL6 target genes and produce cell death (Fig. 5i). We used 
+the synthetic oestrogen, oestrone for these studies and constructed 
+TCIP2 (Fig. 5j), which showed strong antiproliferative activity with an 
+EC50 of 355 nM (Fig. 5k). As predicted, killing was most robust in DLBCL 
+lines, such as KARPAS422, with higher expression of both ER and BCL6 
+(Fig. 5k). Several ER-positive human breast cancer cells with low levels 
+of BCL6 showed enhanced proliferation, indicating that oestrone was 
+active and that TCIPs are not intrinsically toxic in cells lacking BCL6 
+(Fig. 5l). By contrast, triple-negative breast cancer cell lines with nei-
+ther detectable BCL6 nor ER were not affected by the ER–BCL6 TCIP2 
+(Fig. 5l). These studies suggest that other transcriptional activators 
+could be predictably hijacked or rewired to facilitate transcription of 
+pro-apoptotic genes in DLBCL cells.
+Discussion
+Existing approaches to targeted cancer chemotherapy rely on inhibiting 
+or degrading a protein or preventing its synthesis by RNAi or CRISPR 
+(or CRISPRi). These approaches require complete or near complete 
+removal of the driver function, often resulting in mechanism-based 
+toxicity when the cancer driver is an essential protein. However, by 
+making use of the intrinsic driving pathways of the cancer cell and 
+rewiring them to activate pathways of cell death, we have introduced 
+an approach to cancer chemotherapy that is analogous to a dominant, 
+gain-of-function mutation in genetics. TCIPs produce their effect by 
+activating cell death signalling and rewiring only a fraction of the cancer 
+driver molecules per cell to drive the phenotype. This assertion is sup-
+ported by the fact that 10 nM TCIP1 produces only an approximately 
+1.5-fold increase in BRD4 at BCL6 sites over the genome and less than 
+10% loss at enhancers (Fig. 4d,f), despite robust gene activation and 
+cell killing. A gain-of-function mechanism would also explain the far 
+more robust cell killing seen with substantially lower concentrations 
+of TCIP1 than the weaker antiproliferative effects of conventional 
+small-molecule inhibitors or degraders of BCL6 (refs. 23,57,58) or BET 
+proteins24. The wealth of regulators of programmed cell death suggests 
+many opportunities to use diverse cancer drivers to generalize this 
+strategy of killing cancer cells by rewiring the cancer driver circuitry.
+Past studies have used CIPs of genetically modified transcription fac-
+tors or epigenetic regulators to activate or repress signal transduction 
+or transcription of exogenous or endogenous genes9,12,14. Small mole-
+cules that bind to DNA and/or nucleosomes have also been used for this 
+purpose13,59. Although these studies were mechanistically informative 
+and provided a catalogue of the biologic processes regulated by CIPs15, 
+they had little therapeutic potential because of the need to introduce 
+genetically modified transcription factors or small molecules with 
+relatively little genomic specificity. Our experiments developing TCIPs 
+rely only on endogenous transcription factors and epigenetic modifiers 
+with their intrinsic biologic specificity and capture the combinatorial 
+use of transcriptional regulators. The activation of endogenous genes 
+by small-molecule TCIPs might have application to many other areas of 
+biology and medicine. For example, TCIPs could be designed for use in 
+activating death pathways in senescent cells, activating the expression 
+of therapeutic or haploinsufficient genes, activating the expression of 
+neoantigens in human immunotherapy, or regulating gene expression 
+in cells or organisms for synthetic biology applications.
+Online content
+Any methods, additional references, Nature Portfolio reporting summa-
+ries, source data, extended data, supplementary information, acknowl-
+edgements, peer review information; details of author contributions 
+and competing interests; and statements of data and code availability 
+are available at https://doi.org/10.1038/s41586-023-06348-2.
+1.	
+Weinberg, R. A. The action of oncogenes in the cytoplasm and nucleus. Science 230, 
+770–776 (1985).
+2.	
+Davoli, T. et al. Cumulative haploinsufficiency and triplosensitivity drive aneuploidy 
+patterns and shape the cancer genome. Cell 155, 948–962 (2013).
+3.	
+Sanchez-Vega, F. et al. Oncogenic signaling pathways in The Cancer Genome Atlas. Cell 
+173, 321–337.e10 (2018).
+4.	
+Denny, S. K. et al. Nfib promotes metastasis through a widespread increase in chromatin 
+accessibility. Cell 166, 328–342 (2016).
+5.	
+Hengartner, M. O. & Horvitz, H. R. C. elegans cell survival gene ced-9 encodes a 
+functional homolog of the mammalian proto-oncogene bcl-2. Cell 76, 665–676 (1994).
+6.	
+Strasser, A., O’Connor, L. & Dixit, V. M. Apoptosis signaling. Annu. Rev. Biochem. 69, 
+217–245 (2000).
+7.	
+Schmitz, R. et al. Genetics and pathogenesis of diffuse large B-cell lymphoma. N. Engl. J. 
+Med. 378, 1396–1407 (2018).
+8.	
+Phan, R. T. & Dalla-Favera, R. The BCL6 proto-oncogene suppresses p53 expression in 
+germinal-centre B cells. Nature 432, 635–639 (2004).
+9.	
+Spencer, D. M., Wandless, T. J., Schreiber, S. L. & Crabtree, G. R. Controlling signal 
+transduction with synthetic ligands. Science 262, 1019–1024 (1993).
+10.	
+Spencer, D. M., Graef, I., Austin, D. J., Schreiber, S. L. & Crabtree, G. R. A general strategy 
+for producing conditional alleles of Src-like tyrosine kinases. Proc. Natl Acad. Sci. USA 92, 
+9805–9809 (1995).
+11.	
+Graef, I. A., Holsinger, L. J., Diver, S., Schreiber, S. L. & Crabtree, G. R. Proximity and 
+orientation underlie signaling by the non-receptor tyrosine kinase ZAP70. EMBO J. 16, 
+5618–5628 (1997).
+12.	
+Ho, S. N., Biggar, S. R., Spencer, D. M., Schreiber, S. L. & Crabtree, G. R. Dimeric ligands 
+define a role for transcriptional activation domains in reinitiation. Nature 382, 822–826 
+(1996).
+
+
+=== PAGE 9 ===
+Nature  |  Vol 620  |  10 August 2023  |  425
+13.	
+Erwin, G. S. et al. Synthetic transcription elongation factors license transcription across 
+repressive chromatin. Science 358, 1617–1622 (2017).
+14.	
+Hathaway, N. A. et al. Dynamics and memory of heterochromatin in living cells. Cell 149, 
+1447–1460 (2012).
+15.	
+Stanton, B. Z., Chory, E. J. & Crabtree, G. R. Chemically induced proximity in biology and 
+medicine. Science https://doi.org/10.1126/science.aao5902 (2018).
+16.	
+Stanton, B. Z. et al. Smarca4 ATPase mutations disrupt direct eviction of PRC1 from 
+chromatin. Nat. Genet. 49, 282–288 (2017).
+17.	
+Burslem, G. M. & Crews, C. M. Proteolysis-targeting chimeras as therapeutics and tools 
+for biological discovery. Cell 181, 102–114 (2020).
+18.	
+Gestwicki, J. E., Crabtree, G. R. & Graef, I. A. Harnessing chaperones to generate 
+small-molecule inhibitors of amyloid β aggregation. Science 306, 865–869 (2004).
+19.	
+Freiberg, R. A. et al. Specific triggering of the Fas signal transduction pathway in normal 
+human keratinocytes. J. Biol. Chem. 271, 31666–31669 (1996).
+20.	 MacCorkle, R. A., Freeman, K. W. & Spencer, D. M. Synthetic activation of caspases: 
+artificial death switches. Proc. Natl Acad. Sci. USA 95, 3655–3660 (1998).
+21.	
+Yang, X., Chang, H. Y. & Baltimore, D. Essential role of CED-4 oligomerization in CED-3 
+activation and apoptosis. Science 281, 1355–1357 (1998).
+22.	 Basso, K. et al. Integrated biochemical and computational approach identifies BCL6 
+direct target genes controlling multiple pathways in normal germinal center B cells. 
+Blood 115, 975–984 (2010).
+23.	 Kerres, N. et al. Chemically induced degradation of the oncogenic transcription factor 
+BCL6. Cell Rep. 20, 2860–2875 (2017).
+24.	 Filippakopoulos, P. et al. Selective inhibition of BET bromodomains. Nature 468,  
+1067–1073 (2010).
+25.	 Loven, J. et al. Selective inhibition of tumor oncogenes by disruption of super-enhancers. 
+Cell 153, 320–334 (2013).
+26.	 Nagel, S. et al. Amplification at 11q23 targets protein kinase SIK2 in diffuse large B-cell 
+lymphoma. Leuk. Lymphoma 51, 881–891 (2010).
+27.	
+Dyer, M. J., Fischer, P., Nacheva, E., Labastide, W. & Karpas, A. A new human B-cell 
+non-Hodgkin’s lymphoma cell line (Karpas 422) exhibiting both t (14;18) and t(4;11) 
+chromosomal translocations. Blood 75, 709–714 (1990).
+28.	 Shu, S. et al. Response and resistance to BET bromodomain inhibitors in triple-negative 
+breast cancer. Nature 529, 413–417 (2016).
+29.	 Ghandi, M. et al. Next-generation characterization of the Cancer Cell Line Encyclopedia. 
+Nature 569, 503–508 (2019).
+30.	 Yu, C. et al. High-throughput identification of genotype-specific cancer vulnerabilities in 
+mixtures of barcoded tumor cell lines. Nat. Biotechnol. 34, 419–423 (2016).
+31.	
+Winter, G. E. et al. Drug development. Phthalimide conjugation as a strategy for in vivo 
+target protein degradation. Science 348, 1376–1381 (2015).
+32.	 Slabicki, M. et al. Small-molecule-induced polymerization triggers degradation of BCL6. 
+Nature 588, 164–168 (2020).
+33.	 Nowak, R. P. et al. Plasticity in binding confers selectivity in ligand-induced protein 
+degradation. Nat. Chem. Biol. 14, 706–714 (2018).
+34.	 Schultz, L. W. & Clardy, J. Chemical inducers of dimerization: the atomic structure of 
+FKBP12-FK1012A-FKBP12. Bioorg. Med. Chem. Lett. 8, 1–6 (1998).
+35.	 Schreiber, S. L. The rise of molecular glues. Cell 184, 3–9 (2021).
+36.	 Barish, G. D. et al. Bcl-6 and NF-κB cistromes mediate opposing regulation of the innate 
+immune response. Genes Dev. 24, 2760–2765 (2010).
+37.	
+Perez-Rosado, A. et al. BCL6 represses NFκB activity in diffuse large B-cell lymphomas.  
+J. Pathol. 214, 498–507 (2008).
+38.	 Brunet, A. et al. Akt promotes cell survival by phosphorylating and inhibiting a Forkhead 
+transcription factor. Cell 96, 857–868 (1999).
+39.	 Hatzi, K. et al. A hybrid mechanism of action for BCL6 in B cells defined by formation  
+of functionally distinct complexes at enhancers and promoters. Cell Rep. 4, 578–588 
+(2013).
+40.	 Renault, V. M. et al. The pro-longevity gene FoxO3 is a direct target of the p53 tumor 
+suppressor. Oncogene 30, 3207–3221 (2011).
+41.	
+Bradner, J. E., Hnisz, D. & Young, R. A. Transcriptional addiction in cancer. Cell 168,  
+629–643 (2017).
+42.	 Tsherniak, A. et al. Defining a cancer dependency map. Cell 170, 564–576.e16 (2017).
+43.	 Zou, Z., Ohta, T., Miura, F. & Oki, S. ChIP-Atlas 2021 update: a data-mining suite for 
+exploring epigenomic landscapes by fully integrating ChIP-seq, ATAC-seq and 
+Bisulfite-seq data. Nucleic Acids Res. https://doi.org/10.1093/nar/gkac199 (2022).
+44.	 Hurtz, C. et al. Rationale for targeting BCL6 in MLL-rearranged acute lymphoblastic 
+leukemia. Genes Dev. 33, 1265–1279 (2019).
+45.	 Winter, G. E. et al. BET bromodomain proteins function as master transcription elongation 
+factors independent of CDK9 recruitment. Mol. Cell 67, 5–18.e19 (2017).
+46.	 Adelman, K. & Lis, J. T. Promoter-proximal pausing of RNA polymerase II: emerging roles 
+in metazoans. Nat. Rev. Genet. 13, 720–731 (2012).
+47.	
+Creyghton, M. P. et al. Histone H3K27ac separates active from poised enhancers and 
+predicts developmental state. Proc. Natl Acad. Sci. USA 107, 21931–21936 (2010).
+48.	 Wang, Z. et al. Combinatorial patterns of histone acetylations and methylations in the 
+human genome. Nat. Genet. 40, 897–903 (2008).
+49.	 Whyte, W. A. et al. Master transcription factors and mediator establish super-enhancers at 
+key cell identity genes. Cell 153, 307–319 (2013).
+50.	 Hnisz, D. et al. Super-enhancers in the control of cell identity and disease. Cell 155, 
+934–947 (2013).
+51.	
+Huang, C., Hatzi, K. & Melnick, A. Lineage-specific functions of Bcl-6 in immunity and 
+inflammation are mediated by distinct biochemical mechanisms. Nat. Immunol. 14, 
+380–388 (2013).
+52.	 Wang, X., Li, Z., Naganuma, A. & Ye, B. H. Negative autoregulation of BCL-6 is bypassed by 
+genetic alterations in diffuse large B cell lymphomas. Proc. Natl Acad. Sci. USA 99, 
+15018–15023 (2002).
+53.	 Pasqualucci, L. et al. Mutations of the BCL6 proto-oncogene disrupt its negative 
+autoregulation in diffuse large B-cell lymphoma. Blood 101, 2914–2923 (2003).
+54.	 Gearhart, M. D., Corcoran, C. M., Wamstad, J. A. & Bardwell, V. J. Polycomb group and SCF 
+ubiquitin ligases are found in a novel BCOR complex that is recruited to BCL6 targets. 
+Mol. Cell. Biol. 26, 6880–6889 (2006).
+55.	 Huang, C. et al. The BCL6 RD2 domain governs commitment of activated B cells to form 
+germinal centers. Cell Rep. 8, 1497–1508 (2014).
+56.	 Uhlen, M. et al. Proteomics. Tissue-based map of the human proteome. Science 347, 
+1260419 (2015).
+57.	
+Davis, O. A. et al. Optimizing shape complementarity enables the discovery of potent 
+tricyclic BCL6 inhibitors. J. Med. Chem. 65, 8169–8190 (2022).
+58.	 Bellenie, B. R. et al. Achieving in vivo target depletion through the discovery and 
+optimization of benzimidazolone BCL6 degraders. J. Med. Chem. 63, 4047–4068 (2020).
+59.	 Ho, S. N., Boyer, S. H., Schreiber, S. L., Danishefsky, S. J. & Crabtree, G. R. Specific 
+inhibition of formation of transcription complexes by a calicheamicin oligosaccharide:  
+a paradigm for the development of transcriptional antagonists. Proc. Natl Acad. Sci. USA 
+91, 9203–9207 (1994).
+Publisher’s note Springer Nature remains neutral with regard to jurisdictional claims in 
+published maps and institutional affiliations.
+Springer Nature or its licensor (e.g. a society or other partner) holds exclusive rights to this 
+article under a publishing agreement with the author(s) or other rightsholder(s); author 
+self-archiving of the accepted manuscript version of this article is solely governed by the 
+terms of such publishing agreement and applicable law.
+© The Author(s), under exclusive licence to Springer Nature Limited 2023, corrected 
+publication 2023
+
+
+=== PAGE 10 ===
+Article
+Methods
+Cell culture
+Lymphoma and leukaemia cells were cultured in RPMI-1640 (American 
+Type Culture Collection (ATCC) 30-2001) + 10% FBS with antibiotics 
+(100X PenStrep; 15140122, Gibco). Daudi cells were a gift from the labo-
+ratory of R. Levy (Stanford University) and originally from the ATCC. Raji 
+cells were a gift from the laboratory of J. Cochran (Stanford University) 
+and originally from the ATCC. Primary human tonsillar lymphocytes 
+were a gift from M. M. Davis. Toldeo, K562, Reh and Pfeiffer cell lines 
+were a gift from the laboratory of A. Alizadeh (Stanford University) and 
+originally from the ATCC. KARPAS422 cells were obtained from Sigma 
+(06101702). DOHH2 and OCILY19 were obtained from the DSMZ. All 
+other cell lines (SUDHL5, HT, SUDHL10, DB, Jurkat and primary human 
+fibroblasts) were obtained from the ATCC. Primary human fibroblasts 
+were cultured in DMEM + 10% FBS with antibiotics and used at passages 
+3–5. Primary human tonsillar lymphocytes were a gift from M. M. Davis. 
+Cells were routinely checked for mycoplasma and immediately checked 
+upon suspicion. No cultures tested positive.
+Cell viability measurements
+Thirty thousand cells were plated in 100 µl media per well of a 
+96-well plate and treated with drug for indicated times and doses. A 
+resazurin-based indicator of cell health (PrestoBlue; P50200, Thermo 
+Fisher) was added for 1.5 h, after which the fluorescence ratio at 
+560/590 nm was recorded. The background fluorescence was sub-
+tracted and the signal was normalized to DMSO-treated cells. EC50 
+measurements on cell lines were done with four biological replicates 
+by separate cell passages maintained by three independent investi-
+gators. Fit of dose–response curves to data and statistical analysis 
+were performed using the drc package in R using the four-parameter 
+log-logistic function.
+PRISM cell proliferation assay
+The PRISM cell proliferation assay was carried out as previously 
+described30. In brief, up to 906 barcoded cell lines in pools of 20–25 
+were thawed and plated into 384-well plates (1,250 cells per well for 
+adherent cells, 2,000 cells per well for suspension or mixed suspen-
+sion–adherent pools). Cells were treated with an eight-point dose 
+curve starting at 10 µM with threefold dilutions in triplicate and incu-
+bated for 120 h, then lysed. The barcode for each cell was read out 
+by mRNA-based Luminex detection as previously described60 and 
+input to a standardized R pipeline (https://github.com/broadinstitute/
+prism_data_processing) to generate viability estimates relative to 
+vehicle treatment and fit dose–response curves. The area under the 
+dose–response curve (AUC), which is correlated with drug potency, 
+was used as a metric of drug potency in a cell line, and correlated 
+with BCL6 transcripts per million as annotated in the Cancer Cell Line 
+Encyclopedia29.
+Chemical synthesis
+Additional details are provided in the Supplementary Methods.
+Protein expression and purification
+The construct for 6×His-TEV-BRD4(BD1) was described in Filippakopou-
+los, Qi et al.24 and was a gift from N. Burgess-Brown (Addgene plasmid 
+#38943; http://n2t.net/addgene:38943; RRID: Addgene_38943). The 
+construct for BCL6(BTB)-AviTag, where the AviTag was later bioti-
+nylated in vitro using purified BirA, was based on previously designed 
+BCL6 constructs used for TR-FRET assays, as reported in multiple 
+papers including refs. 23,61 and contains amnio acids 5–129 with three 
+mutations—C8Q, C67R and C84N—that enhance stability but have no 
+difference on backbone structure with the wild-type version62. A Trx-
+6×His-HRV3C-BCL6(BTB) construct without the AviTag was produced 
+similarly for isothermal calorimetry (ITC) studies where the Trx-6xHis 
+tag was cleaved by addition of HRV3C. Additional details are provided 
+in the Supplementary Methods.
+TR-FRET
+Each reaction contained 100 nM BRD4(BD1), 100 nM BCL6(BTB)- 
+AviTag-Biot, 20 nM Streptavidin-FITC (SA1001, Thermo) and 1:400 
+anti-6×His terbium antibody (61HI2TLF, PerkinElmer) in 10 µl of buffer 
+containing 20 mM HEPES, 150 mM NaCl, 0.1% BSA, 0.1% NP-40 and 
+1 mM TCEP in a 384-well plate. Protein was incubated with drug digi-
+tally dispensed (Tecan D300e) for 1 h in the dark at room temperature 
+before excitation at 337 nm and measurement of emission at 520 nm 
+(FITC) and 490 nm (terbium) with a PHERAstar FS plate reader (BMG 
+Labtech). The ratio of signal at 520 nm to 490 nm was calculated and 
+normalized to DMSO-treated conditions and plotted.
+ITC
+The tag-cleaved versions of BCL6(BTB) and BRD4(BD1) were used 
+for experiments, in a VP-ITC machine. For binary assays with TCIP1, 
+400 µM BCL6(BTB) or BRD4(BD1) were titrated from the syringe into 
+a cell containing 40 µM TCIP1. For the binary protein–protein ITC, 
+330 µM BCL6(BTB) was titrated into 68 µM BRD4(BD1). For binary 
+assays with JQ1 or BI3812, 100 µM BCL6(BTB) or 350 µM BRD4(BD1) 
+was titrated from the syringe into a cell containing 5 µM BI3812 or 
+20 µM JQ1. For the ternary complex assays, 200 µM BRD4(BD1) was 
+incubated with 10 µM TCIP1 in the cell (20-fold excess, to drive satura-
+tion of the binary complex), and 100 µM BCL6(BTB) was titrated from 
+the syringe, at 310 rpm stirring at 25 °C in a buffer containing 10 mM 
+HEPES (pH 7.5), 200 mM NaCl, 5% glycerol, 1 mM TCEP and matched 
+DMSO percent (never more than 0.4%) in the syringe and the cell. The 
+first one or two injections and outliers from instrument noise were 
+routinely excluded. Data were fit to a one-site model using MicroCal 
+LLC Origin software.
+Biolayer interferometry
+The tag-cleaved version of BRD4(BD1) and biotinylated BCL6(BTB)- 
+AviTag were used for experiments, in a Gator Bio BLI machine. Of 
+BRD4(BD1), 50 µM was added to each well containing titrations of 
+TCIP1 from 5.5 nM to 12 µM so that BRD4(BD1) would be in excess and 
+drive binary BRD4(BD1)–TCIP1 complex formation. Of BCL6(BTB), 
+100 nM was loaded on the streptavidin tip. Experiments were carried 
+out at 25 °C. After loading, association was carried out for 300 s, dis-
+sociation for 300 s and a baseline for 30 s. A TCIP1-only control was 
+carried out for each concentration confirming that there was no bind-
+ing between BCL6(BTB) and TCIP1 on its own. A BRD4(BD1)-only con-
+trol was tested, similarly confirming that BCL6(BTB) and BRD4(BD1) 
+do not interact on their own. Data were analysed in GraphPad Prism 
+with the association curves fit to the model ‘one-phase association’ 
+and the dissociation curves to the model ‘one-phase decay’ to obtain 
+kinetic parameters. The Kd was obtained by fitting a ‘one-site binding’ 
+curve to the span of each association curve versus the concentration 
+of drug.
+Flow cytometry
+For annexin V assays, 500,000 cells plated at 1 M ml−1 and treated 
+with drug for indicated timepoints and doses were harvested on 
+ice and washed twice in 2.5% FBS/PBS. Of 7-AAD, 2.5  µl and 2.5 µl of 
+FITC-annexin V (640922, BioLegend) were added. Cells were incu-
+bated for 15 min at room temperature, then immediately measured 
+on a BD Accuri. Gates were drawn based on single-stain and no-stain 
+controls. For cell cycle and TUNEL analysis, cells plated at 1 M ml−1 
+were treated with drug for indicated timepoints and doses and pulsed 
+with 10 µM ethynyl-EdU (C10424, Thermo) for 2 h before harvesting 
+on ice. One million cells were counted and washed in 2.5% FBS/PBS. 
+Cells were resuspended at 10 M ml−1 and fixed in 4% paraformalde-
+hyde, washed and permeabilized in 0.5% Triton X-100/PBS. Fixed and 
+
+
+=== PAGE 11 ===
+permeabilized cells were washed and labelled with BrdUTP using ter-
+minal deoxynucleotidyl transferase (556405, BD) for 60 min at 37 °C, 
+rinsed and then labelled with AlexaFluor 647-azide (C10424, Thermo) 
+for 30 min at room temperature in the dark. After washes, the sample 
+was incubated with 2 µl 7-AAD and 5 µl RNAseA for 30 min at room tem-
+perature in the dark, washed and measured on a BD Accuri. Gates were 
+drawn based on single-stain and no-stain controls and kept constant 
+across conditions.
+BCL6 reporter assay
+KARPAS422 cells were lentivirally transduced with a construct contain-
+ing the reporter. After selection, cells were plated and treated with 
+indicated amount of TCIP1 for 8 h. Cells were washed in 2.5% FBS/PBS, 
+1:250 v/v of 7-AAD was added to distinguish live from dead cells and 
+harvested for flow cytometry on a BD Accuri. Given the polyclonal 
+population after transduction, the area under the curve of the histo-
+gram representing the FITC signal across all live cells was calculated 
+as an integrative measure of the total GFP signal. A GFP-positive gate 
+was drawn off non-transduced cells and the area past the thresh-
+old for each sample was calculated and normalized to cells treated 
+with DMSO.
+The BCL6–BRD4 nanoBRET assay
+HEK293T cells were transfected with 1 µg of a construct with an 
+N-terminal fusion of HaloTag to full-length BCL6 and 1 µg of a construct 
+with an N-terminal fusion of nanoLuc (nano-luciferase) to full-length 
+BRD4 (N169A, Promega). A 12-point dose–response curve with three 
+technical replicates for each TCIP was carried out, and corrected BRET 
+ratios were calculated according to the manufacturer assay protocol 
+(TM439, Promega). Data were fit using the R package drc using the 
+four-parameter log-logistic function. EC50 values shown in Fig. 2g are 
+‘left-side’ EC50, as curves displayed the characteristic hook effect of a 
+bivalent molecule.
+RNA extraction, qPCR and sequencing library preparation
+Cells were plated at 1 M ml−1 and harvested in TRIsure (38033, Bioline). 
+RNA was extracted using Direct-zol RNA MicroPrep columns (R2062, 
+Zymo) treated with DNAseI. Complementary DNA (cDNA) was prepared 
+for quantitative PCR with reverse transcription (RT–qPCR) using the 
+SensiFAST cDNA preparation kit according to manufacturer instruc-
+tions (65054, Bioline). Of cDNA, 1 µl was used per RT–qPCR prepared 
+with SYBR Lo-ROX (94020, Bioline). For sequencing library prepara-
+tion, polyA-containing transcripts were enriched for (E7490S, NEB) 
+and prepared into paired-end libraries (E7760S, NEB). Libraries were 
+sequenced on an Illumina NovaSeq (Novogene).
+Western blots
+Cells were plated at 1 M ml−1 and treated with drug at indicated time-
+points and doses. Two million cells were harvested on ice in RIPA buffer 
+(50 mM Tris-HCl (pH 8), 150 mM NaCl, 1% NP-40, 0.1% sodium deoxy-
+cholic acid salt (DOC), 1% SDS, protease inhibitor cocktail (homemade) 
+and 1 mM DTT) and 1:200 benzonase (E1014, Sigma) was added and 
+incubated for 20 min. After 10 min of centrifugation at 14,000g at 
+4 °C, the supernatant was collected and protein concentration was 
+measured by Bradford. The antibodies used for immunoblots were: 
+BCL6 (D65C10, Cell Signaling), BRD4 (ab243862, Abcam), BCL2 (15071, 
+Cell Signaling), p53 (DO-1, Santa Cruz), MYC (D84C12, Cell Signaling), 
+FOXO3 (75D8, Cell Signaling), p21 (12D1, Cell Signaling) and GAPDH 
+(6C5, Santa Cruz). All antibodies were used at 1:1,000 v/v dilutions 
+except GAPDH (1:2,000) and p21 (1:500). ImageStudio (LI-COR) was 
+used for blot imaging.
+RNA sequencing analysis
+Raw reads were checked for quality using fastqc (https://www.bioinfor-
+matics.babraham.ac.uk/projects/fastqc/) and trimmed from adapters 
+using cutadapt63 using parameters cutadapt -a AGATCGGAAGAG 
+CACACGTCTGAACTCCAGTCA -b AGATCGGAAGAGCGTCGTGTAGG 
+GAAAGAGTGT --nextseq-trim=20 --minimum-length 1. Transcripts 
+were quantified using kallisto64 against the human Gencode v33 
+indexed transcriptome and annotations. Differential gene analysis 
+was performed using DESeq2 (ref. 65) using apeglm66 to shrink log2 
+fold changes and pathway and enrichment analyses using Enrichr67 
+and ChIP-Atlas43. For analysis of BCL6 binding at ±1 kb from the tran-
+scription start site of differentially regulated genes, BCL6 peaks were 
+reconstructed from OCILY1 DLBCL cells as deposited in ref. 39, using 
+macs2 (ref. 68) callpeak with a score cut-off 100 or more, and overlap 
+was calculated.
+ChIP–seq experiment and library preparation
+Thirty million cells were treated with TCIP1 or DMSO for indicated 
+timepoints. Cells were washed in PBS and crosslinked for 12 min in 
+CiA Fix buffer (50 mM HEPES (pH 8.0), 1 mM EDTA, 0.5 mM EGTA and 
+100 mM NaCl) with the addition of formaldehyde to a final concentra-
+tion of 1%. The crosslinking reaction was quenched by glycine added 
+at 0.125 M final concentration. Crosslinked cells were centrifuged at 
+1,000g for 5 min. Nuclei were prepared by 10 min of incubation of 
+resuspended pellet in CiA NP-Rinse 1 buffer (50 mM HEPES (pH 8.0), 
+140 mM NaCl, 1 mM EDTA, 10% glycerol, 0.5% IPEGAL CA-630 and 0.25% 
+Triton X-100) followed by wash in CiA NP-Rinse 2 buffer (10 mM Tris 
+(pH 8.0), 1 mM EDTA, 0.5 mM EGTA and 200 mM NaCl). The pellet was 
+resuspended in CiA Covaris Shearing buffer (0.1% SDS, 1 mM EDTA 
+(pH 8.0) and 10 mM Tris-HCl (pH 8.0)) with 1,000× protease inhibi-
+tors (Roche) and sonicated for 20 min with Covaris E220 sonicator 
+(peak power of 140, duty factor of 5.0 and cycles/burst of 200). The 
+distribution of fragments was confirmed with agarose gel. Of chro-
+matin per ChIP, 300 µl was used with anti-BRD4 antibodies (E2A7X, 
+Cell Signaling). Of chromatin, 50 µg was used with anti-Pol II Ser2 
+phos (ab5095, Abcam) and anti-Pol II Ser5 phos (3E8, ActiveMotif) 
+antibodies. Of chromatin, 25 µg was used with anti-H3K27ac (ab4729, 
+Abcam). For each Pol II Ser2 phos, Pol II Ser5 phos and H3K27ac ChIP, 
+exactly 20 ng (for Pol II Ser2 phos and Pol II Ser5 phos) or 50 ng (for 
+H3K27ac) Drosophila chromatin (53083, ActiveMotif) was spiked-in 
+with 2 µl spike-in chromatin-specific antibody (61686, ActiveMotif). 
+After overnight incubation at 4 °C in IP buffer (50 mM HEPES (pH 7.5), 
+300 mM NaCl, 1 mM EDTA, 1% Triton X-100, 0.1% DOC and 0.1% SDS), 
+immunoprecipitates were washed twice with IP buffer, once with DOC 
+buffer (10 mM Tris (pH 8), 0.25 M LiCl, 0.5% IPEGAL CA-630, 0.5% DOC 
+and 1 mM EDTA) and once with 10 mM Tris/1 mM EDTA buffer (TE) pH 8. 
+Immunoprecipitates and inputs were reverse crosslinked in TE/0.5% 
+SDS/0.5 µg µl−1 proteinase K for 55 °C for 3 h, then 65 °C for 18 h, and 
+then DNA was purified using a PCR cleanup spin column (74609, Takara). 
+The sequencing library preparation was performed using the NEBNext 
+Ultra II DNA kit (E7645S). Libraries were sequenced on an Illumina 
+NovaSeq (Novogene).
+ChIP–seq analysis
+The data quality was checked using fastqc. The raw reads were 
+trimmed from adapters with trim_galore (parameters: --paired –
+illumina) and raw reads were aligned to the hg38 human genome 
+assembly and the dm6 fly genome assembly using bowtie2 (param-
+eters: --local --maxins 1000). Low-quality reads, duplicated reads and 
+reads with multiple alignments were removed using SAMtools69 and 
+Picard (https://broadinstitute.github.io/picard/). macs2 (ref. 68) was 
+used to map position of peaks with a false discovery rate cut-off of 
+0.05. Bedtools70 was used to find a consensus set of peaks by merg-
+ing peaks across multiple conditions (bedtools merge), to count 
+the number of reads in peaks (bedtools intersect -c) and to generate 
+genome coverage (bedtools genomecov -bga). deepTools71 was used 
+to generate coverage densities across multiple experimental condi-
+tions (deeptools computeMatrix and deeptools plotProfile) and to 
+
+
+=== PAGE 12 ===
+Article
+generate bigwig files (deeptools bamCoverage), where reads mapping 
+to ENCODE blacklist regions were excluded72. Normalization was 
+performed as suggested by the manufacturer protocol (61686 and 
+53083, ActiveMotif) in which the human genome-mapped unique 
+reads in each ChIP were downsampled proportional to a normaliza-
+tion factor calculated by: (1) counting the unique reads in each sample 
+that align to the fly genome; (2) identifying the sample containing the 
+least amount of mapped fly genome reads; and (3) computing the nor-
+malization factor for each sample as (reads mapping to the fly genome 
+in the sample with minimum mapped fly reads)/(reads mapping to 
+the fly genome in the current sample). This procedure was carried 
+out on a per-antigen basis (that is, the H3K27ac ChIPs were treated 
+separately from the Pol II Ser2 phos ChIPs, which were separate from 
+the Poll II Ser5 phos ChIPs). The average percentage of reads in each 
+sample that mapped to the fly genome was 1.8 ± 1.4% (mean ± s.d.). 
+All browser tracks and metaprofiles shown were calculated with 
+spike-in-normalized and input-subtracted data. The peak differen-
+tial analysis and principal component analysis was performed using 
+DESeq2 (ref. 65). The SRX4609168 public dataset was used to extract 
+positions of BCL6 summits for Fig. 4d. Enhancers and super-enhancers 
+used in Fig. 4f and Extended Data Fig. 8d,e were classified using the 
+ROSE49 algorithm by stitching together H3K27ac peaks in untreated 
+cells within 12.5 kb but excluding regions within 2 kb of a transcription 
+start site unless within a larger H3K27ac domain. Data from Bal et al.73 
+were used to cross-check our analysis and annotate the BCL6 intronic 
+hyper-mutated super-enhancer.
+Mouse tolerability and pharmacokinetic study
+The pharmacokinetic and tolerability study was performed in the 
+Drug Metabolism and Pharmacokinetics (DMPK) Core facility at 
+Scripps Florida (https://www.scripps.edu/science-and-medicine/
+cores-and-services/dmpk-core/index.html). Mice used were C57Bl/6J, 
+male and 9 weeks old. Sex was not considered in the study design, 
+no data were randomized and no experimenters were blinded. The 
+mice were housed in individually ventilated cages in JAG 75 cages with 
+micro-isolator lids. HEPA-filtered air was supplied into each cage at a 
+rate of 60 air exchanges per hour for the mice. The dark–light cycle was 
+set to 20:00 on and 20:00 off. The temperature was set at 72 °F and was 
+maintained at ±2 °F. The humidity was low/Hi of 30–70%. There was a 
+computerized system in place to control and or monitor the tempera-
+tures within the Animal Holding Room. Each animal room was equipped 
+with a thermos-hygrometer that was monitored and recorded daily on 
+the room log. Of TCIP1, 10 mg kg−1 was injected intraperitoneally into 
+C57BL/6 male mice (n = 3 in treatment and n = 3 in vehicle conditions) 
+using a 25–29-gauge needle to deliver 10 µl g−1 body weight of a for-
+mulation of 1 mg ml−1 TCIP1 in 5% DMSO, 5% Tween-80, and 90% saline. 
+Vehicle was the same formulation (5%, 5% and 90% of DMSO, Tween-80 
+and saline, respectively). The formulation was checked to be a clear 
+solution and after administration, the animal was put back in its cage. 
+For pharmacokinetic properties, plasma levels were measured at 0, 5, 
+15, 30, 60, 120, 240, 360 and 480 min after drug administration. For 
+tolerability work, body weights and observation of animal health were 
+recorded each day through 5 days of dosing once daily. After 5 days, 
+tissues were collected 8 h after the last drug administration and split 
+into one part for RNA sequencing, homogenized in TRIzol (15596026, 
+Thermo), another part for histology, snap-frozen, and another part 
+for measurement of drug levels for which molar concentrations were 
+recorded with the assumption of 1 g tissue was equal to 1 ml. Samples 
+were processed for analysis by precipitation using acetonitrile and 
+analysed with liquid chromatography–tandem mass spectrometry. 
+Pharmacokinetic parameters were calculated using the noncompart-
+mental analysis tool of WinNonlin Enterprise software (version 6.3). All 
+procedures were approved by the Scripps Florida Institutional Animal 
+Care and Use Committee, and the Scripps Vivarium is fully accredited 
+by the Association for Assessment and Accreditation of Laboratory 
+Animal Care International. Formalin-fixed paraffin-embedded 
+blocks (on snap-frozen tissue) and haematoxylin and eosin stain-
+ing were done by the Stanford Histology/Pathology Service Core by 
+H.V. and P. Chu.
+Reporting summary
+Further information on research design is available in the Nature 
+Portfolio Reporting Summary linked to this article.
+Data availability
+Uncropped blots of western blots and Coomassie gels of recombinant 
+proteins are available in Supplementary Fig. 1a,b, respectively. The flow 
+gating strategy is available in Supplementary Fig. 2. Select gene expres-
+sion changes in tissue from mice treated with TCIP1 are annotated in 
+Supplementary Table 1. Source data for mouse drug levels in plasma and 
+tissue and for body weight changes are provided. Sequencing data have 
+been deposited to GSE211282. Source data are provided with this paper.
+ 
+60.	 Corsello, S. M. et al. Discovering the anti-cancer potential of non-oncology drugs by 
+systematic viability profiling. Nat. Cancer 1, 235–248 (2020).
+61.	
+McCoull, W. et al. Development of a novel B-cell lymphoma 6 (BCL6) PROTAC to provide 
+insight into small molecule targeting of BCL6. ACS Chem. Biol. 13, 3131–3141 (2018).
+62.	 Stead, M. A. et al. Structure of the wild-type human BCL6 POZ domain. Acta Crystallogr. 
+Sect. F Struct. Biol. Cryst. Commun. 64, 1101–1104 (2008).
+63.	 Martin, M. Cutadapt removes adapter sequences from high-throughput sequencing 
+reads. EMBnet.journal 17, 10 (2011).
+64.	 Bray, N. L., Pimentel, H., Melsted, P. & Pachter, L. Near-optimal probabilistic RNA-seq 
+quantification. Nat. Biotechnol. 34, 525–527 (2016).
+65.	 Love, M. I., Huber, W. & Anders, S. Moderated estimation of fold change and dispersion 
+for RNA-seq data with DESeq2. Genome Biol. 15, 550 (2014).
+66.	 Zhu, A., Ibrahim, J. G. & Love, M. I. Heavy-tailed prior distributions for sequence count 
+data: removing the noise and preserving large differences. Bioinformatics 35, 2084–2092 
+(2019).
+67.	
+Chen, E. Y. et al. Enrichr: interactive and collaborative HTML5 gene list enrichment 
+analysis tool. BMC Bioinformatics 14, 128 (2013).
+68.	 Zhang, Y. et al. Model-based analysis of ChIP-seq (MACS). Genome Biol. 9, R137 (2008).
+69.	 Li, H. et al. The Sequence Alignment/Map format and SAMtools. Bioinformatics 25, 
+2078–2079 (2009).
+70.	 Quinlan, A. R. & Hall, I. M. BEDTools: a flexible suite of utilities for comparing genomic 
+features. Bioinformatics 26, 841–842 (2010).
+71.	
+Ramírez, F. et al. deepTools2: a next generation web server for deep-sequencing data 
+analysis. Nucleic Acids Res. 44, W160–W165 (2016).
+72.	 Amemiya, H. M., Kundaje, A. & Boyle, A. P. The ENCODE Blacklist: identification of 
+problematic regions of the genome. Sci. Rep. https://doi.org/10.1038/s41598-019-45839-z 
+(2019).
+73.	 Bal, E. et al. Super-enhancer hypermutation alters oncogene expression in B cell 
+lymphoma. Nature 607, 808–815 (2022).
+Acknowledgements The studies described in this article were funded from a grant from the 
+HHMI to G.R.C. and NIH grants CA276167, CA163915 and MH126720-01 to G.R.C. Funding 
+was also provided by a grant from the Mary Kay Foundation. Funding was provided to S.G. 
+from the NIH grant 5F31HD103339-03. G.R.C., S.G., A.K., S.H.K., C.-Y.C. and J.M.S. were 
+mentored and financially supported by Stanford’s SPARK Translational Research Program. 
+G.R.C. was supported by the David Korn Professorship. This research was financially 
+supported by Stanford Bio-X. Funding was provided to N.S.G. from departmental funds from 
+Chemical and Systems Biology and the Stanford Cancer Institute, and the Gray laboratory 
+also receives or has received research funding from Novartis, Takeda, Astellas, Taiho, 
+Jansen, Kinogen, Arbella, Deerfield, Springworks, Interline and Sanofi. Funding for 
+pharmacokinetic studies was provided by NIH grant number 1 S10OD030332-01. M.R.G.  
+is supported by a Leukemia and Lymphoma Society Scholar award. S.G. thanks T. Reindl,  
+E. Bruguera and S. Hinshaw for helpful advice for the biochemical studies. We thank  
+I. A. Graef for thoughtful comments on the manuscript, and members of the Crabtree  
+and Gray laboratories for constructive comments.
+Author contributions G.R.C. conceived the TCIP strategy to regulate endogenous genes and 
+the rewiring of cancer drivers to activate cell death pathways. S.G. contributed many inventive 
+ideas, designed the first effective TCIP and performed the biochemical, cell biological and 
+genomic studies. A.K. contributed many inventive ideas, defined the conditions for TCIP use, 
+carried out the first successful TCIP experiments and conducted the cell biological and 
+genomic studies. C.-Y.C. suggested the use of BCL6 as a means of producing cell death. S.H.K. 
+screened the cell death genes to detect those that would directly kill cancer cells. N.S.G. and 
+S.G. designed the first effective TCIPs. X.L. synthesized the first effective TCIP. Z.L. and T.Z. 
+contributed to TCIP design and optimization. W.J. synthesized TCIP1, the most potent TCIP to 
+date. W.W. contributed innovative ideas to the computational analysis for the selection of TCIP 
+components and helped fund the studies by writing grants with G.R.C. J.M.S. carried out 
+experiments designed by G.R.C., S.G. and A.K. H.V. conducted the histopathology studies.  
+H.Y. and M.R.G. contributed to TCIP1 application in DLBCL. The manuscript was written by 
+G.R.C., S.G., A.K. and N.S.G. with input from all authors.
+
+
+=== PAGE 13 ===
+Competing interests G.R.C. is a founder and scientific advisor for Foghorn Therapeutics  
+and Shenandoah Therapeutics. N.S.G. is a founder, science advisory board member (SAB)  
+and equity holder in Syros, C4, Allorion, Lighthorse, Voronoi, Inception, Matchpoint, 
+CobroVentures, GSK, Shenandoah (board member), Larkspur (board member) and Soltego 
+(board member). The Gray laboratory receives or has received research funding from Novartis, 
+Takeda, Astellas, Taiho, Jansen, Kinogen, Arbella, Deerfield, Springworks, Interline and Sanofi. 
+T.Z. is a scientific founder, equity holder and consultant of Matchpoint, equity holder of 
+Shenandoah, and consultant of Lighthorse. M.R.G. reports research funding from Sanofi,  
+Kite/Gilead, Abbvie and Allogene; consulting for Abbvie, Allogene and Bristol Myers Squibb; 
+honoraria from Tessa Therapeutics, Monte Rosa Therapeutics and Daiichi Sankyo; and stock 
+ownership of KDAc Therapeutics. Shenandoah has a license from Stanford for the TCIP 
+technology that was invented by G.R.C., S.G., A.K., C-Y.C, W.W., S.H.K., N.S.G., W.J., X.L. and 
+Z.L. All other authors declare no competing interests.
+Additional information
+Supplementary information The online version contains supplementary material available at 
+https://doi.org/10.1038/s41586-023-06348-2.
+Correspondence and requests for materials should be addressed to Nathanael S. Gray or 
+Gerald R. Crabtree.
+Peer review information Nature thanks the anonymous reviewers for their contribution to the 
+peer review of this work.
+Reprints and permissions information is available at http://www.nature.com/reprints.
+
+
+=== PAGE 14 ===
+Article
+BCL6
+P53 wt
+P53 mut
+BCL2
+GAPDH
+BRD4
+HT
+KARPAS422
+SUDHL5
+DB
+DOHH2
+RAJI
+SUDHL10
+PFEIFFER
+TOLEDO
+DAUDI
+REH
+OCILY19
+K562
+JURKAT
+Primary
+Lymphocytes
+Primary
+Fibroblasts
+BCL6 
+(over-
+exposed)
+80-
+kDa
+185-
+80-
+50-
+30-
+25-
+a
+c
+d
+b
+0
+0.3
+0.6
+0.9
+1.2
+Viabililty
+HT
+TCIP1
+JQ1+BI3812
+JQ1
+Neg2
+Neg1
+BI3812
+0
+0.3
+0.6
+0.9
+1.2
+Viabililty
+KARPAS422
+Neg1
+TCIP1
+JQ1+BI3812
+JQ1
+Neg2
+BI3812
+0
+0.3
+0.6
+0.9
+1.2
+Viabililty
+SUDHL5
+TCIP1
+JQ1
+JQ1+BI3812
+Neg1
+BI3812
+TCIP1
+0
+0.3
+0.6
+0.9
+1.2
+SUDHL10
+JQ1+BI3812
+JQ1
+Neg1
+Neg2
+BI3812
+10
+−11
+10
+−10
+10
+−9
+10
+−8
+10
+−7
+10
+−6
+10
+−5
+Dose (M)
+10
+−11
+10
+−10
+10
+−9
+10
+−8
+10
+−7
+10
+−6
+10
+−5
+Dose (M)
+10
+−11
+10
+−10
+10
+−9
+10
+−8
+10
+−7
+10
+−6
+10
+−5
+Dose (M)
+10
+−11
+10
+−10
+10
+−9
+10
+−8
+10
+−7
+10
+−6
+10
+−5
+Dose (M)
+300
+KARPAS422
+HT
+SUDHL5
+SUDHL10
+DB
+PFEIFFER
+DAUDI
+DOHH2
+RAJI
+REH
+K562
+TOLEDO
+OCILY19
+JURKAT
+TCIP1
+JQ1+BI3812
+Neg1+Neg2
+BCL6 (TPM)
+0
+100
+200
+400
+EC50 (M)
+10-6
+10-7
+10-8
+10-9
+NS
+NS
+4.5·10-13
+1.8·10-9
+5.9·10-10
+1.8·10-4
+4.3·10-10
+5.5·10-5
+6.9·10-5
+3.8·10-3
+1.1·10-3
+NS
+NS
+4.2·10-42.8·10-2
+1.1·10-3
+NS
+5.1·10-4
+NS
+NS 2.5·10-3
+2.4·10-3
+NS
+8.0·10-3
+NS
+NS
+NS
+8.7·10-3
+BCL6 expression (Cancer Cell Line Encyclopedia)
+906 Cancer Cell Lines (PRISM Lab)
+HT_HAEMATOPOIETIC_AND_LYMPHOID_TISSUE
+RL_HAEMATOPOIETIC_AND_LYMPHOID_TISSUE
+SUDHL4_HAEMATOPOIETIC_AND_LYMPHOID_TISSUE
+WSUDLCL2_HAEMATOPOIETIC_AND_LYMPHOID_TISSUE
+0.4
+0.6
+0.8
+1.0
+0
+100
+200
+300
+BCL6 TPM
+Area Under Dose-Response Curve
+Lower Cell Viability 
+after 120hrs 8-point
+TCIP1 dose treatment
+OCIAML3_HAEMATOPOIETIC_AND_LYMPHOID_TISSUE
+SKM1_HAEMATOPOIETIC_AND_LYMPHOID_TISSUE
+NOMO1_HAEMATOPOIETIC_AND_LYMPHOID_TISSUE
+Extended Data Fig. 1 | Potency of TCIP1 in cancer cell lines and correlation 
+with BCL6 level. a. Comparison of TCIP1 effect on cell viability to effect of 
+negative controls Neg1 and Neg2, or single-sided molecules JQ1 and BI3812, or 
+the additive effect of JQ1+BI3812. mean±s.d., 72 h drug treatment. b. TCIP1 EC50 
+of cell viability is anti-correlated with BCL6 content across 14 different cancer 
+cell lines, p-values computed by Students’ t-test, two-sided, not adjusted for 
+multiple comparisons. For a,b: n = 4 biological replicates with 3 technical 
+replicates each, mean±s.d 72 h drug treatment. c. Measurement of BCL6, BRD4, 
+p53 and BCL2 status of DLBCL cell lines ranked from left to right from high to 
+low-BCL6 protein content. d. Unbiased screen of the effect of TCIP1 on the 
+viability of 906 barcoded cancer cell lines (PRISM). Drug was dosed for 120 h in 
+triplicate (Methods).
+
+
+=== PAGE 15 ===
+a
+10-5
+BI3812 (M)
+10-6
+10-7
+10-8
+10-9
+10-10
+1.00
+0.75
+0.50
+0.25
+0.00
+Viability
+TCIP1 3.3 nM
+16 nM
+80 nM
+SUDHL10
+10-5
+BI3812 (M)
+10-6
+10-7
+10-8
+10-9
+10-10
+KARPAS422
+TCIP1 3.3 nM
+80 nM
+400 nM
+2 uM
+1.00
+0.75
+0.50
+0.25
+0.00
+Viability
+10-5
+BI3812 (M)
+10-6
+10-7
+10-8
+10-9
+10-10
+1.00
+0.75
+0.50
+0.25
+0.00
+Viability
+HT
+TCIP1 3.3 nM
+16 nM
+40 nM
+80 nM
+2 uM
+10 uM
+Cell lines highly sensitive to TCIP1 with BCL6 TPM ≥ 300 
+Cell lines with modest or low sensitivity to TCIP1
+10-5
+BI3812 (M)
+10-6
+10-7
+10-8
+10-9
+10-10
+1.00
+0.75
+0.50
+0.25
+0.00
+Viability
+PFEIFFER
+TCIP1 80 nM
+400 nM
+10-5
+BI3812 (M)
+10-6
+10-7
+10-8
+10-9
+10-10
+1.00
+0.75
+0.50
+0.25
+0.00
+Viability
+DAUDI
+TCIP1 80 nM
+2 uM
+10 uM
+10-5
+BI3812 (M)
+10-6
+10-7
+10-8
+10-9
+10-10
+1.00
+0.75
+0.50
+0.25
+0.00
+Viability
+REH
+TCIP1 40 nM
+200 nM
+1 uM
+Cell lines not sensitive to TCIP1 with BCL6 TPM ~0
+10-5
+BI3812 (M)
+10-6
+10-7
+10-8
+10-9
+10-10
+1.00
+0.75
+0.50
+0.25
+0.00
+Viability
+JURKAT
+TCIP1 3.3 nM
+16 nM
+40 nM
+80 nM
+2 uM
+10 uM
+S
+N
+N
+N
+N
+O
+Cl
+H
+N
+H
+N
+H
+N
+O
+O
+HN
+Cl
+N
+N
+N
+O
+O
+N
+O
+TCIP1
+JQ1
+BI3812
+S
+N
+N
+N
+N
+O
+Cl
+H
+N
+H
+N
+N
+N
+N
+Cl
+O
+N
+O
+OH
+O
+O
+O
+N
+H
+Neg2
+d
+e
+Comparison of TCIP1, Neg2, and JQ1 in cell lines not sensitive to TCIP1 with low BCL6
+K562
+10−11
+10−10
+10−9
+10−8
+10−7
+10−6
+10−5
+0.00
+0.25
+0.50
+0.75
+1.00
+1.25
+Dose (M)
+Viability
+Drug
+TCIP1
+Neg2
+JQ1
+JURKAT
+10−11
+10−10
+10−9
+10−8
+10−7
+10−6
+10−5
+0.00
+0.25
+0.50
+0.75
+1.00
+1.25
+Dose (M)
+Viability
+Drug
+TCIP1
+Neg2
+JQ1
+0.0
+0.5
+1.0
+10−11
+10−10
+10−9
+10−8
+10−7
+10−6
+10−5
+Dose (M)
+Viability
+TOLEDO
+Drug
+TCIP1
+Neg2
+JQ1
+OCILY19
+10−11
+10−10
+10−9
+10−8
+10−7
+10−6
+10−5
+0.00
+0.25
+0.50
+0.75
+1.00
+1.25
+Dose (M)
+Viability
+Drug
+TCIP1
+Neg2
+JQ1
+b
+c
+Extended Data Fig. 2 | Rescue of TCIP1-induced cell death by competitive 
+titration of BCL6 inhibitors. a. Rescue of TCIP1-induced cell death across 
+cancer cell lines that are highly sensitive to TCIP1, b. moderately sensitive,  
+or c. not at all sensitive. d. Comparison of JQ1, TCIP1, and Neg2, which contains 
+a functional BRD4 inhibitor but very low-affinity BCL6 binder (KD ~ 10 µM) in e. 
+cell lines that have low or no BCL6. For a,b,c, e: n = 3 biological replicates, 
+mean±s.d. Viability curves in a, b, c, and e are after 72 h drug treatment.
+
+
+=== PAGE 16 ===
+Article
+a
+Polyethylene glycol (PEG) linkers
+Tertiary amine containing linkers
+Alkyl linkers (top to bottom: 6-11 carbons)
+b
+BCL6 + TCIP1
+BRD4 + BCL6
+BRD4 + JQ1
+BCL6 + BI3812
+BRD4 + TCIP1
+KD = 5.08 µM
+KD = >1 mM
+KD = no binding
+KD = 22 nM
+KD = 1.4 nM
+0
+20
+40
+60
+80
+100
+-0.08
+-0.06
+-0.04
+-0.02
+0.00
+0.02
+Seconds
+Shift (nm)
+Dissociation
+nM TCIP1
+16.5
+49.4
+148
+444
+1333
+4000
+12000
+0
+20
+40
+60
+80
+100
+-0.02
+0.00
+0.02
+0.04
+0.06
+0.08
+0.10
+Seconds
+Shift (nm)
+Association
+nM TCIP1
+5.49
+16.5
+49.4
+148
+444
+1333
+4000
+12000
+d
+c
+f
+e
+Decreasing potency on 
+DLBCL cell death
+(EC50s of cell viability 
+on KARPAS422 labeled
+for representative set)
+ EC50 ~ 1.3 nM
+EC50~ 2.3 nM
+EC50~ 2.5 nM
+EC50~ 7.2 nM
+EC50~ 71 nM
+0
+20
+40
+60
+80
+t1/2 (s)
+t1/2 = 30.4 ± 11 s
+0.00
+0.02
+0.04
+0.06
+koff (nM-1s-1)
+koff = 0.0260 ± 0.01 /s
+10-8
+10-7
+10-6
+10-5
+10-4
+0
+2
+4
+6
+8
+10
+Dose (M)
+Norm. TR-FRET Signal
+(Fold Change to DMSO)
+JWZ-7-6
+TCIP1
+XFL-03-017
+JWZ-7-23
+JWZ-7-15
+JWZ-7-20
+JWZ-7-22
+XFL-01-186
+Neg1
+Neg2
+10-8
+10-7
+10-6
+10-5
+10-4
+0
+2
+4
+6
+8
+10
+Dose (M)
+Norm. TR-FRET Signal
+(Fold Change to DMSO)
+TCIP1
+JWZ-7-97
+XFL-01-173
+XFL-01-185
+10-8
+10-7
+10-6
+10-5
+10-4
+0
+5
+10
+15
+Dose (M)
+Norm. TR-FRET Signal
+(Fold Change to DMSO)
+TCIP1
+JWZ-7-100
+JWZ_7-13
+JWZ-7-14
+JWZ-7-98
+0
+5
+10
+15
+20
+25
+JWZ-7-6
+TCIP1
+XFL-03-017
+JWZ-7-13
+JWZ-7-14
+XFL-01-173
+JWZ-7-22
+XFL-03-018
+JWZ-7-97
+XFL-01-185
+JWZ-7-98
+JWZ-7-15
+JWZ-7-23
+JWZ-7-100
+JWZ-7-20
+XFL-01-186
+Neg2
+Neg1
+Area Under TR−FRET Curve
+Extended Data Fig. 3 | Biochemical studies of ternary complex binding 
+affinities of TCIPs. a. Ternary complex formation by TCIPs with related 
+chemistries. TCIP1 plotted on every graph as a comparison. Each point 
+represents an independent replicate which is the mean of 3 technical repeats, 
+mean value line drawn. b. Isothermal calorimetry experiments to measure binary 
+affinities of TCIP1 to BRD4BD1, BCL6BTB, and associated controls. Representative 
+data from 1-2 independent experiments shown. c. Representative biolayer 
+interferometry measurements (BLI) of ternary complex kinetics from 3 
+independent replicates shown with biotinylated BCL6BTB on the tip and excess 
+BRD4BD1 in the well with titration of TCIP1. d. Off-rate and e. half-life of TCIP1 
+calculated from BLI dissociation curve measurements, 7-8 different doses for 
+each of n = 3 independent replicates, mean±s.d. f. Area under curve of TR-FRET 
+correlates with potency of TCIPs on cell death (KARPAS422 cells, viability at 
+72 h). Representative cellular EC50s labeled, mean of 4 biological replicates. 
+Each area under the curve point represents an independent replicate which is 
+the mean of 3 technical repeats of the TR-FRET experiment.
+
+
+=== PAGE 17 ===
+a
+b
+d
+e
+f
+c
+AF647
+-24 or -14hr: 
+Add drug
+-2hr: 
+10μM EdU pulse for
+newly synthesized DNA
+0hr: Fix cells
+Label DNA breaks 
+with BrdU
+FITC
+anti-BrdU
+clicked to EdU
+N3
++ 7AAD: total DNA 
+content
+-48hrs:
+arrest cell cycle 
+in X% FBS
+0hrs: plate and 
+add TCIP1 titration
+72hrs: measure
+cell viability
+27.73%
+55.5%
+9.8%
+S
+28.91%
+46.66%
+8.52%
+G0/G1
+G2/M
+TCIP1
+Neg1
+100nM
+KARPAS422
+Neg2
+DMSO
+14hrs
+24hrs
+G2/M
+S
+7AAD
+EdU
+60.43%
+32.7%
+2.76%
+49.72%
+43.14%
+3.18%
+65.81%
+27.09%
+2.09%
+7AAD
+AD
+62.66%
+25.94%
+3.43%
+60.53%
+30.47%
+2.81%
+SO
+60.32%
+29.05%
+2.83%
+G0/G1
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+DMSO
+10 nM
+100 nM
+1 µM
+Dose TCIP1, 24hrs
+KARPAS422
+AnnexinV+ % of cells
+Apoptotic (BrdU+)
+% of cells
+100 nM Drug,KARPAS422 
+0
+2500
+5000
+7500
+10000
+Fluorescence
+10-6
+10-5
+10-7
+10-8
+10-9
+10-10
+TCIP1 (M)
+10% FBS
+5% FBS
+3% FBS
+2% FBS
+1% FBS
+10% FBS, IC50 ~3.2 nM
+5% FBS, IC50 ~1.3 nM
+3% FBS, IC50~0.26 nM
+2% FBS, IC50~0.25 nM
+1% FBS, IC50~0.27 nM
+10-11
+SUDHL5
+DMSO
+Neg1
+Neg2
+TCIP1
+0
+20
+40
+60
+G0/G1
+14hr
+24hr
+DMSO
+Neg1
+Neg2
+TCIP1
+0
+20
+40
+60
+G2/M
+DMSO
+Neg1
+Neg2
+TCIP1
+0
+2
+4
+6
+S
+10 nM
+100 nM
+0 2 4 82024
+10
+20
+30
+40
+Hours TCIP1
+KARPAS422
+AnnexinV+% of Cells
+0 2 4 82024
+10
+20
+30
+40
+Hours TCIP1
+KARPAS422
+AnnexinV+% of Cells
+100 nM Drug,KARPAS422 
+Extended Data Fig. 4 | TCIP1 induces apoptosis at every stage of the cell 
+cycle. a. Dose-dependent induction of apoptosis at 24 h by TCIP1 as measured 
+by AnnexinV-positive cells. b. Kinetics of TCIP1-induced apoptosis in KARPAS422 
+cells. For a, b: n = 2-6 biological replicates, mean(±s.d) shown as appropriate.  
+c. Design of assay to measure cell cycle progression simultaneously with 
+apoptosis using Terminal deoxynucleotidyl transferase dUTP nick end labeling 
+(TUNEL) staining. d. TCIP1 induction of cell cycle arrest compared to controls, 
+representative of 2 biological replicates, see Extended Data Fig. 5 for both 
+replicates’ flow cytometry graphs. e. 100 nM TCIP1 induction of apoptosis as 
+measured by DNA fragmentation at each stage of the cell cycle, n = 2 biological 
+replicates, mean shown. f. Measurement of cell viability after cell cycle arrest in 
+G0/G1 by serum starvation in SUDHL5 cells and TCIP1 addition, n = 3 biological 
+replicates, mean±s.d.
+
+
+=== PAGE 18 ===
+Article
+G0/G1
+G2/M
+S
+TCIP1
+Neg1
+100 nM
+KARPAS422
+Neg2
+DMSO
+24hrs Replicate 1
+7AAD
+EdU
+PerCP-A (FL3-A)
+FITC-A (FL1-A)
+10.33%
+PerCP-A (FL3-A)
+FITC-A (FL1-A)
+20.45%
+PerCP-A (FL3-A)
+FITC-A (FL1-A)
+3.14%
+FITC-A (FL1-A)
+7.57%
+FITC-A (FL1-A)
+10.43%
+FITC-A (FL1-A)
+1.07%
+FITC-A (FL1-A)
+5.54%
+FITC-A (FL1-A)
+8.84%
+FITC-A (FL1-A)
+1.04%
+FITC-A (FL1-A)
+61.17%
+FITC-A (FL1-A)
+53.17%
+FITC-A (FL1-A)
+5.26%
+G0/G1
+G2/M
+S
+a
+7AAD
+BrdU
+FITC-A (FL1-A)
+39.54%
+TCIP1
+Neg1
+100 nM
+KARPAS422
+Neg2
+DMSO
+24hrs Replicate 2
+7AAD
+EdU
+7AAD
+BrdU
+0 nM
+S422
+24hrs Replicate 2
+p
+EdU
+27.73%
+55.5%
+9.8%
+7AAD
+60.43%
+32.7%
+2.76%
+49.72%
+43.14%
+3.18%
+O
+65.81%
+27.09%
+2.09%
+FITC-A (FL1-A)
+32.45%
+FITC-A (FL1-A)
+4.07%
+7AAD
+FITC-A (FL1-A)
+12.19%
+FITC-A (FL1-A)
+28.95%
+FITC-A (FL1-A)
+1.92%
+FITC-A (FL1-A)
+23.82%
+FITC-A (FL1-A)
+FITC-A (FL1-A)
+25.95%
+FITC-A (FL1-A)
+2.27%
+PerCP-A (FL3-A)
+FITC-A (FL1-A)
+9.85%
+PerCP-A (FL3-A)
+FITC-A (FL1-A)
+16.22%
+PerCP-A (FL3-A)
+FITC-A (FL1-A)
+0.96%
+Extended Data Fig. 5 | Cell-cycle block and apoptosis induction by TCIP1.  
+a. 100 nM TCIP1 addition at 24 h and simultaneous measurement of cell cycle 
+block and apoptosis in KARPAS422 cells, two separate experiments on different 
+passages of cells shown. Gates were set based on no-stain controls detailed in 
+the Supplementary information.
+
+
+=== PAGE 19 ===
+a
+b
+c
+e
+100nM
+10nM
+DMSO
+−10
+0
+10
+20
+−25
+0
+25
+PC1: 80% variance
+PC2: 16% variance
+Treatment
+10nM 
+TCIP1/DMSO
+100nM 
+TCIP1/DMSO
+MYC
+LGR5
+CXCR4
+DNTT
+KLF2
+CDKN1A
+CCR6
+log2(TCIP1/
+DMSO)
+10
+0
+-10
+5
+-5
+7,174 combined significant DEGs only
+TNF−alpha Signaling via NF−kB
+Xenobiotic Metabolism
+0.0
+0.5
+1.0
+1.5
+0.00
+0.05
+0.10
+0.15
+Upregulated Genes/Genes Annotated
+−log10(Padj)
+p53 Pathway
+TNF−alpha Signaling via NF−kB
+Apoptosis
+0
+1
+2
+3
+0.0
+0.1
+0.2
+Upregulated Genes/Genes Annotated
+−log10(Padj)
+d
+10nM TCIP1/DMSO
+100nM TCIP1/DMSO
+CDKN1A
+KLF2
+CDKN2B
+ARID3A
+IGF2R
+DUSP5
+CXCR4
+FOXO3
+CTBP2
+ARID3B
+RAPGEF1
+CCND1
+PRDM1
+MYC
+PTPN6
+KDM2B
+FGD2
+SIPA1L1
+NFKB1
+BCL2
+PDE4A
+BMI1
+−10
+−5
+0
+5
+10
+0
+2
+4
+6
+log10(norm. transcript counts)
+log2(100nM TCIP1/DMSO)
+3,155 up
+3,485 down
+K562
+K562
+P4936
+RAMOS
+RAJI
+K562
+Bcells
+Bcells
+RS411
+OCILY7
+OCILY1
+OCILY1
+ICN12
+OCILY1
+Bcells
+OCILY1
+2
+4
+6
+0
+2
+-2
+log2(peaks in upregulated genes/
+random set of peaks
+-log10 (p-adjusted)
+the top 100 upregulated genes, 
+10 nM TCIP1/DMSO at 20 hrs
+MYC
+BCL6
+Extended Data Fig. 6 | Robust and dose-dependent gene regulation by 
+TCIP1. a. Principal component analysis of RNA-seq data after addition of TCIP1 
+for 20 h in 2 biological replicates of KARPAS422 cells. b. Gene expression 
+changes after addition of 100 nM TCIP1 for 20 h in KARPAS422 cells. Adjusted 
+p-values computed by two-sided Wald test and adjusted for multiple comparisons 
+by Benjamini-Hochberg. Significance cutoffs were padj ≤ 0.05 and |log2(Drug/
+DMSO)| ≥ 1), n = 2 biological replicates. c. Dose-dependent change in gene 
+expression. d. Enrichment analysis of upregulated genes (MSigDB Hallmark 
+Pathways). e. Analysis of TF binding at the top upregulated genes in over 4,500 
+public transcription factor ChIP-seq datasets from blood-lineage cells. For  
+d, e: adjusted p-values computed by two-sided Fisher’s exact test and adjusted 
+for multiple comparisons by Benjamini-Hochberg.
+
+
+=== PAGE 20 ===
+Article
+log2(10nM TCIP1/DMSO)
+4hr
+680 up
+795 down
+log10(norm. transcript counts)
+log2(10nM TCIP1/DMSO)
+1hr
+32 up
+48 down
+1
+2
+4
+1
+2
+4
+1
+2
+4 hrs
+TCIP1
+Neg1
+Neg2
+10nM:
+All genes
+-5
+5
+0
+log2(10nM Drug/DMSO)
+a
+c
+0
+5
+10
+15
+20
+0.0
+0.1
+0.2
+0.3
+Downregulated Genes/Genes Annotated
+log10(Padj)
+0
+5
+10
+15
+20
+0.0
+0.1
+0.2
+0.3
+Downregulated Genes/Genes Annotated
+log10(Padj)
+Myc Targets V2
+0
+5
+10
+15
+20
+0.0
+0.1
+0.2
+0.3
+Downregulated Genes/Genes Annotated
+log10(Padj)
+TNF alpha Signaling via NF kB
+p53 Pathway
+0
+5
+10
+15
+20
+0.0
+0.1
+0.2
+0.3
+Upregulated Genes/Genes Annotated
+log10(Padj)
+TNF alpha Signaling via NF kB
+p53 Pathway
+UV Response Up
+0
+5
+10
+15
+20
+0.0
+0.1
+0.2
+0.3
+Upregulated Genes/Genes Annotated
+log10(Padj)
+TNF alpha Signaling via NF kB
+p53 Pathway
+UV Response Up
+0
+5
+10
+15
+20
+0.0
+0.1
+0.2
+0.3
+Upregulated Genes/Genes Annotated
+log10(Padj)
+1hr
+2hr
+4hr
+UP
+DOWN
+padj < 0.05
+not significant
+b
+Extended Data Fig. 7 | Specific activation of gene expression by TCIP1 but 
+not related controls. a. Gene expression changes after 1 h or 4 h addition of 
+10 nM TCIP1 in KARPAS422 cells. Changes at 2 h was shown in Fig. 4a. Adjusted 
+p-values computed by two-sided Wald test and adjusted for multiple comparisons 
+by Benjamini-Hochberg. Significance cutoffs were padj ≤ 0.05 and |log2(Drug/
+DMSO)| ≥ 0.5), n = 3 biological replicates. b. Specific effects of TCIP1 across 
+transcriptome. For Neg1 and Neg2, n = 2 biological replicates. For TCIP1, n = 3 
+biological replicates. c. Enrichment analysis of upregulated and downregulated 
+genes (MSigDB Hallmark Pathways). Adjusted p-values computed by two-sided 
+Fisher’s exact test and adjusted for multiple comparisons by Benjamini- 
+Hochberg.
+
+
+=== PAGE 21 ===
+0
+5
+10
+15
+20
+−2
+−1
+0
+1
+2
+log2(2hr/0hr)
+−log10(padj)
+0
+5
+10
+15
+20
+−2
+−1
+0
+1
+2
+log2(2hr/0hr)
+−log10(padj)
+0
+5
+10
+15
+20
+−2
+−1
+0
+1
+2
+log2(2hr/0hr)
+−log10(padj)
+H3K27AC_0hr_1
+H3K27AC_15min_1
+H3K27AC_1hr_1
+H3K27AC_2hr_1
+H3K27AC_4hr_1
+H3K27AC_0hr_2
+H3K27AC_15min_2
+H3K27AC_1hr_2
+H3K27AC_2hr_2
+H3K27AC_4hr_2
+−4
+−2
+0
+2
+4
+−5
+0
+PC1: 61% variance
+PC2: 21% variance
+H3K27ac
+POLIIS2P_0hr_1
+POLIIS2P_15min_1
+POLIIS2P_1hr_1
+POLIIS2P_2hr_1
+POLIIS2P_4hr_1
+POLIIS2P_0hr_2
+POLIIS2P_15min_2
+POLIIS2P_1hr_2
+POLIIS2P_2hr_2
+POLIIS2P_4hr_2
+−4
+−2
+0
+2
+4
+−5
+0
+5
+10
+PC1: 62% variance
+PC2: 16% variance
+Pol II ser 2 phos (elongation)
+POLIIS5P_0hr_1
+POLIIS5P_15min_1
+POLIIS5P_1hr_1
+POLIIS5P_2hr_1
+POLIIS5P_4hr_1
+POLIIS5P_0hr_2
+POLIIS5P_15min_2
+POLIIS5P_1hr_2
+POLIIS5P_2hr_2
+POLIIS5P_4hr_2
+−5
+0
+5
+−10
+−5
+0
+5
+PC1: 49% variance
+PC2: 26% variance
+Pol II ser 5 phos (paused/initiation)
+a
+b
+0.00
+97.76
+BRD4 1hr
+0.00
+97.76
+BRD4 0hr
+BTG4 <
+<
+<
+<
+<
+chr11:111384907−111465896
+0.0
+172.3
+H3K27AC 4hr
+0.0
+172.3
+H3K27ac 2hr
+0.0
+172.3
+H3K27ac 1hr
+0.0
+172.3
+H3K27ac 15min
+0.0
+172.3
+H3K27ac 0hr
+OCA-B/POU2AF1 Super-enhancer
+OCA-B/POU2AF1 Super-enhancer
+FOXO3>
+>
+>
+>
+>
+>
+>>
+chr6:108519858−108724667
+0.00
+47.42
+BRD4 1hr
+0.00
+47.42
+BRD4 0hr
+0.0
+2.2
+Pol II ser 2 phos 4hr
+0.0
+2.2
+Pol II ser 2 phos 2hr
+0.0
+2.2
+Pol II ser 2 phos 1hr
+0.0
+2.2
+Pol II ser 2 phos 15min
+0.0
+2.2
+Pol II ser 2 phos 0hr
+0.00
+4.59
+Pol II ser 5 phos 4hr
+0.00
+4.59
+Pol II ser 5 phos 2hr
+0.00
+4.59
+Pol II ser 5 phos 1hr
+0.00
+4.59
+Pol II ser 5 phos 15min
+0.00
+4.59
+Pol II ser 5 phos 0hr
+0.00
+24.92
+H3K27ac 4hr
+0.00
+24.92
+H3K27ac 2hr
+0.00
+24.92
+H3K27ac 1hr
+0.00
+24.92
+H3K27ac 15min
+0.00
+24.92
+H3K27ac 0hr
+FOXO3
+>
+>
+>
+>
+>
+BCL2L11
+chr2:111108322−111180923
+0.00
+37.12
+BRD4 1hr
+0.00
+37.12
+BRD4 0hr
+0.00
+6.68
+Pol II ser 2 phos 4hr
+0.00
+6.68
+Pol II ser 2 phos 2hr
+0.00
+6.68
+Pol II ser 2 phos 1hr
+0.00
+6.68
+Pol II ser 2 phos 15min
+0.00
+6.68
+Pol II ser 2 phos 0hr
+0.00
+16.12
+Pol II ser 5 phos 4hr
+0.00
+16.12
+Pol II ser 5 phos 2hr
+0.00
+16.12
+Pol II ser 5 phos 1hr
+0.00
+16.12
+Pol II ser 5 phos 15min
+0.00
+16.12
+Pol II ser 5 phos 0hr
+0.00
+21.31
+H3K27ac 4hr
+0.00
+21.31
+H3K27ac 2hr
+0.00
+21.31
+H3K27ac 1hr
+0.00
+21.31
+H3K27ac 15min
+0.00
+21.31
+H3K27ac 0hr
+BCL2L11/BIM
+Pol II ser 2 phos (elongation)
+Pol II ser 5 phos (paused/initiation)
+H3K27ac
+Total consensus peaks: 51,678
+Total consensus peaks: 30,572
+Total consensus peaks: 37,517
+Up: 126
+Up: 55
+Up: 241
+FOXP1
+PDGFD
+LOC100132078
+LINC01991
+ITPKB
+OCA−B
+ST6GAL1
+BCL6
+PAX5
+RHOH
+0
+1
+2
+3
+0
+3000
+6000
+9000
+12000
+H3K27ac enhancers ranked by increasing load
+H3K27ac [x105] (norm. counts)
+707 Super-enhancers
+c
+d
+e
+Down: 70
+Down: 532
+Down: 208
+Extended Data Fig. 8 | ChIP-seq analyses of BRD4, H3K27ac, and RNA Pol II 
+in response to TCIP1. a. PCA plots of each ChIP-seq experiment at indicated 
+timepoints of 10 nM TCIP1 addition: 0hr (DMSO), 15 min, 1 h, 2 h, and 4 h.  
+b. Browser tracks of Pol II Ser2 phos, Pol II Ser5 phos, H3K27ac, and BRD4 at 
+BCL6-target genes and TCIP1-upregulated genes FOXO3 and BCL2L11/BIM.  
+c. Volcano plots of Pol II ser 2 phos, Pol II ser 5 phos, and H3K27ac after 2 h 10 nM 
+TCIP1 addition. Adjusted p-values computed by two-sided Wald test and 
+adjusted for multiple comparisons by Benjamini-Hochberg. Peaks were 
+classified as differential after reads in peaks-based regulative log expression 
+(RLE) normalization and cutoffs padj ≤ 0.05 and |log2(Drug/DMSO)|≥0.5.  
+d. Enhancer and super-enhancer classification in KARPAS422 cells based on 
+H3K27ac ChIP-seq and the ROSE algorithm (Methods). e. BRD4 and H3K27ac 
+ChIP-seq track at the known OCA-B super-enhancer after TCIP1 addition for 
+indicated timepoints. In b, e, Pol II Ser2 phos, Pol II Ser5 phos, and H3K27ac 
+tracks in are spike-in- and input-normalized, BRD4 tracks are sequence-depth- 
+and input-normalized.
+
+
+=== PAGE 22 ===
+Article
+a
+b
+c
+DMSO
+0.2
+0.5
+1.0
+2.0
+3.9
+7.8
+15.6 31.3 62.5
+250
+125
+nM 
+BCL6
+GAPDH
+BCL6
+GAPDH
+Neg1
+Neg2
+KARPAS422, 20hrs
+80-
+80-
+30-
+30-
+kDa
+BCL6
+BCL6
+BTB
+NCOR
+BCOR
+SMRT
+X
+BRD4
+BCL6
+BCL6
+BTB
+d
+BRD4
+GAPDH
+TCIP1, 20hrs
+DMSO
+0.2
+0.5
+1.0
+2.0
+3.9
+7.8
+15.6 31.3 62.5
+250
+125
+nM
+KP422
+30-
+185-
+GAPDH
+BCL6L
+0
+1
+2
+4
+20
+8
+hrs 10nM TCIP1
+BCL6S
+SUDHL5
+GAPDH
+BCL6L
+0
+1
+2
+4
+20
+8
+hrs 10nM TCIP1
+BCL6S
+KP422
+80-
+80-
+30-
+30-
+kDa
+Extended Data Fig. 9 | Conversion of BCL6 auto-inhibitory pathway to 
+feedforward loop. a. Control Neg1 and Neg2 effect on BCL6 protein levels at 
+20 h treatment in KARPAS422 cells. b. Effect on BRD4 levels at 20 h treatment 
+with TCIP1 in KARPAS422 cells. c. Kinetics of BCL6 upregulation in two separate 
+DLBCL cell lines, KARPAS422 and SUDHL5, after addition of 10 nM TCIP1. Blots 
+in a–c representative of 2 biological replicates (for SUDHL5) or 3 (for KARPAS422). 
+d. Model for conversion of BCL6 auto-inhibitory circuit to a positive feedback 
+loop.
+
+
+=== PAGE 23 ===
+
+
+=== PAGE 24 ===
+
+
+=== PAGE 25 ===
+
+
+=== PAGE 26 ===
+
+
+=== PAGE 27 ===
+
+
+=== PAGE 28 ===
+
+
+=== PAGE 29 ===
+
+
