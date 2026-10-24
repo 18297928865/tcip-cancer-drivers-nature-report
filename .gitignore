@@ -1,3 +1,8 @@
 __pycache__/
 *.pyc
 .DS_Store
+*.json
+*.txt
+append_*.py
+build_*.py
+init_*.py
